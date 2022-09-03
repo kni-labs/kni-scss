@@ -1,0 +1,60 @@
+html {
+  font-family: $bodyFontStack;
+  font-size: em($baseFontSize);
+  line-height: 150%;
+  font-weight: $bodyFont-regular;
+}
+
+p,
+.p {
+  color: $gray-200;
+  @include p;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $headingFontStack;
+  font-weight: $headingFont-bold;
+  color: $black;
+  line-height: 1.25em;
+}
+
+h1,
+.h1 {
+  @include fluidType(40, 48);
+}
+
+h2,
+.h2 {
+  @include fluidType(32, 40);
+}
+
+h3,
+.h3 {
+  @include fluidType(28, 32);
+}
+
+h4,
+.h4 {
+  @include fluidType(24, 28);
+}
+
+h5,
+.h5 {
+  @include fluidType(20, 24);
+}
+
+h6,
+.h6 {
+  @include fluidType(16, 20);
+}

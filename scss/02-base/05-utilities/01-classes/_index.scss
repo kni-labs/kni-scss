@@ -1,0 +1,12 @@
+.screenReaderOnly {
+  @include screenReaderOnly;
+}
+
+.resizeTransitionStopper {
+  .responsiveNav {
+    &,
+    .nav {
+      transition: none !important;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+$black: #000;
+$gray-100: #1e1e1c;
+$gray-200: #3d3c38;
+$gray-300: #5b5a54;
+$gray-400: #7a786f;
+$gray-500: #98968c;
+$gray-600: #adaba2;
+$gray-700: #c1c0ba;
+$gray-800: #d6d5d1;
+$gray-900: #eaeae8;
+$gray-950: #f5f4f3;
+$gray-975: #fafaf9;
+$grays: (
+  'gray-100': $gray-100,
+  'gray-200': $gray-200,
+  'gray-300': $gray-300,
+  'gray-400': $gray-400,
+  'gray-500': $gray-500,
+  'gray-600': $gray-600,
+  'gray-700': $gray-700,
+  'gray-800': $gray-800,
+  'gray-900': $gray-900,
+  'gray-950': $gray-950,
+  'gray-975': $gray-975,
+);
+$white: #fff;
+
+// Site settings
+$globalBackgroundColor: $white;
+$globalTextColor: $gray-300;
+$globalSelectionBackgroundColor: initial;
+$globalSelectionColor: initial;

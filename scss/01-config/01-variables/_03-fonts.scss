@@ -1,0 +1,26 @@
+$baseFontSize: $emBase;
+$baseMinFontSize: $emBase;
+$baseMaxFontSize: $emBase;
+$bodyFont-light: 300;
+$bodyFont-regular: 400;
+$bodyFont-medium: 500;
+$bodyFont-semibold: 600;
+$bodyFont-bold: 700;
+$headingFont-light: 300;
+$headingFont-regular: 400;
+$headingFont-medium: 500;
+$headingFont-semibold: 600;
+$headingFont-bold: 700;
+$bodyFont: 'Inter';
+$headingFont: 'Inter';
+$body-font: 'Inter';
+/* stylelint-disable value-keyword-case */
+$bodyFontStack: $body-font, sans-serif, -apple-system, BlinkMacSystemFont,
+  'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol';
+/* stylelint-enable value-keyword-case */
+$heading-font: 'Inter';
+/* stylelint-disable value-keyword-case */
+$headingFontStack: $heading-font, sans-serif, -apple-system, BlinkMacSystemFont,
+  'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol';
+/* stylelint-disable enable-keyword-case */
+$font-path: '/fonts/';

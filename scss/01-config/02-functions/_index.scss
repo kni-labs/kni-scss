@@ -1,0 +1,25 @@
+@use 'sass:math';
+
+@function aspectRatio($number1, $number2) {
+  @return math.div($number2, $number1) * 100%;
+}
+
+@function removeUnit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function em($px) {
+  @return #{math.div($px, $emBase)}em;
+}
+
+@function rem($px) {
+  @return #{math.div($px, $emBase)}rem;
+}
+
+@function px($em) {
+  @return #{$em * $emBase}px;
+}

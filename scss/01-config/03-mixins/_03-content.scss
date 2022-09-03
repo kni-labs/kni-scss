@@ -1,0 +1,44 @@
+@use 'sass:math';
+
+@mixin touchDevice {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin screenReaderOnly {
+  position: absolute;
+  overflow: hidden;
+  top: auto;
+  left: -10000px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+}
+
+@mixin focus {
+  &:focus,
+  > *:focus {
+    outline: none;
+  }
+
+  &:focus > * {
+    box-shadow: 0 0 0 2px #0061c7; /* keyboard-only focus styles */
+    border-radius: 2px;
+  }
+}
+
+@mixin noFocus {
+  &:focus,
+  > *:focus {
+    outline: none;
+  }
+
+  &:focus > * {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

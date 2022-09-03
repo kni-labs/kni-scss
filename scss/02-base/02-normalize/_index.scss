@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-margin-before: 0;
+  margin-block-start: 0;
+  -webkit-margin-after: 0;
+  margin-block-end: 0;
+  -webkit-padding-start: 0;
+  padding-inline-start: 0;
+  -webkit-padding-end: 0;
+  padding-inline-end: 0;
+  -webkit-padding-before: 0;
+  padding-block-start: 0;
+  -webkit-padding-after: 0;
+  padding-block-end: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0;
+  margin-inline-end: 0;
+
+  &:visited {
+    color: inherit;
+  }
+
+  // &::-moz-selection {
+  //   background-color: $globalSelectionBackgroundColor;
+  //   color: $globalSelectionColor;
+
+  //   @include darkMode {
+  //     background-color: $globalSelectionBackgroundColor-dark;
+  //     color: $globalSelectionColor-dark;
+  //   }
+  // }
+
+  // &::selection {
+  //   background-color: $globalSelectionBackgroundColor;
+  //   color: $globalSelectionColor;
+
+  //   @include darkMode {
+  //       background-color: $globalSelectionBackgroundColor-dark;
+  //       color: $globalSelectionColor-dark;
+  //   }
+  // }
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+img,
+button {
+  user-select: none;
+}
+
+img,
+video,
+figure,
+picture,
+label,
+embed,
+ul,
+li {
+  display: block;
+}
+
+img,
+video,
+figure,
+picture {
+  height: auto;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+  transition: $global-transition;
+
+  &:hover {
+    transition: $global-transition;
+  }
+}
+
+nav {
+  ul {
+    list-style-type: none;
+  }
+}
+
+iframe {
+  border: none;
+  color-scheme: normal;
+}
+
+q {
+  quotes: '“' '”' '‘' '’';
+
+  &::before {
+    content: open-quote;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+}
+
+figure,
+picture {
+  overflow: hidden;
+  position: relative;
+}
+
+pre {
+  margin: 0;
+}
+
+button {
+  appearance: none;
+  align-items: unset;
+  background-color: transparent;
+  margin: unset;
+  padding: unset;
+  border: none;
+  font: unset;
+  font-size: inherit;
+  font-family: $bodyFontStack;
+  font-weight: $bodyFont-regular;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
