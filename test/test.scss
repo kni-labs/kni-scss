@@ -1,0 +1,12 @@
+@import '../scss/global.scss';
+
+// write test code here
+
+body {
+  padding: 0 15vw;
+}
+
+.vwtest {
+  border: 2px solid tomato;
+  width: vw(300px);
+}

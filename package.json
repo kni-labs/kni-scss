@@ -13,8 +13,7 @@
   "scripts": {
     "prepare": "husky install",
     "prettier": "npx prettier --write .",
-    "sass-dev": "npm i && sass --watch --update --style=expanded scss:test",
-    "sass-prod": "sass --no-source-map --style=compressed scss:test",
+    "sass-dev": "npm i && sass --watch --update --style=expanded test:test",
     "stylelint": "npx stylelint \"**/*.{css,sass,scss}\" --fix"
   },
   "author": "KNI",
