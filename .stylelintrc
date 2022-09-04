@@ -7,7 +7,7 @@
   ],
   "ignoreFiles": [
     "**/*.{js,mjs,jsx,ts,tsx,json,md,mdx}",
-    "test/*{.css,sass,scss}"
+    "test/*{.css}"
   ],
   "rules": {
     "at-rule-empty-line-before": null,
