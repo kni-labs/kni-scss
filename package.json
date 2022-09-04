@@ -3,16 +3,33 @@
   "version": "0.0.1",
   "description": "kni css",
   "main": "scss",
+  "engines": {
+    "node": "^16.15.1",
+    "npm": "^8.5.5"
+  },
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "sass-dev": "sass --watch --update --style=expanded scss:test",
-    "sass-prod": "sass --no-source-map --style=compressed scss:test"
+    "prepare": "husky install",
+    "prettier": "npx prettier --write .",
+    "sass-dev": "npm i && sass --watch --update --style=expanded scss:test",
+    "sass-prod": "sass --no-source-map --style=compressed scss:test",
+    "stylelint": "npx stylelint \"**/*.{css,sass,scss}\" --fix"
   },
-  "author": "",
+  "author": "KNI",
   "license": "ISC",
+  "dependencies": {
+    "husky": "^7.0.4",
+    "sass": "^1.54.8",
+    "stylelint": "^14.8.2",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-prettier-scss": "0.0.1",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^3.0.0"
+  },
   "devDependencies": {
-    "sass": "^1.54.8"
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.1"
   }
 }

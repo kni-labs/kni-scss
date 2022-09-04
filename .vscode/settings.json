@@ -1,0 +1,10 @@
+{
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  "scss.validate": false
+}
