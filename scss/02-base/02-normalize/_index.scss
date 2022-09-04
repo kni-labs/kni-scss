@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
   box-sizing: border-box;
   text-decoration: none;
   -webkit-overflow-scrolling: touch;
@@ -20,7 +20,7 @@
   margin-inline-start: 0;
   -webkit-margin-end: 0;
   margin-inline-end: 0;
-
+  
   &:visited {
     color: inherit;
   }
@@ -93,8 +93,9 @@ li {
 img,
 video,
 figure,
-picture {
+picture, canvas, svg {
   height: auto;
+  max-width: 100%;
 }
 
 fieldset {
