@@ -1,0 +1,4 @@
+{
+  "*.{css,scss,sass}": "npx stylelint --fix",
+  "*.{js,mjs,jsx,ts,tsx,json,md,mdx,css,scss,sass}": "npx prettier --write"
+}
