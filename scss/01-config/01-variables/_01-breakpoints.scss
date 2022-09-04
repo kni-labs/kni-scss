@@ -4,6 +4,8 @@ $tp: 768; // Tablet portrait
 $tl: 1024; // Tablet landscape
 $dk: 1280; // Desktop
 $lf: 1440; // Large format
+
+$siteBasis--desktop: $dk;
 $headerNavBreakpoint: $tl;
 $footerNavBreakpoint: $dk;
 $gridGutter: 5%;
