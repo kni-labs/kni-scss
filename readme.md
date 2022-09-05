@@ -2,7 +2,7 @@
 
 Our css starter pack and folder structure.
 
-###Install
+### Install
 
 This project runs on Node v16. Install Node 16 to run this project or install <a href="https://github.com/nvm-sh/nvm#install--update-script" target="_blank" rel="noopener noreferrer">NVM</a> and run `nvm install v16`. If using NVM, precede your `npm run` commands with `nvm use`.
 
