@@ -1,1 +1,36 @@
-// New fluid type here
+%fluidType {
+  // Responsive Fluid Typogrpahy
+  // -------------------------------------------------------------
+  // convert global sass variables to css-custom props
+  --siteMin: #{$siteMin};
+  --siteBasis: #{$siteBasis--mobile};
+  --siteMax--mobile: #{$siteMax--mobile};
+  --siteMin--desktop: #{$siteMin--desktop};
+  --siteBasis--desktop: #{$siteBasis--desktop};
+  --siteMax--desktop: #{$siteMax--desktop};
+  --fontMin: 14; // default min - do not edit
+  --fontSize: 16; // default val - do not edit
+  --fontMax: 22; // default max - do not edit
+  --fontMinMultiplier: calc(var(--siteMin) / var(--siteBasis));
+  --fontMinMultiplier--desktop: calc(
+    var(--siteMin--desktop) / var(--siteBasis--desktop)
+  );
+  --fontMaxMultiplier: calc(var(--siteMax--mobile) / var(--siteBasis));
+  --fontMaxMultiplier--desktop: calc(
+    var(--siteMax--desktop) / var(--siteBasis--desktop)
+  );
+
+  // min:rem, val:rem+vw, max:rem
+  font-size: clamp(
+    calc(var(--fontMin) * var(--fontMinMultiplier) / 16 * 1rem),
+    0.5rem + calc(((var(--fontSize) - 8) * 100vw) / var(--siteBasis)),
+    calc((var(--fontSize) * var(--fontMaxMultiplier)) / 16 * 1rem)
+  );
+
+  // we can't use css custom props in mqs
+  @media (min-width: $sitePortraitFlip) {
+    --siteBasis: var(--siteBasis--desktop);
+    --fontMinMultiplier: var(--fontMinMultiplier--desktop);
+    --fontMaxMultiplier: var(--fontMaxMultiplier--desktop);
+  }
+}

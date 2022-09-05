@@ -3,10 +3,63 @@
 // write test code here
 
 body {
-  padding: 0 15vw;
+  padding: 5%;
+
+  @media (min-width: rem($tp)) {
+    padding: 0 15vw;
+  }
+}
+
+.test code {
+  @extend %fluidType;
+
+  width: vw(300px);
+
+  @media (min-width: rem($tp)) {
+    display: block;
+    width: vw(320px);
+  }
+
+  // desktop
+  @media (min-width: rem($tp)) {
+    --fontMin: 10;
+    --fontSize: 14;
+    --fontMax: 16;
+  }
 }
 
 .vwtest {
   border: 2px solid tomato;
-  width: vw(300px);
+
+  @media (min-width: rem($tp)) {
+    width: vw(300px);
+    margin-left: vw(30px);
+  }
+}
+
+article {
+  display: flex;
+  margin-bottom: vw(20px);
+}
+
+article > div:nth-of-type(1) {
+  display: none;
+
+  @media (min-width: rem($tp)) {
+    display: block;
+  }
+}
+
+article div:nth-of-type(2) {
+  padding-left: vw(20px);
+}
+
+code {
+  display: block;
+  background: #1f212a;
+  padding: vw(5px) vw(10px);
+  border-radius: vw(5px);
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.3;
 }

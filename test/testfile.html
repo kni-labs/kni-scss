@@ -1,32 +1,129 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <link rel="icon" ,="" type="image/ico" href="https://www.kurtnoble.com/img/favicon.ico">
+    <meta charset="utf-8"/>
     <title>KNI CSS</title>
 
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="test.css"/>
 
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="manifest" href="site.webmanifest"/>
   </head>
 
-  <body>
-    <div class="vwtest">This div will be 300px when your browser is at 1280px</div>
-    <hgroup>
-      <h1>h1 I am most important.</h1>
-      <h2>h2 Back in my quaint <a href="#">garden</a></h2>
-      <h3>h3 Jaunty <a href="#">zinnias</a> vie with flaunting phlox.</h3>
-      <h4>h4 Five or six big jet planes zoomed quickly by the new tower.</h4>
-      <h5>
-        h5 Expect skilled signwriters to use many jazzy, quaint old alphabets
-        effectively.
-      </h5>
-      <h6>h6 Pack my box with five dozen liquor jugs.</h6>
-    </hgroup>
-    <p>
-      Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-      dapibus ac facilisis in, egestas eget quam. Cras justo odio, dapibus ac
-      facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor
-      fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit.
-    </p>
-  </body>
-</html>
+  <body class="test">
+    <h4>vw() function</h4>
+    <hr>
+    <br>
+    <article>
+      <div>
+        <code>
+          <pre>
+div {
+  width: vw(300px);
+  margin-left: vw(30px);
+}</pre>
+        </code>
+      </div>
+      <div>
+        <div class="vwtest">When your browser is at 1280px, this div will be 300px wide with a 30px margin left</div>
+      </div>
+    </article><br>
+
+    <h4>The new fluid typography</h4>
+    <hr>
+    <br>
+
+    <article>
+      <div>
+        <code>
+          <pre>
+h1 {
+  --fontSize: 43;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 56;
+  }
+}</pre>
+        </code>
+      </div>
+      <div>
+        <h1>h1 heading</h1>
+        <p>On desktop, when your browser is set to 1280px, the H1 above will be 56px. It scaleds fluidly until 1600px where it maxes out at 70px. When scaling down from 1280 it will get as small as 47px at 1024.</p>
+      </div>
+    </article>
+
+    <article>
+      <div>
+        <code>
+          <pre>
+p {
+  --fontMin: 14;
+  --fontSize: 14;
+  --fontMax: 28;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 16;
+  }
+}</pre>
+        </code>
+      </div>
+      <div>
+        <h4>p</h4>
+        <p>With many small text styles, we'll want to override the `--fontMin` variable so they dont get too small. </p>
+      </div>
+    </article>    
+
+    <article>
+      <div>
+        <code>
+          <pre>
+h2 {
+  --fontSize: 37;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 48;
+  }
+}</pre>
+        </code>
+      </div>
+      <div>
+        <h2>This is an h2</h2>
+      </div>
+    </article>
+
+    <article>
+      <div>
+        <code>
+          <pre>
+h3 {
+  --fontSize: 28;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 36;
+  }
+}</pre>
+        </code>
+      </div>
+      <div>
+        <h3>h3 Heading here</h3>
+      </article>
+      <article>
+        <div>
+          <code>
+            <pre>
+h4 {
+  --fontSize: 22;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 27;
+  }
+}</pre>
+          </code>
+        </div>
+        <div>
+          <h3>I am an h4</h3>
+        </div>
+      </article>
+
+    </body>
+  </html>

@@ -5,12 +5,78 @@ html {
   font-weight: $bodyFont-regular;
 }
 
-p,
+// extend for all selectors you want to be fluid
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   overflow-wrap: break-word;
+  line-height: 1.2;
+  @extend %fluidType;
+}
+
+// Initial Heading sizes
+// Note: you can and should change these per project
+h1 {
+  --fontSize: 43;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 56;
+  }
+}
+
+h2 {
+  --fontSize: 37;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 48;
+  }
+}
+
+h3 {
+  --fontSize: 28;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 36;
+  }
+}
+
+h4 {
+  --fontSize: 22;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 27;
+  }
+}
+
+h5 {
+  --fontSize: 18;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 21;
+  }
+}
+
+h6 {
+  --fontMin: 16;
+  --fontSize: 18;
+
+  @media (min-width: rem($tp)) {
+    --fontSize: 21;
+  }
+}
+
+p {
+  // you can specifically override min and max anywhere
+  --fontMin: 14;
+  --fontSize: 14;
+  --fontMax: 28;
+
+  // desktop
+  @media (min-width: rem($tp)) {
+    --fontSize: 16;
+  }
 }
