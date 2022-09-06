@@ -10,6 +10,12 @@ body {
   }
 }
 
+.vwtest {
+  width: vw(300px);
+  margin-left: vw(30px);
+  border: 5px solid tomato;
+}
+
 article {
   display: flex;
   margin-bottom: vw(40px);
@@ -42,12 +48,14 @@ h1 {
 
   @include fluidType(36, 88, 320, 767);
 
+  // tablet
   @media (min-width: 768px) {
     @include fluidType(44.8, 44.8, 768, 1023);
 
     border: 5px solid green;
   }
 
+  // desktop
   @media (min-width: 1024px) {
     @include fluidType(44.8, 70, 1024, 1600);
 
