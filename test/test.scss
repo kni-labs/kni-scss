@@ -24,7 +24,7 @@ article {
 article > div:nth-of-type(1) {
   display: none;
 
-  @media (min-width: #{$sitePortraitFlip}px) {
+  @media (min-width: #{$tp}px) {
     display: block;
   }
 }
@@ -44,21 +44,18 @@ code {
 }
 
 h1 {
-  line-height: 1em;
-
-  @include fluidType(36, 88, 320, 767);
+  @include fluidType(36, 88, $ms, $tp);
 
   // tablet
-  @media (min-width: 768px) {
-    @include fluidType(44.8, 44.8, 768, 1023);
-
-    border: 5px solid green;
+  @media (min-width: #{$tp}px) {
+    font-size: 44.8px;
+    border: 1px solid green;
   }
 
   // desktop
-  @media (min-width: 1024px) {
-    @include fluidType(44.8, 70, 1024, 1600);
+  @media (min-width: #{$tl}px) {
+    @include fluidType(44.8, 70, $tl, $lf);
 
-    border: 5px solid blue;
+    border: 2px solid blue;
   }
 }
