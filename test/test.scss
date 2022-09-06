@@ -5,26 +5,27 @@
 body {
   padding: 5%;
 
-  @media (min-width: #{$sitePortraitFlip}px) {
+  @media (min-width: #{$tl}px) {
     padding: 0 15vw;
   }
+}
+
+.test pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .test code {
   @extend %fluidType;
 
-  width: vw(300px);
+  --fontSize: 12;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  width: vw(350px);
 
   @media (min-width: #{$sitePortraitFlip}px) {
-    display: block;
-    width: vw(320px);
-  }
-
-  // desktop
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontMin: 10;
-    --fontSize: 14;
-    --fontMax: 16;
+    --fontSize: 16px;
   }
 }
 
@@ -39,7 +40,7 @@ body {
 
 article {
   display: flex;
-  margin-bottom: vw(20px);
+  margin-bottom: vw(40px);
 }
 
 article > div:nth-of-type(1) {
