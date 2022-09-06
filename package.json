@@ -11,6 +11,7 @@
     "test": "test"
   },
   "scripts": {
+    "deploy": "npx stylelint \"**/*.{css,sass,scss}\" && npm run sass-prod",
     "prepare": "husky install",
     "prettier": "npx prettier --write .",
     "sass-dev": "npm i && sass --watch --update --style=expanded test:test",
