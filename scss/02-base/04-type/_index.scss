@@ -5,78 +5,36 @@ html {
   font-weight: $bodyFont-regular;
 }
 
-// extend for all selectors you want to be fluid
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-p {
-  overflow-wrap: break-word;
-  line-height: 1.2;
-  @extend %fluidType;
-}
-
-// Initial Heading sizes
-// Note: you can and should change these per project
-h1 {
-  --fontSize: 43;
-
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 56;
-  }
-}
-
-h2 {
-  --fontSize: 37;
-
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 48;
-  }
-}
-
-h3 {
-  --fontSize: 28;
-
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 36;
-  }
-}
-
-h4 {
-  --fontSize: 22;
-
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 27;
-  }
-}
-
-h5 {
-  --fontSize: 18;
-
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 21;
-  }
-}
-
 h6 {
-  --fontMin: 16;
-  --fontSize: 18;
-
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 21;
-  }
+  overflow-wrap: break-word;
 }
 
-p {
-  // you can specifically override min and max anywhere
-  --fontMin: 14;
-  --fontSize: 14;
-  --fontMax: 28;
+p,
+.p {
+  color: $gray-200;
+  @include p;
+}
 
-  // desktop
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 16;
-  }
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $headingFontStack;
+  font-weight: $headingFont-bold;
+  color: $black;
+  line-height: 1.25em;
 }

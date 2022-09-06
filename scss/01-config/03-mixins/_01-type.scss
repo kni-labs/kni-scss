@@ -1,36 +1,22 @@
-%fluidType {
-  // Responsive Fluid Typogrpahy
-  // -------------------------------------------------------------
-  // convert global sass variables to css-custom props
-  --siteMin: #{$siteMin};
-  --siteBasis: #{$siteBasis--mobile};
-  --siteMax--mobile: #{$siteMax--mobile};
-  --siteMin--desktop: #{$siteMin--desktop};
-  --siteBasis--desktop: #{$siteBasis--desktop};
-  --siteMax--desktop: #{$siteMax--desktop};
-  --fontMin: 14; // default min - do not edit
-  --fontSize: 16; // default val - do not edit
-  --fontMax: 22; // default max - do not edit
-  --fontMinMultiplier: calc(var(--siteMin) / var(--siteBasis));
-  --fontMinMultiplier--desktop: calc(
-    var(--siteMin--desktop) / var(--siteBasis--desktop)
+@mixin fluidType(
+  $minFontSize: $baseMinFontSize,
+  $maxFontSize: $baseMaxFontSize,
+  $minWidth: $minContentWidth,
+  $maxWidth: $maxContentWidth
+) {
+  font-size: calc(
+    #{rem($minFontSize)} + (#{$maxFontSize} - #{$minFontSize}) * ((
+            100vw - #{$minWidth}px
+          ) / (#{$maxWidth} - #{$minWidth}))
   );
-  --fontMaxMultiplier: calc(var(--siteMax--mobile) / var(--siteBasis));
-  --fontMaxMultiplier--desktop: calc(
-    var(--siteMax--desktop) / var(--siteBasis--desktop)
-  );
-
-  // min:rem, val:rem+vw, max:rem
-  font-size: clamp(
-    calc(var(--fontMin) * var(--fontMinMultiplier) / 16 * 1rem),
-    0.5rem + calc(((var(--fontSize) - 8) * 100vw) / var(--siteBasis)),
-    calc((var(--fontSize) * var(--fontMaxMultiplier)) / 16 * 1rem)
-  );
-
-  // we can't use css custom props in mqs
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --siteBasis: var(--siteBasis--desktop);
-    --fontMinMultiplier: var(--fontMinMultiplier--desktop);
-    --fontMaxMultiplier: var(--fontMaxMultiplier--desktop);
+  @media (max-width: #{$minWidth}px) {
+    font-size: rem($minFontSize);
   }
+  @media (min-width: #{$maxWidth}px) {
+    font-size: rem($maxFontSize);
+  }
+}
+
+@mixin p {
+  @include fluidType(16, 18);
 }
