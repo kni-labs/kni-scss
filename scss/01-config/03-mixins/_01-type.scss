@@ -28,7 +28,7 @@
   );
 
   // we can't use css custom props in mqs
-  @media (min-width: $sitePortraitFlip) {
+  @media (min-width: #{$sitePortraitFlip}px) {
     --siteBasis: var(--siteBasis--desktop);
     --fontMinMultiplier: var(--fontMinMultiplier--desktop);
     --fontMaxMultiplier: var(--fontMaxMultiplier--desktop);

@@ -37,11 +37,11 @@ tl;dr:
 
 Write all base styles in the mobile media query then overwrite as necessary for desktop(landscape). This will result in much less overwriting of code.
 
-```css
+```scss
 body {
   padding: 0 5%;
 
-  @media (min-width: rem($tp)) {
+  @media (min-width: #{$sitePortraitFlip}px) {
     padding: 0 15vw;
   }
 }
@@ -108,7 +108,7 @@ p {
   --fontSize: 14;
   --fontMax: 22;
 
- @media (min-width: rem($tp)) {
+ @media (min-width: #{$sitePortraitFlip}px) {
     --fontSize: 16;
 }
 ```
@@ -121,7 +121,7 @@ You can always overwrite any of the values but the mixin contains sensible defau
 h1 {
   --fontSize: 43;
 
-  @media (min-width: rem($tp)) {
+  @media (min-width: #{$sitePortraitFlip}px) {
     --fontSize: 56;
   }
 }

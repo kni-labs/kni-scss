@@ -1,8 +1,6 @@
-// Fluid Type Settings
-$siteMin: 320;
-$siteBasis--mobile: 375;
-$siteMax--mobile: 767;
-$sitePortraitFlip: 768px;
-$siteMin--desktop: 1024;
-$siteBasis--desktop: 1280;
-$siteMax--desktop: 1600;
+$siteMin: $ms;
+$siteMin--desktop: $tl;
+$siteBasis--mobile: $mm;
+$siteBasis--desktop: $dk;
+$siteMax--mobile: $tp;
+$siteMax--desktop: $lf;
