@@ -80,7 +80,7 @@ Use the pixel sizes you see in Figma and wrap them in this function everywhere. 
 
 ### Accessible Fluid Typography
 
-Along with widths, padding, margin, gutters, etc, we need a way to have fully fluid typography as well.
+<<<<<<< HEAD Along with widths, padding, margin, gutters, etc, we need a way to have fully fluid typography as well.
 
 Typography will now use the clamp function to set a minimum size, default value, and maximum size. We will set `rem` units for `min` and `max` and use `rem + vw` for the main value. This allows the type to still be browser zoomable for accessibility purposes.
 
@@ -127,4 +127,8 @@ h1 {
 }
 ```
 
-Hit up Daniel with questions. (More readme coming soon.)
+# Hit up Daniel with questions. (More readme coming soon.)
+
+new readme coming
+
+> > > > > > > master
