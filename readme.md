@@ -80,7 +80,7 @@ Use the pixel sizes you see in Figma and wrap them in this function everywhere. 
 
 ### Fluid Typography
 
-We have 3 mixins to help with Accesible Fluid Typography.
+We have 2 mixins to help with Fluid Typography.
 
 #### fluidType()
 
@@ -94,7 +94,7 @@ Base mixin:
 
 #### setType()
 
-Use this for full Responsive Type automation. Great for headers or larger type.
+Use this for full Responsive Type automation.
 
 ```scss
 h1 {
@@ -102,14 +102,13 @@ h1 {
 }
 ```
 
-Takes only 2 arguments: `$fontSize--mobile` and `$fontSize--desktop`, then it automatically takes care of all responsive scaling based on your site settings.
-
-#### defineType()
-
-If you need a little more control, specifically with making sure type doens't get too small at smaller browser sizes use `definteType()` which allows you override the minium scaling size:
+Sometimes for smaller fonts you want to override the sma llest size it can go. In this case pass in the `$minClamp` argument which is the percentage the minimum font size should be. Set it to `100%` to have it not scale any smaller than default size.
 
 ```scss
 p {
-  @include defineType(14, 16, $minMobileClamp: 14, $minDesktopClamp: 15);
+  @include setType(14, 16, $minClamp: 94%);
+}
+.eyebrow {
+  @include setType(11, 13, 100%);
 }
 ```

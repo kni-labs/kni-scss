@@ -22,7 +22,7 @@
 // $fontSize--mobile-small: math.div(($fontSize--mobile * $siteMin),$siteBasis--mobile);
 // $fontSize--desktop-small: math.div(($fontSize--desktop * $siteMin--desktop),$siteBasis--desktop);
 
-@mixin setType($fontSize--mobile, $fontSize--desktop) {
+@mixin setType($fontSize--mobile, $fontSize--desktop, $minClamp: false) {
   $fontSize--mobile-small: math.div(
     ($fontSize--mobile * $siteMin),
     $siteBasis--mobile
@@ -42,39 +42,10 @@
   $minMobileClamp: $fontSize--mobile-small;
   $minDesktopClamp: $fontSize--desktop-small;
 
-  @include fluidType($minMobileClamp, $fontSize--mobile-large, $ms, $tp);
-
-  @media (min-width: #{$tp}px) {
-    font-size: rem($minDesktopClamp);
+  @if $minClamp {
+    $minMobileClamp: $fontSize--mobile * math.div($minClamp, 100%);
+    $minDesktopClamp: $fontSize--desktop * math.div($minClamp, 100%);
   }
-  @media (min-width: #{$tl}px) {
-    @include fluidType($minDesktopClamp, $fontSize--desktop-large, $tl, $lf);
-  }
-}
-
-// todo: figure out how to make this part of setType
-@mixin defineType(
-  $fontSize--mobile,
-  $fontSize--desktop,
-  $minMobileClamp,
-  $minDesktopClamp
-) {
-  $fontSize--mobile-small: math.div(
-    ($fontSize--mobile * $siteMin),
-    $siteBasis--mobile
-  );
-  $fontSize--mobile-large: math.div(
-    ($fontSize--mobile * $siteMax--mobile),
-    $siteBasis--mobile
-  );
-  $fontSize--desktop-large: math.div(
-    ($fontSize--desktop * $siteMax--desktop),
-    $siteBasis--desktop
-  );
-  $fontSize--desktop-small: math.div(
-    ($fontSize--desktop * $siteMin--desktop),
-    $siteBasis--desktop
-  );
 
   @include fluidType($minMobileClamp, $fontSize--mobile-large, $ms, $tp);
 

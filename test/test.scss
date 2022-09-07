@@ -44,5 +44,5 @@ code {
   line-height: 1.3;
   width: 100%;
 
-  @include defineType(14, 14, 12, 13);
+  @include setType(14, 14, 100%);
 }
