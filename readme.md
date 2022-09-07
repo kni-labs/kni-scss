@@ -41,7 +41,7 @@ Write all base styles in the mobile media query then overwrite as necessary for 
 body {
   padding: 0 5%;
 
-  @media (min-width: #{$sitePortraitFlip}px) {
+  @media (min-width: #{$tp}px) {
     padding: 0 15vw;
   }
 }
