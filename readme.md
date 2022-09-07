@@ -94,7 +94,7 @@ Base mixin:
 
 #### setType()
 
-This is superset of fluidType that should be used in most cases, and is great for Figma matching. Use this for full Responsive Type automation. In most cases you only need to provide 2 arguments: The mobile size and the desktop size:
+This is superset of fluidType that should be used in most cases, and is great for Figma matching. Use this for fullly responsive type automation. In most cases you only need to provide 2 arguments: The mobile size and the desktop size. **Note** these values are not the same as `fluidType`.
 
 ```scss
 h1 {
