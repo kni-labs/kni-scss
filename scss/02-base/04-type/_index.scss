@@ -29,7 +29,7 @@ h6,
   font-family: $headingFontStack;
   font-weight: $headingFont-bold;
   color: $black;
-  line-height: 1.25em;
+  line-height: 1.1em;
 }
 
 h1,
@@ -65,4 +65,6 @@ h6,
 p {
   color: $gray-200;
   @include defineType(14, 16, $minMobileClamp: 14, $minDesktopClamp: 15);
+
+  line-height: 1.4;
 }
