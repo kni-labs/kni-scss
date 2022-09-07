@@ -17,11 +17,6 @@
   }
 }
 
-// $fontSize--mobile: 43;
-// $fontSize--desktop: 56;
-// $fontSize--mobile-small: math.div(($fontSize--mobile * $siteMin),$siteBasis--mobile);
-// $fontSize--desktop-small: math.div(($fontSize--desktop * $siteMin--desktop),$siteBasis--desktop);
-
 @mixin setType($fontSize--mobile, $fontSize--desktop, $minClamp: false) {
   $fontSize--mobile-small: math.div(
     ($fontSize--mobile * $siteMin),
