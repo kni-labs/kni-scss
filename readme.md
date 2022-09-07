@@ -102,7 +102,7 @@ h1 {
 }
 ```
 
-Sometimes for smaller fonts you want to override the sma llest size it can go. In this case pass in the `$minClamp` argument which is the percentage the minimum font size should be. Set it to `100%` to have it not scale any smaller than default size.
+Sometimes for smaller fonts you want to override the smallest size it can go. In this case pass in the `$minClamp` argument which is the percentage the minimum font size should be. Set it to `100%` to have it not scale any smaller than default size.
 
 ```scss
 p {
