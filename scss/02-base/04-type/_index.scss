@@ -62,7 +62,8 @@ h6,
   @include setType(16, 20);
 }
 
-p {
+p,
+.p {
   color: $gray-200;
   line-height: 1.4;
   @include setType(14, 16, 95%);
