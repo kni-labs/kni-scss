@@ -15,12 +15,6 @@ h6 {
   overflow-wrap: break-word;
 }
 
-p,
-.p {
-  color: $gray-200;
-  @include p;
-}
-
 h1,
 .h1,
 h2,
@@ -37,4 +31,39 @@ h6,
   font-weight: $headingFont-bold;
   color: $black;
   line-height: 1.25em;
+}
+
+h1,
+.h1 {
+  @include setType(32, 48);
+}
+
+h2,
+.h2 {
+  @include setType(26, 40);
+}
+
+h3,
+.h3 {
+  @include setType(22, 33);
+}
+
+h4,
+.h4 {
+  @include setType(20, 27);
+}
+
+h5,
+.h5 {
+  @include setType(18, 23);
+}
+
+h6,
+.h6 {
+  @include setType(16, 20);
+}
+
+p {
+  color: $gray-200;
+  @include defineType(14, 16, $minMobileClamp: 14, $minDesktopClamp: 15);
 }
