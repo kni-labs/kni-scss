@@ -31,7 +31,7 @@ tl;dr:
 - Write mobile-first css
 - Use 2 "zones" vs many breakpoints
 - Scale everything
-- Use Accessible Fluid Typography
+- Use Fluid Typography
 
 ### Mobile-first CSS:
 
@@ -78,57 +78,38 @@ The output becomes a flexible vw unit that changes as browser resizes. At `1280p
 
 Use the pixel sizes you see in Figma and wrap them in this function everywhere. The exception is if you want to use actual pixels, then use `px` or `rem(px)` and it will output fixed pixel sizes.
 
-### Accessible Fluid Typography
+### Fluid Typography
 
-<<<<<<< HEAD Along with widths, padding, margin, gutters, etc, we need a way to have fully fluid typography as well.
+We have 3 mixins to help with Accesible Fluid Typography.
 
-Typography will now use the clamp function to set a minimum size, default value, and maximum size. We will set `rem` units for `min` and `max` and use `rem + vw` for the main value. This allows the type to still be browser zoomable for accessibility purposes.
+#### fluidType()
 
-Usage: Call `%fluidType` as an extend all elements that you wish to be fluid:
+Base mixin:
 
 ```scss
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-code,
-input {
-  @extend %fluid-type;
+.item {
+  @include fluidType($minFontSize, $maxFontSize, $minWidth, $maxWdith);
 }
 ```
 
-Then update custom properties on an element by element basis:
+#### setType()
 
-```scss
-p {
-  --fontMin: 14;
-  --fontSize: 14;
-  --fontMax: 22;
-
- @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 16;
-}
-```
-
-In the above example text on mobile will be 14px that scales fluidly up to `22px`, but never get smaller than `14px`. The desktop size will be fluid at `16px` scaling up to `20px` and down as low as `12.8px`.
-
-You can always overwrite any of the values but the mixin contains sensible defaults so for the most part you only need to provide a mobile and desktop value:
+Use this for full Responsive Type automation. Great for headers or larger type.
 
 ```scss
 h1 {
-  --fontSize: 43;
-
-  @media (min-width: #{$sitePortraitFlip}px) {
-    --fontSize: 56;
-  }
+  @include setType(32, 48);
 }
 ```
 
-# Hit up Daniel with questions. (More readme coming soon.)
+Takes only 2 arguments: `$fontSize--mobile` and `$fontSize--desktop`, then it automatically takes care of all responsive scaling based on your site settings.
 
-new readme coming
+#### defineType()
 
-> > > > > > > master
+If you need a little more control, specifically with making sure type doens't get too small at smaller browser sizes use `definteType()` which allows you override the minium scaling size:
+
+```scss
+p {
+  @include defineType(14, 16, $minMobileClamp: 14, $minDesktopClamp: 15);
+}
+```
