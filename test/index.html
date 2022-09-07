@@ -40,12 +40,13 @@ div {
 
 
           <h1>Banking built for scale</h1>
+          
           <code>
           <pre>
 h1 {
   @include setType(32, 48)
 }</pre>
-        </code><br><br>
+        </code><br><p>setType() at this time only takes 2 arguments, mobile font size, and desktop font size, both of which should be available in Figma. It will automatically scale based on site settings.</p><br><br>
 
             <h2>Get insights into your finances in minutes, not months</h2>
         <code>
@@ -53,7 +54,7 @@ h1 {
 h2 {
   @include setType(26, 40)
 }</pre>
-        </code><br><br>
+        </code><br>
    
 <h3>Extend your runway by months, in just minutes</h3>
         <code>
@@ -96,6 +97,6 @@ p {
   color: $gray-200;
   @include defineType(14, 16, $minMobileClamp: 14, $minDesktopClamp: 15);
 }</pre>
-    </code>
+    </code><br><br>
   </body>
 </html>
