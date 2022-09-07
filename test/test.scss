@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../scss/global';
 
 // write test code here
@@ -44,18 +45,29 @@ code {
 }
 
 h1 {
-  @include fluidType(36, 88, $ms, $tp);
+  @include setType(43, 56);
+}
 
-  // tablet
-  @media (min-width: #{$tp}px) {
-    font-size: 44.8px;
-    border: 1px solid green;
-  }
+h2 {
+  @include setType(37, 48);
+}
 
-  // desktop
-  @media (min-width: #{$tl}px) {
-    @include fluidType(44.8, 70, $tl, $lf);
+h3 {
+  @include setType(28, 36);
+}
 
-    border: 2px solid blue;
-  }
+h4 {
+  @include setType(22, 27);
+}
+
+h5 {
+  @include setType(18, 21);
+}
+
+h6 {
+  @include setType(16, 19);
+}
+
+p {
+  @include setType(14, 16);
 }
