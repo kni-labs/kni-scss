@@ -94,7 +94,7 @@ Base mixin:
 
 #### setType()
 
-Use this for full Responsive Type automation.
+This is superset of fluidType that should be used in most cases, and is great for Figma matching. Use this for full Responsive Type automation. In most cases you only need to provide 2 arguments: The mobile size and the desktop size:
 
 ```scss
 h1 {
@@ -102,7 +102,7 @@ h1 {
 }
 ```
 
-Sometimes for smaller fonts you want to override the smallest size it can go. In this case pass in the `$minClamp` argument which is the percentage the minimum font size should be. Set it to `100%` to have it not scale any smaller than default size.
+Sometimes for smaller fonts you want to override the smallest size that it can go. In this case pass in the `$minClamp` argument which is the percentage the minimum font size should be compared to default size. Set it to `100%` to have it not scale any smaller than default size.
 
 ```scss
 p {
