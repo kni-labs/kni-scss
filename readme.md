@@ -24,7 +24,7 @@ Contributions are welcome! Please either post an issue of a suggestion or open a
 
 # Responsive Theory
 
-Please take a moment to read more about our [Responsive Theory for Marketing Websites](https://docs.google.com/presentation/d/1go0-Oy6ae1wmr7yg-hsaIst86KB05vCQE_vc4dWv8Aw/edit?usp=sharing) (WIP).
+Please take a moment to read more about our [Responsive Theory for Marketing Websites](https://docs.google.com/presentation/d/1go0-Oy6ae1wmr7yg-hsaIst86KB05vCQE_vc4dWv8Aw/edit?usp=sharing) (Rough WIP, Daniel workign on this).
 
 tl;dr:
 
