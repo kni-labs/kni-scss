@@ -18,7 +18,7 @@ This project uses <a href="https://www.npmjs.com/package/prettier" target="_blan
 
 ### Contributing
 
-Contributions are welcome! Please either post an issue of a suggestion or open a pull request. Be sure to edit `testfile.html` to show clear example of code addition.
+Contributions are welcome! Please either post an issue of a suggestion or open a pull request. Be sure to edit `test/index.html` to show clear example of code addition.
 
 ---
 
@@ -88,7 +88,7 @@ Base mixin:
 
 ```scss
 .item {
-  @include fluidType($minFontSize, $maxFontSize, $minWidth, $maxWdith);
+  @include fluidType($minFontSize, $maxFontSize, $minWidth, $maxWidth);
 }
 ```
 
