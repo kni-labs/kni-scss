@@ -2,18 +2,29 @@
   $minFontSize: $baseMinFontSize,
   $maxFontSize: $baseMaxFontSize,
   $minWidth: $minContentWidth,
-  $maxWidth: $maxContentWidth
+  $maxWidth: $maxContentWidth,
+  $minBreakpoint: true,
+  $midBreakpoint: true,
+  $maxBreakpoint: true
 ) {
-  font-size: calc(
-    #{rem($minFontSize)} + (#{$maxFontSize} - #{$minFontSize}) * ((
-            100vw - #{$minWidth}px
-          ) / (#{$maxWidth} - #{$minWidth}))
-  );
-  @media (max-width: #{$minWidth}px) {
-    font-size: rem($minFontSize);
+  @if $midBreakpoint {
+    font-size: calc(
+      #{rem($minFontSize)} +
+        (#{$maxFontSize} - #{$minFontSize}) *
+        ((100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth}))
+    );
   }
-  @media (min-width: #{$maxWidth}px) {
-    font-size: rem($maxFontSize);
+
+  @if $minBreakpoint {
+    @media (max-width: #{$minWidth}px) {
+      font-size: rem($minFontSize);
+    }
+  }
+
+  @if $maxBreakpoint {
+    @media (min-width: #{$maxWidth}px) {
+      font-size: rem($maxFontSize);
+    }
   }
 }
 
@@ -42,12 +53,24 @@
     $minDesktopClamp: $fontSize--desktop * math.div($minClamp, 100%);
   }
 
-  @include fluidType($minMobileClamp, $fontSize--mobile-large, $ms, $tp);
+  @include fluidType(
+    $minFontSize: $minMobileClamp,
+    $maxFontSize: $fontSize--mobile-large,
+    $minWidth: $ms,
+    $maxWidth: $tp,
+    $maxBreakpoint: false
+  );
 
   @media (min-width: #{$tp}px) {
     font-size: rem($minDesktopClamp);
   }
+
   @media (min-width: #{$tl}px) {
-    @include fluidType($minDesktopClamp, $fontSize--desktop-large, $tl, $lf);
+    @include fluidType(
+      $minFontSize: $minDesktopClamp,
+      $maxFontSize: $fontSize--desktop-large,
+      $minWidth: $tl,
+      $maxWidth: $lf
+    );
   }
 }
