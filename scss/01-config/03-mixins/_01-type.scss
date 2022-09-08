@@ -56,21 +56,21 @@
   @include fluidType(
     $minFontSize: $minMobileClamp,
     $maxFontSize: $fontSize--mobile-large,
-    $minWidth: $ms,
-    $maxWidth: $tp,
+    $minWidth: $siteMin,
+    $maxWidth: $siteMax--mobile,
     $maxBreakpoint: false
   );
 
-  @media (min-width: #{$tp}px) {
+  @media (min-width: #{$siteMax--mobile}px) {
     font-size: rem($minDesktopClamp);
   }
 
-  @media (min-width: #{$tl}px) {
+  @media (min-width: #{$siteMin--desktop}px) {
     @include fluidType(
       $minFontSize: $minDesktopClamp,
       $maxFontSize: $fontSize--desktop-large,
-      $minWidth: $tl,
-      $maxWidth: $lf,
+      $minWidth: $siteMin--desktop,
+      $maxWidth: $siteMax--desktop,
       $minBreakpoint: false,
       $maxBreakpoint: false
     );
@@ -79,8 +79,8 @@
   @include fluidType(
     $minFontSize: $minDesktopClamp,
     $maxFontSize: $fontSize--desktop-large,
-    $minWidth: $tl,
-    $maxWidth: $lf,
+    $minWidth: $siteMin--desktop,
+    $maxWidth: $siteMax--desktop,
     $minBreakpoint: false,
     $midBreakpoint: false
   );
