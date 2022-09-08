@@ -68,3 +68,9 @@ p,
   line-height: 1.4;
   @include setType(14, 16, 95%);
 }
+
+.p {
+  &--smallest {
+    @include setType(10, 12, 100%);
+  }
+}
