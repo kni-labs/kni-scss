@@ -70,7 +70,18 @@
       $minFontSize: $minDesktopClamp,
       $maxFontSize: $fontSize--desktop-large,
       $minWidth: $tl,
-      $maxWidth: $lf
+      $maxWidth: $lf,
+      $minBreakpoint: false,
+      $maxBreakpoint: false
     );
   }
+
+  @include fluidType(
+    $minFontSize: $minDesktopClamp,
+    $maxFontSize: $fontSize--desktop-large,
+    $minWidth: $tl,
+    $maxWidth: $lf,
+    $minBreakpoint: false,
+    $midBreakpoint: false
+  );
 }
