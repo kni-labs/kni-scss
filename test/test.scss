@@ -46,3 +46,7 @@ code {
 
   @include setType(14, 14, 100%);
 }
+
+p.smallest {
+  @include setType(10, 12, 100%);
+}
