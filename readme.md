@@ -35,7 +35,7 @@ tl;dr:
 
 ### Mobile-first CSS:
 
-Write all base styles in the mobile media query then overwrite as necessary for desktop(landscape). This will result in much less overwriting of code.
+Write all base styles then overwrite as necessary for desktop(landscape). This will result in much less overwriting of code. Mobile media queries should be rare. 
 
 ```scss
 body {
