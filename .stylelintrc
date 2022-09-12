@@ -10,6 +10,14 @@
     "test/*{.css,.css.map}"
   ],
   "rules": {
+    "annotation-no-unknown": [
+      true,
+      {
+        "ignoreAnnotations": [
+          "default"
+        ]
+      }
+    ],
     "at-rule-empty-line-before": null,
     "custom-property-pattern": "^([a-zA-Z0-9]*)(--[a-zA-Z0-9]+)*$",
     "declaration-block-no-redundant-longhand-properties": null,

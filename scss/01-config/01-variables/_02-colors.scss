@@ -1,15 +1,15 @@
-$black: #000;
-$gray-100: #1e1e1c;
-$gray-200: #3d3c38;
-$gray-300: #5b5a54;
-$gray-400: #7a786f;
-$gray-500: #98968c;
-$gray-600: #adaba2;
-$gray-700: #c1c0ba;
-$gray-800: #d6d5d1;
-$gray-900: #eaeae8;
-$gray-950: #f5f4f3;
-$gray-975: #fafaf9;
+$black: #000 !default;
+$gray-100: #1e1e1c !default;
+$gray-200: #3d3c38 !default;
+$gray-300: #5b5a54 !default;
+$gray-400: #7a786f !default;
+$gray-500: #98968c !default;
+$gray-600: #adaba2 !default;
+$gray-700: #c1c0ba !default;
+$gray-800: #d6d5d1 !default;
+$gray-900: #eaeae8 !default;
+$gray-950: #f5f4f3 !default;
+$gray-975: #fafaf9 !default;
 $grays: (
   'gray-100': $gray-100,
   'gray-200': $gray-200,
@@ -22,11 +22,11 @@ $grays: (
   'gray-900': $gray-900,
   'gray-950': $gray-950,
   'gray-975': $gray-975,
-);
-$white: #fff;
+) !default;
+$white: #fff !default;
 
 // Site settings
-$globalBackgroundColor: $white;
-$globalTextColor: $gray-300;
-$globalSelectionBackgroundColor: initial;
-$globalSelectionColor: initial;
+$globalBackgroundColor: $white !default;
+$globalTextColor: $gray-300 !default;
+$globalSelectionBackgroundColor: initial !default;
+$globalSelectionColor: initial !default;
