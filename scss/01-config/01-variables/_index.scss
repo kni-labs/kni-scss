@@ -1,6 +1,6 @@
-$emBase: 16;
-$darkMode: true;
-$cmsUrl: '';
+$emBase: 16 !default;
+$darkMode: true !default;
+$cmsUrl: '' !default;
 
 @import '01-breakpoints';
 @import '02-colors';

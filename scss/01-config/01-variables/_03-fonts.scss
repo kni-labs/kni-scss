@@ -1,26 +1,26 @@
-$baseFontSize: $emBase;
-$baseMinFontSize: $emBase;
-$baseMaxFontSize: $emBase;
-$bodyFont-light: 300;
-$bodyFont-regular: 400;
-$bodyFont-medium: 500;
-$bodyFont-semibold: 600;
-$bodyFont-bold: 700;
-$headingFont-light: 300;
-$headingFont-regular: 400;
-$headingFont-medium: 500;
-$headingFont-semibold: 600;
-$headingFont-bold: 700;
-$bodyFont: 'Inter';
-$headingFont: 'Inter';
-$body-font: 'Inter';
+$baseFontSize: $emBase !default;
+$baseMinFontSize: $emBase !default;
+$baseMaxFontSize: $emBase !default;
+$bodyFont-light: 300 !default;
+$bodyFont-regular: 400 !default;
+$bodyFont-medium: 500 !default;
+$bodyFont-semibold: 600 !default;
+$bodyFont-bold: 700 !default;
+$headingFont-light: 300 !default;
+$headingFont-regular: 400 !default;
+$headingFont-medium: 500 !default;
+$headingFont-semibold: 600 !default;
+$headingFont-bold: 700 !default;
+$bodyFont: 'Inter' !default;
+$headingFont: 'Inter' !default;
+$body-font: 'Inter' !default;
 /* stylelint-disable value-keyword-case */
 $bodyFontStack: $body-font, sans-serif, -apple-system, BlinkMacSystemFont,
-  'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 /* stylelint-enable value-keyword-case */
-$heading-font: 'Inter';
+$heading-font: 'Inter' !default;
 /* stylelint-disable value-keyword-case */
 $headingFontStack: $heading-font, sans-serif, -apple-system, BlinkMacSystemFont,
-  'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 /* stylelint-disable enable-keyword-case */
-$font-path: '/fonts/';
+$font-path: '/fonts/' !default;
