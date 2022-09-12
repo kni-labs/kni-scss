@@ -24,9 +24,7 @@ Contributions are welcome! Please either post an issue of a suggestion or open a
 
 # Responsive Theory
 
-Please take a moment to read more about our [Responsive Theory for Marketing Websites](https://docs.google.com/presentation/d/1go0-Oy6ae1wmr7yg-hsaIst86KB05vCQE_vc4dWv8Aw/edit?usp=sharing) (Rough WIP, Daniel workign on this).
-
-tl;dr:
+Will post more on our responsive theory soon, but for now:
 
 - Write mobile-first css
 - Use 2 "zones" vs many breakpoints
@@ -35,7 +33,7 @@ tl;dr:
 
 ### Mobile-first CSS:
 
-Write all base styles then overwrite as necessary for desktop(landscape). This will result in much less overwriting of code. Mobile media queries should be rare. 
+Write all base styles then overwrite as necessary for desktop(landscape). This will result in much less overwriting of code. Mobile media queries should be rare.
 
 ```scss
 body {
@@ -94,7 +92,7 @@ Base mixin:
 
 #### setType()
 
-This is superset of fluidType that should be used in most cases, and is great for Figma matching. Use this for fullly responsive type automation. In most cases you only need to provide 2 arguments: The mobile size and the desktop size. **Note** these values are not the same as `fluidType`.
+This is superset of fluidType that should be used in most cases, and is great for Figma matching. Use this for fully responsive type automation. In most cases you only need to provide 2 arguments: The mobile size and the desktop size. **Note** these values are not the same as `fluidType`.
 
 ```scss
 h1 {
