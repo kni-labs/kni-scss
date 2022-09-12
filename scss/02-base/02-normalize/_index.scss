@@ -109,10 +109,10 @@ fieldset {
 
 a {
   cursor: pointer;
-  transition: $global-transition;
+  transition: $globalTransition;
 
   &:hover {
-    transition: $global-transition;
+    transition: $globalTransition;
   }
 }
 
