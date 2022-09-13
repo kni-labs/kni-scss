@@ -56,11 +56,23 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  font-family: $bodyFontStack;
+  font-size: em($baseFontSize);
+  font-weight: $bodyFont-regular;
 }
 
 body {
   margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 h1,
