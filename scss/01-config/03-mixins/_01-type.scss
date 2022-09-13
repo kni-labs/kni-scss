@@ -87,3 +87,52 @@
     $midBreakpoint: false
   );
 }
+
+@mixin h {
+  font-family: $headingFontStack;
+  font-weight: $headingFont-bold;
+  color: $black;
+  line-height: 1.1em;
+}
+
+@mixin h1 {
+  @include setType(32, 48);
+}
+
+@mixin h2 {
+  @include setType(26, 40);
+}
+
+@mixin h3 {
+  @include setType(22, 33);
+}
+
+@mixin h4 {
+  @include setType(20, 27);
+}
+
+@mixin h5 {
+  @include setType(18, 23);
+}
+
+@mixin h6 {
+  @include setType(16, 20);
+}
+
+@mixin p {
+  color: $gray-200;
+  line-height: 1.4;
+  @include setType(14, 16, 95%);
+}
+
+@mixin p--smallest {
+  @include setType(10, 12, 100%);
+}
+
+@mixin p--small {
+  @include setType(12, 14, 100%);
+}
+
+@mixin p--large {
+  @include setType(16, 18, 100%);
+}
