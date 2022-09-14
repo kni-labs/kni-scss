@@ -86,6 +86,11 @@
     $minBreakpoint: false,
     $midBreakpoint: false
   );
+
+  @if $minClamp {
+    // new breakpoint $siteMin--desktop to $siteBasis--desktop
+    // in breakpoint fluidType minimum number minimum clamp maximum number is value
+  }
 }
 
 @mixin h {
