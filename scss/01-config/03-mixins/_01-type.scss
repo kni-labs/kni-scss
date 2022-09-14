@@ -63,11 +63,22 @@
     $maxBreakpoint: false
   );
 
+  // tablet
   @media (min-width: #{$siteMax--mobile}px) {
     font-size: rem($minDesktopClamp);
   }
 
-  @media (min-width: #{$siteMin--desktop}px) {
+  @if $minClamp {
+    // new breakpoint $siteMin--desktop to $siteBasis--desktop
+    // in breakpoint fluidType minimum number minimum clamp maximum number is value
+    @media (min-width: #{$siteMin--desktop}px) and (max-width: #{$siteBasis--desktop}px) {
+      border: 5px solid yellow;
+    }
+  }
+
+  // 1024 - 1280
+  @media (min-width: #{$siteBasis--desktop}px) {
+    border: 5px solid green;
     @include fluidType(
       $minFontSize: $minDesktopClamp,
       $maxFontSize: $fontSize--desktop-large,
@@ -86,11 +97,6 @@
     $minBreakpoint: false,
     $midBreakpoint: false
   );
-
-  @if $minClamp {
-    // new breakpoint $siteMin--desktop to $siteBasis--desktop
-    // in breakpoint fluidType minimum number minimum clamp maximum number is value
-  }
 }
 
 @mixin h {
