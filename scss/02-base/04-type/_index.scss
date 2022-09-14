@@ -49,6 +49,10 @@ p,
 }
 
 .p {
+  &--xxs {
+    @include p--xxs;
+  }
+
   &--xs {
     @include p--xs;
   }

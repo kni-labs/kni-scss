@@ -119,6 +119,10 @@
   @include setType(16, 20);
 }
 
+@mixin p--xxs {
+  @include setType(10, 10, 100%);
+}
+
 @mixin p--xs {
   @include setType(10, 12, 100%);
 }
