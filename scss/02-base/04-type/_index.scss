@@ -49,15 +49,19 @@ p,
 }
 
 .p {
-  &--smallest {
-    @include p--smallest;
+  &--xs {
+    @include p--xs;
   }
 
-  &--small {
-    @include p--small;
+  &--sm {
+    @include p--sm;
   }
 
-  &--large {
-    @include p--large;
+  &--lg {
+    @include p--lg;
+  }
+
+  &--xl {
+    @include p--xl;
   }
 }

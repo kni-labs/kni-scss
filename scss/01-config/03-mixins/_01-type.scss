@@ -119,20 +119,24 @@
   @include setType(16, 20);
 }
 
+@mixin p--xs {
+  @include setType(10, 12, 100%);
+}
+
+@mixin p--sm {
+  @include setType(12, 14, 100%);
+}
+
 @mixin p {
   color: $gray-200;
   line-height: 1.4;
   @include setType(14, 16, 95%);
 }
 
-@mixin p--smallest {
-  @include setType(10, 12, 100%);
-}
-
-@mixin p--small {
-  @include setType(12, 14, 100%);
-}
-
-@mixin p--large {
+@mixin p--lg {
   @include setType(16, 18, 100%);
+}
+
+@mixin p--xl {
+  @include setType(18, 20, 100%);
 }
