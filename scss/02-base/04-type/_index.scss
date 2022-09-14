@@ -68,4 +68,8 @@ p,
   &--xl {
     @include p--xl;
   }
+
+  &--xxl {
+    @include p--xxl;
+  }
 }
