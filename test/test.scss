@@ -114,6 +114,14 @@ code {
     }
   }
 
+  @media (min-width: #{$dl}px) {
+    background: rgb(147 245 128);
+
+    &::before {
+      content: '$dl: ';
+    }
+  }
+
   @media (min-width: #{$lf}px) {
     background: yellow;
 
