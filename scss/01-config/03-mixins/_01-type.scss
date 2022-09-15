@@ -55,6 +55,7 @@
     $minDesktopClamp: $fontSize--desktop * math.div($minClamp, 100%);
   }
 
+  // Base mobile call. Todo: 320 - 375 mq
   @include fluidType(
     $minFontSize: $minMobileClamp,
     $maxFontSize: $fontSize--mobile-large,
@@ -63,24 +64,29 @@
     $maxBreakpoint: false
   );
 
-  // tablet
+  // tablet is static
   @media (min-width: #{$siteMax--mobile}px) {
     font-size: rem($minDesktopClamp);
   }
 
+  // If mobile clamp is set, then add a mq to "slow down" the scale to specified amount
   @if $minClamp {
-    // new breakpoint $siteMin--desktop to $siteBasis--desktop
-    // in breakpoint fluidType minimum number minimum clamp maximum number is value
     @media (min-width: #{$siteMin--desktop}px) and (max-width: #{$siteBasis--desktop}px) {
-      border: 5px solid yellow;
+      @include fluidType(
+        $minFontSize: $minDesktopClamp,
+        $maxFontSize: $fontSize--desktop,
+        $minWidth: $siteMin--desktop,
+        $maxWidth: $siteBasis--desktop,
+        $minBreakpoint: false,
+        $maxBreakpoint: false
+      );
     }
   }
 
-  // 1024 - 1280
+  // 1280 - max
   @media (min-width: #{$siteBasis--desktop}px) {
-    border: 5px solid green;
     @include fluidType(
-      $minFontSize: $minDesktopClamp,
+      $minFontSize: $fontSize--desktop-small,
       $maxFontSize: $fontSize--desktop-large,
       $minWidth: $siteMin--desktop,
       $maxWidth: $siteMax--desktop,
@@ -89,6 +95,7 @@
     );
   }
 
+  // max +
   @include fluidType(
     $minFontSize: $minDesktopClamp,
     $maxFontSize: $fontSize--desktop-large,
