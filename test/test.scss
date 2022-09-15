@@ -98,6 +98,13 @@ code {
       content: '$tp: ';
     }
   }
+  @media (min-width: #{$tl}px) {
+    background: lightpink;
+
+    &::before {
+      content: '$tl: ';
+    }
+  }
 
   @media (min-width: #{$dk}px) {
     background: rgb(90 216 244);
