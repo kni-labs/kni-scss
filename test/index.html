@@ -14,17 +14,14 @@
   </head>
 
   <body class="test">
-    <div id="width">Width: <span></span></div>
+    <div id="width"><span class="bp"></span><span class="currentWidth"></span></div>
     <script>
-      const height = document.querySelector("#height span");
-      const width = document.querySelector("#width span");
+      const width = document.querySelector("#width span.currentWidth");
 
       window.onload = function () {
         width.innerHTML = window.innerWidth;
       };
-
       window.onresize = function () {
-
         width.innerHTML = window.innerWidth;
       };
     </script>
