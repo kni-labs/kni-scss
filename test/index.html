@@ -13,6 +13,19 @@
   </head>
 
   <body class="test">
+    <div id="width">
+      <span class="bp"></span><span class="currentWidth"></span>
+    </div>
+    <script>
+      const width = document.querySelector('#width span.currentWidth');
+
+      window.onload = function () {
+        width.innerHTML = window.innerWidth;
+      };
+      window.onresize = function () {
+        width.innerHTML = window.innerWidth;
+      };
+    </script>
     <h4>vw() function</h4>
     <hr />
     <br />

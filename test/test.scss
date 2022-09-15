@@ -46,3 +46,79 @@ code {
 
   @include setType(14, 14, 100%);
 }
+
+#width {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: lightgreen;
+  padding: 10px;
+
+  &::before,
+  span {
+    font-weight: bold;
+    font-size: rem(24);
+  }
+
+  @media (min-width: 1px) and (max-width: #{($siteBasis--mobile - 1)}px) {
+    background: lightseagreen;
+
+    &::before {
+      content: 'Below $ms: ';
+    }
+  }
+
+  @media (min-width: #{$ms}px) {
+    background: lightblue;
+
+    &::before {
+      content: '$ms: ';
+    }
+  }
+
+  @media (min-width: #{$mp}px) {
+    background: lightgoldenrodyellow;
+
+    &::before {
+      content: '$mp: ';
+    }
+  }
+
+  @media (min-width: #{$ml}px) {
+    background: lightsalmon;
+
+    &::before {
+      content: '$ml: ';
+    }
+  }
+  @media (min-width: #{$tp}px) {
+    background: lightsteelblue;
+
+    &::before {
+      content: '$tp: ';
+    }
+  }
+  @media (min-width: #{$tl}px) {
+    background: lightpink;
+
+    &::before {
+      content: '$tl: ';
+    }
+  }
+
+  @media (min-width: #{$dk}px) {
+    background: rgb(90 216 244);
+
+    &::before {
+      content: '$dk: ';
+    }
+  }
+
+  @media (min-width: #{$lf}px) {
+    background: yellow;
+
+    &::before {
+      content: '$lf: ';
+    }
+  }
+}
