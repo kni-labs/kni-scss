@@ -13,9 +13,7 @@
     "annotation-no-unknown": [
       true,
       {
-        "ignoreAnnotations": [
-          "default"
-        ]
+        "ignoreAnnotations": ["default"]
       }
     ],
     "at-rule-empty-line-before": null,
