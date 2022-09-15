@@ -77,6 +77,18 @@
     font-size: rem($minDesktopClamp);
   }
 
+  // $siteMin--desktop to $siteMax--desktop
+  @media (min-width: #{$siteMin--desktop}px) {
+    @include fluidType(
+      $minFontSize: $fontSize--desktop-small,
+      $maxFontSize: $fontSize--desktop-large,
+      $minWidth: $siteMin--desktop,
+      $maxWidth: $siteMax--desktop,
+      $minBreakpoint: false,
+      $maxBreakpoint: false
+    );
+  }
+
   // If clamp is set, then add a mq to "slow down" the scale to specified amount
   @if $minClamp {
     // $siteMin--desktop to $siteBasis--desktop
@@ -90,18 +102,6 @@
         $maxBreakpoint: false
       );
     }
-  }
-
-  // $siteMin--desktop to $siteMax--desktop
-  @media (min-width: #{$siteBasis--desktop}px) {
-    @include fluidType(
-      $minFontSize: $fontSize--desktop-small,
-      $maxFontSize: $fontSize--desktop-large,
-      $minWidth: $siteMin--desktop,
-      $maxWidth: $siteMax--desktop,
-      $minBreakpoint: false,
-      $maxBreakpoint: false
-    );
   }
 
   // $siteMax--desktop and above
