@@ -64,7 +64,7 @@
 
   // Base mobile call
   @include fluidType(
-    $minFontSize: $minMobileClamp,
+    $minFontSize: $fontSize--mobile-small,
     $maxFontSize: $fontSize--mobile-large,
     $minWidth: $siteMin,
     $maxWidth: $siteMax--mobile,
@@ -73,14 +73,14 @@
 
   // tablet is static
   @media (min-width: #{$siteMax--mobile}px) {
-    font-size: rem($minDesktopClamp);
+    font-size: rem($fontSize--desktop-small);
   }
 
-  // If  clamp is set, then add a mq to "slow down" the scale to specified amount
+  // If clamp is set, then add a mq to "slow down" the scale to specified amount
   @if $minClamp {
     @media (min-width: #{$siteMin--desktop}px) and (max-width: #{$siteBasis--desktop}px) {
       @include fluidType(
-        $minFontSize: $minDesktopClamp,
+        $minFontSize: $fontSize--desktop-small,
         $maxFontSize: $fontSize--desktop,
         $minWidth: $siteMin--desktop,
         $maxWidth: $siteBasis--desktop,
@@ -104,7 +104,7 @@
 
   // max +
   @include fluidType(
-    $minFontSize: $minDesktopClamp,
+    $minFontSize: $fontSize--desktop-small,
     $maxFontSize: $fontSize--desktop-large,
     $minWidth: $siteMin--desktop,
     $maxWidth: $siteMax--desktop,
