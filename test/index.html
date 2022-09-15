@@ -10,9 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KNI CSS</title>
     <link rel="stylesheet" href="test.css" />
+
   </head>
 
+
   <body class="test">
+    <div id="width">Width: <span></span></div>
+      <script>const height = document.querySelector("#height span");
+const width = document.querySelector("#width span");
+             
+window.onload = function() {
+    width.innerHTML = window.innerWidth;
+};
+
+window.onresize = function() {
+
+    width.innerHTML = window.innerWidth;
+};</script>
     <h4>vw() function</h4>
     <hr />
     <br />
