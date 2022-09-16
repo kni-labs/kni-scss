@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "es2017": true,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "extends": ["eslint:recommended"],
+  "ignorePatterns": ["!.*", "**/node_modules/**/*"],
+  "plugins": ["unused-imports"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "camelcase": "error",
+    "eqeqeq": "error",
+    "no-duplicate-imports": "error",
+    "no-empty-function": "error",
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-script-url": "error",
+    "no-unneeded-ternary": "error",
+    "no-unused-vars": "error",
+    "no-use-before-define": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "react/display-name": [
+      "off",
+      {
+        "ignoreTranspilerName": true
+      }
+    ],
+    "require-await": "error",
+    "spaced-comment": "error",
+    "unused-imports/no-unused-imports": "error"
+  }
+}

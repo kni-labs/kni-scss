@@ -10,7 +10,7 @@ Run `npm i` before running each NPM script to ensure that the project's dependen
 
 ### Develop
 
-To spin up the sass dev environment for this project, run `npm run sass-dev`. This will compile and watch `./test/test.scss` for changes.
+To spin up the sass dev environment for this project, run `npm run gulp`. This will compile and watch `./test/test.scss` and watch the `./scss` directory for sass changes.
 
 ### Code Formatting
 
