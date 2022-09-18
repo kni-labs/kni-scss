@@ -13,6 +13,7 @@
   </head>
 
   <body class="test">
+
     <div id="width">
       <span class="bp"></span><span class="currentWidth"></span>
     </div>
@@ -26,6 +27,25 @@
         width.innerHTML = window.innerWidth;
       };
     </script>
+
+    <nav class="sideNav">
+      <ul>
+        <li><a href="#">Variables</a>
+        </li>
+        <li><a href="#">Functions</a>
+          <ul>
+            <li><a href="#">em()</a></li>
+            <li><a href="#">rem()</a></li>
+            <li><a href="#">vw()</a></li>
+          </ul>        
+        </li>
+        <li><a href="#">Mixins</a></li>        
+      </ul>
+    </nav>
+
+    
+
+    <main>
     <h4>vw() function</h4>
     <hr />
     <br />
@@ -35,16 +55,27 @@
           <pre>
 div {
   width: vw(300px);
-  margin-left: vw(30px);
+  margin-left: vw(30px); 
+  background: peachpuff;
+
+  @media (max-width: #{$tl}px) {
+    background: azure;
+    width: 100%;
+  }
+
+  @media (min-width: #{$siteMax--desktop}px) {
+    background: lime;
+    width: #{math.div((300 * $siteMax--desktop), $siteBasis--desktop)}px;
+  }
 }</pre
           >
         </code>
-      </div>
+      </div><br>
       <div>
         <div class="vwtest">
           <p>
             When your browser is at 1280px, this div will be 300px wide with a
-            30px margin left
+            30px padding left. <br><br>If you keep scaling past $siteBasis--desktop, the width will stop at the largest size it was before then. 
           </p>
         </div>
       </div>
@@ -140,5 +171,6 @@ p {
 }</pre
       ></code
     ><br /><br />
+    </main>
   </body>
 </html>

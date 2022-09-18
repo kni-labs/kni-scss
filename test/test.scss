@@ -3,22 +3,34 @@
 
 // write test code here
 
-body {
+$navWidth: rem(200);
+
+main {
   padding: 5%;
 
   @media (min-width: #{$tl}px) {
-    padding: 0 15vw;
+    margin-left: $navWidth;
   }
 }
 
 .vwtest {
   width: vw(300px);
-  margin-left: vw(30px);
-  border: 5px solid tomato;
+  padding-left: vw(30px);
+  background: peachpuff;
+
+  @media (max-width: #{$tl}px) {
+    background: azure;
+    width: 100%;
+  }
+
+  @media (min-width: #{$siteMax--desktop}px) {
+    background: lime;
+    width: #{math.div((300 * $siteMax--desktop), $siteBasis--desktop)}px;
+  }
 }
 
 article {
-  display: flex;
+  // display: flex;
   margin-bottom: vw(40px);
 }
 
@@ -28,10 +40,6 @@ article > div:nth-of-type(1) {
   @media (min-width: #{$tp}px) {
     display: block;
   }
-}
-
-article div:nth-of-type(2) {
-  padding-left: vw(20px);
 }
 
 code {
@@ -129,4 +137,22 @@ code {
       content: '$lf: ';
     }
   }
+}
+
+.sideNav {
+  height: 100vw;
+  overflow-y: scroll;
+  position: fixed;
+  width: $navWidth;
+  background: #eee;
+  display: none;
+  padding: rem(20);
+
+  @media (min-width: #{$tl}px) {
+    display: block;
+  }
+}
+
+.sideNav ul {
+  display: none;
 }
