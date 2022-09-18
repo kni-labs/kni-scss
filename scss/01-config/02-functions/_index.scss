@@ -30,7 +30,7 @@
 
 @function vw($px) {
   @return clamp(
-    #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw,
+    1px,
     #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw,
     #{math.div((removeUnit($px) * $siteMax--desktop), $siteBasis--desktop)}px
   );
