@@ -150,3 +150,28 @@ code {
 .sideNav ul {
   display: none;
 }
+
+.stressTest {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stressTest div:nth-child(even) {
+  background: peachpuff;
+  color: tomato;
+}
+@for $i from 1 through 300 {
+  .stressTest div:not(#width):nth-child(3n + #{$i}) {
+    width: vw($i * 1px);
+    border: 1px solid green;
+    height: vw($i * 0.3);
+    padding: vw(1px) vw(3px);
+    margin: vw(2px) vw(3px);
+
+    &::before {
+      @include h6;
+
+      content: 'asdfsf';
+    }
+  }
+}
