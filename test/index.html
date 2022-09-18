@@ -53,19 +53,15 @@
       <div>
         <code>
           <pre>
-div {
+.vwtest {
   width: vw(300px);
-  margin-left: vw(30px); 
+  padding-left: vw(30px);
   background: peachpuff;
 
-  @media (max-width: #{$tl}px) {
+  @media (min-width: #{$tl}px) {
     background: azure;
     width: 100%;
-  }
-
-  @media (min-width: #{$siteMax--desktop}px) {
-    background: lime;
-    width: #{math.div((300 * $siteMax--desktop), $siteBasis--desktop)}px;
+    padding-left: vw(30px);
   }
 }</pre
           >
@@ -75,7 +71,7 @@ div {
         <div class="vwtest">
           <p>
             When your browser is at 1280px, this div will be 300px wide with a
-            30px padding left. <br><br>If you keep scaling past $siteBasis--desktop, the width will stop at the largest size it was before then. 
+            30px padding left. <br><br>The box will keep scaling until it hits $siteMax-desktop 
           </p>
         </div>
       </div>

@@ -24,6 +24,14 @@
   @return #{$em * $emBase}px;
 }
 
+// @function vw($px) {
+//   @return #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw;
+// }
+
 @function vw($px) {
-  @return #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw;
+  @return clamp(
+    #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw,
+    #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw,
+    #{math.div((removeUnit($px) * $siteMax--desktop), $siteBasis--desktop)}px
+  );
 }

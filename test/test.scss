@@ -14,18 +14,13 @@ main {
 }
 
 .vwtest {
-  width: vw(300px);
+  width: 100%;
   padding-left: vw(30px);
   background: peachpuff;
 
-  @media (max-width: #{$tl}px) {
+  @media (min-width: #{$tl}px) {
     background: azure;
-    width: 100%;
-  }
-
-  @media (min-width: #{$siteMax--desktop}px) {
-    background: lime;
-    width: #{math.div((300 * $siteMax--desktop), $siteBasis--desktop)}px;
+    width: vw(300px);
   }
 }
 
