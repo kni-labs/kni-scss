@@ -24,7 +24,6 @@ main {
 }
 
 article {
-  // display: flex;
   margin-bottom: vw(40px);
 }
 
@@ -148,7 +147,18 @@ code {
 }
 
 .sideNav ul {
-  display: none;
+  // display: none;
+  & li {
+    & a {
+      text-decoration: none;
+      color: #666;
+      font-weight: 600;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
 }
 
 .stressTest {

@@ -5,17 +5,18 @@
       rel="icon"
       type="image/ico"
       href="https://www.kurtnoble.com/img/favicon.ico"
-    />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>KNI CSS</title>
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="test.css"/>
   </head>
 
   <body class="test">
 
     <div id="width">
-      <span class="bp"></span><span class="currentWidth"></span>
+      <span class="bp"></span>
+      <span class="currentWidth"></span>
     </div>
     <script>
       const width = document.querySelector('#width span.currentWidth');
@@ -29,30 +30,27 @@
     </script>
 
     <nav class="sideNav">
+      <h6>KNI SCSS</h6>
       <ul>
-        <li><a href="#">Variables</a>
+        <li>
+          <a href="#vw">vw()</a>
         </li>
-        <li><a href="#">Functions</a>
-          <ul>
-            <li><a href="#">em()</a></li>
-            <li><a href="#">rem()</a></li>
-            <li><a href="#">vw()</a></li>
-          </ul>        
+        <li>
+          <a href="#typography">Typography</a>
         </li>
-        <li><a href="#">Mixins</a></li>        
       </ul>
     </nav>
 
-    
-
     <main>
-    <h4>vw() function</h4>
-    <hr />
-    <br />
-    <article>
-      <div>
-        <code>
-          <pre>
+
+      <section id="vw">
+        <h4>vw() function</h4>
+        <hr/>
+        <br/>
+        <article>
+          <div>
+            <code>
+              <pre>
 .vwtest {
   width: 100%;
 
@@ -71,7 +69,8 @@
         </div>
       </div>
     </article>
-    <br />
+    </section>
+    <section id="typography">
 
     <h1>h1 – This is how we CSS</h1>
 
@@ -160,8 +159,8 @@ p {
 .p--xs {
   @include setType(10, 12, 100%);
 }</pre
-      ></code
-    ><br /><br />
+      ></code>
+    </section>
     </main>
   </body>
 </html>
