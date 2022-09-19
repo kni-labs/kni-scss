@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>KNI CSS</title>
     <link rel="stylesheet" href="test.css"/>
+
   </head>
 
   <body class="test">
-
     <div id="width">
       <span class="bp"></span>
       <span class="currentWidth"></span>
@@ -33,6 +33,15 @@
       <h6>KNI SCSS</h6>
       <ul>
         <li>
+          <a href="#em">em()</a>
+        </li>  
+    <li>
+          <a href="#px">px()</a>
+        </li>          
+        <li>
+          <a href="#rem">rem()</a>
+        </li>       
+        <li>
           <a href="#vw">vw()</a>
         </li>
         <li>
@@ -43,23 +52,75 @@
 
     <main>
 
+      <section id="em">
+        <h4>em() function</h4>
+        <hr/>
+        <br/>
+        <article>
+          <div>
+<pre><code class="scss">.btn {
+  @include p;
+  padding: em(10px) em(20px);
+}
+</code></pre>
+        
+      </div><br>
+      <div>
+        <div>
+          <p>
+           Use this when you want an element to scale with the nearest font size near it. For example this button's padding will always be porportional to the font size. In this specific case it makes for less code than the vw solution.
+          </p><br>
+          <a href="#" class="btn">i'm an em-padded btn</a> <a href="#" class="btn vw">vw padding</a>
+        </div>
+      </div>
+    </article>
+    </section>
+
+    <section id="px">
+        <h4>px() function</h4>
+        <hr/>
+        <br/>
+        <article>
+      <div>
+        <div>
+          <p>
+          Cooper, when would we use this?
+          </p>
+        </div>
+      </div>
+    </article>
+    </section>    
+
+      <section id="rem">
+        <h4>rem() function</h4>
+        <hr/>
+        <br/>
+        <article>
+      <div>
+        <div>
+          <p>
+           Historically it was always a good idea to futureproof your layouts to be more flexible by converting px values to rem values, however Daniel is starting to question if this is still neccessary.
+          </p>
+        </div>
+      </div>
+    </article>
+    </section>    
+
+
       <section id="vw">
         <h4>vw() function</h4>
         <hr/>
         <br/>
         <article>
           <div>
-            <code>
-              <pre>
-.vwtest {
+<pre><code class="scss">.vwtest {
   width: 100%;
 
   @media (min-width: #{$tl}px) {
     width: vw(300px);
   }
-}</pre
-          >
-        </code>
+}</code></pre>
+        
       </div><br>
       <div>
         <div class="vwtest">
@@ -74,12 +135,11 @@
 
     <h1>h1 – This is how we CSS</h1>
 
-    <code>
-      <pre>
+   
+      <pre> <code class="scss">
 h1 {
   @include setType(32, 48);
-}</pre
-      ></code
+}</code></pre>
     ><br />
     <p>
       setType() can be used with 2 arguments. Specify the mobile font size, and
