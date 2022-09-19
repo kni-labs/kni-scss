@@ -18,7 +18,7 @@ main {
   background: peachpuff;
 
   @media (min-width: #{$tl}px) {
-    background: azure;
+    background: powderblue;
     width: vw(300px);
   }
 }

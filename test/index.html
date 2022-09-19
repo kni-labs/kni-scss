@@ -99,7 +99,7 @@
       <div>
         <div>
           <p>
-           Historically it was always a good idea to futureproof your layouts to be more flexible by converting px values to rem values, however Daniel is starting to question if this is still neccessary.
+           Historically it was always a good idea to futureproof your layouts to be more flexible by converting px values to rem values, however Daniel is starting to question if this is still neccessary. We should very rarely use pixel values at all in the new system, except in a few use cases like 1px borders, etc.
           </p>
         </div>
       </div>
@@ -123,6 +123,7 @@
         
       </div><br>
       <div>
+        <p>This function will allow us to input pixel sizes and output vw units, which is super handy for matching Figma, while keeping all elements scalable:</p><br>
         <div class="vwtest">
           <p>
             When your browser is at 1280px, this div will be 300px wide. <br><br>The box will keep scaling until it hits $siteMax-desktop 
