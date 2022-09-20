@@ -191,7 +191,7 @@ code {
 }
 
 .test .btn.vw {
-  padding: vw(10px, m) vw(20px, m);
+  padding: vw(10px, mobile) vw(20px, mobile);
   background: darkslategray;
 
   @media (min-width: #{$tp}px) and (max-width: #{$tl}px) {
@@ -208,10 +208,10 @@ code {
 }
 
 .vwTestContainer div {
-  margin: vw(10px, m);
+  margin: vw(10px, mobile);
   background: #abebc6;
-  width: vw(30px, m);
-  height: vw(30px, m);
+  width: vw(30px, mobile);
+  height: vw(30px, mobile);
 
   @media (min-width: #{$tl}px) {
     margin: vw(50px);
