@@ -79,6 +79,7 @@ Use the pixel sizes you see in Figma and wrap them in this function everywhere. 
 Many times you'll only need `vw()` for desktop applications (then mobile gets something like 100%), but because mobile and desktop use different `siteBasis` vars, mobile usages will need the optional mobile argument:
 
 Input:
+
 ```scss
 div {
   width: vw(30px, mobile);
@@ -89,6 +90,7 @@ div {
 ```
 
 Output:
+
 ```scss
 div {
   width: 2.34375vw;
