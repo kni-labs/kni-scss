@@ -20,24 +20,22 @@
   @return #{math.div(removeUnit($px), $emBase)}rem;
 }
 
-// when would we ever use this?
 @function px($em) {
   @return #{$em * $emBase}px;
 }
 
-@function vw($px) {
-  @return clamp(
-    1px,
-    #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw,
-    #{math.div((removeUnit($px) * $siteMax--desktop), $siteBasis--desktop)}px
-  );
-}
-
-// This will likely be neccessary
-@function vw-m($px) {
-  @return clamp(
-    1px,
-    #{removeUnit($px) * math.div(100, $siteBasis--mobile)}vw,
-    #{math.div((removeUnit($px) * $siteMax--mobile), $siteBasis--mobile)}px
-  );
+@function vw($px, $mobile: false) {
+  @if $mobile {
+    @return clamp(
+      1px,
+      #{removeUnit($px) * math.div(100, $siteBasis--mobile)}vw,
+      #{math.div((removeUnit($px) * $siteMax--mobile), $siteBasis--mobile)}px
+    );
+  } @else {
+    @return clamp(
+      1px,
+      #{removeUnit($px) * math.div(100, $siteBasis--desktop)}vw,
+      #{math.div((removeUnit($px) * $siteMax--desktop), $siteBasis--desktop)}px
+    );
+  }
 }

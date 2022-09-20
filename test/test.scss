@@ -191,7 +191,7 @@ code {
 }
 
 .test .btn.vw {
-  padding: vw-m(10px) vw-m(20px);
+  padding: vw(10px, m) vw(20px, m);
   background: darkslategray;
 
   @media (min-width: #{$tp}px) and (max-width: #{$tl}px) {
