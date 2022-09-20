@@ -72,9 +72,31 @@ div {
 }
 ```
 
-The output becomes a flexible vw unit that changes as browser resizes. At `1280px` it should match up exactly to the comp.
+The output becomes a flexible vw unit that changes as browser resizes. At `$siteBasis--mobile`(375px) and `siteBasis--desktop`(1280px) it should match up exactly to the comp.
 
 Use the pixel sizes you see in Figma and wrap them in this function everywhere. The exception is if you want to use actual pixels, then use `px` or `rem(px)` and it will output fixed pixel sizes.
+
+Many times you'll only need `vw()` for desktop applications (then mobile gets something like 100%), but because mobile and desktop use different `siteBasis` vars, mobile usages will need the optional mobile argument:
+
+Input:
+```scss
+div {
+  width: vw(30px, mobile);
+
+  @media (min-width: #{$tl}px) {
+    width:vw(30px);
+  }
+```
+
+Output:
+```scss
+div {
+  width: 2.34375vw;
+
+  @media (min-width: #{$tl}px) {
+    width: 2.34375vw;
+  }
+```
 
 ### Fluid Typography
 
