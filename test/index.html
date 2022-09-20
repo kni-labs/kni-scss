@@ -5,12 +5,11 @@
       rel="icon"
       type="image/ico"
       href="https://www.kurtnoble.com/img/favicon.ico"
-/>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KNI CSS</title>
-    <link rel="stylesheet" href="test.css"/>
-
+    <link rel="stylesheet" href="test.css" />
   </head>
 
   <body class="test">
@@ -51,11 +50,10 @@
     </nav>
 
     <main>
-
       <section id="em">
         <h4>em() function</h4>
-        <hr/>
-        <br/>
+        <hr />
+        <br />
         <article>
           <div>
             <pre><code class="scss">.btn {
@@ -63,13 +61,17 @@
   padding: em(10px) em(20px);
 }
 </code></pre>
-
-          </div><br>
+          </div>
+          <br />
           <div>
             <div>
               <p>
-           Use this when you want an element to scale with the nearest font size near it. For example this button's padding will always be porportional to the font size. In this specific case it makes for less code than the vw solution.
-          </p><br>
+                Use this when you want an element to scale with the nearest font
+                size near it. For example this button's padding will always be
+                porportional to the font size. In this specific case it makes
+                for less code than the vw solution.
+              </p>
+              <br />
               <a href="#" class="btn">i'm an em-padded btn</a>
               <a href="#" class="btn vw">vw padding</a>
             </div>
@@ -79,14 +81,12 @@
 
       <section id="px">
         <h4>px() function</h4>
-        <hr/>
-        <br/>
+        <hr />
+        <br />
         <article>
           <div>
             <div>
-              <p>
-          Mainly used for debugging. Talk to Cooper :p
-          </p>
+              <p>Mainly used for debugging. Talk to Cooper :p</p>
             </div>
           </div>
         </article>
@@ -94,14 +94,12 @@
 
       <section id="rem">
         <h4>rem() function</h4>
-        <hr/>
-        <br/>
+        <hr />
+        <br />
         <article>
           <div>
             <div>
-              <p>
-                Convert px to rem.
-          </p>
+              <p>Convert px to rem.</p>
             </div>
           </div>
         </article>
@@ -109,8 +107,8 @@
 
       <section id="vw">
         <h4>vw() function</h4>
-        <hr/>
-        <br/>
+        <hr />
+        <br />
         <article>
           <div>
             <pre><code class="scss">div {
@@ -120,16 +118,23 @@
     width: vw(300px);
   }
 }</code></pre>
-
-          </div><br>
+          </div>
+          <br />
           <div>
-            <p>This function will allow us to input pixel sizes and output vw units, which is super handy for matching Figma, while keeping all elements scalable:</p><br>
+            <p>
+              This function will allow us to input pixel sizes and output vw
+              units, which is super handy for matching Figma, while keeping all
+              elements scalable:
+            </p>
+            <br />
             <div class="vwtest">
               <p>
-            When your browser is at 1280px, this div will be 300px wide. <br><br>The box will keep scaling until it hits $siteMax-desktop. For mobile the box is 100%.
-          </p>
+                When your browser is at 1280px, this div will be 300px wide.
+                <br /><br />The box will keep scaling until it hits
+                $siteMax-desktop. For mobile the box is 100%.
+              </p>
             </div>
-            <br>
+            <br />
             <div>
               <pre><code class="scss">div {
   margin: vw(10px, m);
@@ -138,32 +143,35 @@
     margin: vw(30px);
   }
 }</code></pre>
-
-            </div><br>
+            </div>
+            <br />
             <p>
-            Lots of times we'll only use vw() for desktop scenarios but if you need to use it during mobile, pass in a mobile argument. 
-          </p>
+              Lots of times we'll only use vw() for desktop scenarios but if you
+              need to use it during mobile, pass in a mobile argument.
+            </p>
           </div>
           <div class="vwTestContainer">
-            <div></div><div></div><div></div><div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
         </article>
       </section>
       <section id="typography">
-
         <h1>h1 – This is how we CSS</h1>
 
         <pre> <code class="scss">
 h1 {
   @include setType(32, 48);
 }</code></pre>
-        <br/>
+        <br />
         <p>
-      setType() can be used with 2 arguments. Specify the mobile font size, and
-      desktop font size, both of which should be available in Figma. It will
-      automatically scale based on site settings.
-    </p>
-        <br/><br/>
+          setType() can be used with 2 arguments. Specify the mobile font size,
+          and desktop font size, both of which should be available in Figma. It
+          will automatically scale based on site settings.
+        </p>
+        <br /><br />
 
         <h2>h2 – Heading example</h2>
         <code>
@@ -171,73 +179,75 @@ h1 {
 h2 {
   @include setType(26, 40);
 }</pre
-      ></code
-    ><br /><br />
+          ></code
+        ><br /><br />
 
-    <h3>My favorite heading tag is h3</h3>
-    <code>
-      <pre>
+        <h3>My favorite heading tag is h3</h3>
+        <code>
+          <pre>
 h3 {
   @include setType(22, 33);
 }</pre
-      ></code
-    ><br /><br />
-    <h4>Sometime's h4's get neglected</h4>
-    <code>
-      <pre>
+          ></code
+        ><br /><br />
+        <h4>Sometime's h4's get neglected</h4>
+        <code>
+          <pre>
 h4 {
   @include setType(20, 27);
 }</pre
-      >
-    </code>
-    <br /><br />
+          >
+        </code>
+        <br /><br />
 
-    <h5>But not as much as h5's</h5>
-    <code>
-      <pre>
+        <h5>But not as much as h5's</h5>
+        <code>
+          <pre>
 h5 {
   @include setType(18, 23);
 }</pre
-      ></code
-    ><br /><br />
+          ></code
+        ><br /><br />
 
-    <h6>This h6 is a bit larger than the paragraph</h6>
-    <code>
-      <pre>
+        <h6>This h6 is a bit larger than the paragraph</h6>
+        <code>
+          <pre>
 h6 {
   @include setType(16, 20);
 }</pre
-      ></code
-    ><br /><br />
+          ></code
+        ><br /><br />
 
-    <p>
-      This is an example paragraph tag. Sometimes for smaller fonts you want to
-      override the smallest size it can go. In this case pass in the $minClamp
-      argument which is the percentage the minimum font size should be. Set it
-      to 100% to have it not scale any smaller than default.
-    </p>
-    <br />
-    <code>
-      <pre>
+        <p>
+          This is an example paragraph tag. Sometimes for smaller fonts you want
+          to override the smallest size it can go. In this case pass in the
+          $minClamp argument which is the percentage the minimum font size
+          should be. Set it to 100% to have it not scale any smaller than
+          default.
+        </p>
+        <br />
+        <code>
+          <pre>
 p {
   @include setType(14, 16, $minClamp: 94%);
 }</pre
-      ></code
-    ><br /><br />
+          ></code
+        ><br /><br />
 
-    <p class="p--xs">
-      This is an example paragraph with the class ".p--xs". For very small
-      selectors you may not want it to ever scale smaller. The `minClamp`
-      argument can also just be value on it's own:
-    </p>
-    <br />
-    <code>
-      <pre>
+        <p class="p--xs">
+          This is an example paragraph with the class ".p--xs". For very small
+          selectors you may not want it to ever scale smaller. The `minClamp`
+          argument can also just be value on it's own:
+        </p>
+        <br />
+        <code>
+          <pre>
 .p--xs {
   @include setType(10, 12, 100%);
 }</pre
-      ></code>
-    </section>
+          >
+        </code>
+      </section>
     </main>
   </body>
 </html>
