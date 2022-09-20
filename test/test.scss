@@ -202,3 +202,19 @@ code {
     padding: vw(10px) vw(20px);
   }
 }
+
+.vwTestContainer {
+  display: flex;
+}
+
+.vwTestContainer div {
+  margin: vw(10px, m);
+  background: #abebc6;
+  width: vw(30px, m);
+  height: vw(30px, m);
+
+  @media (min-width: #{$tl}px) {
+    margin: vw(50px);
+    background: #45b39d;
+  }
+}
