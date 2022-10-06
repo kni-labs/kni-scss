@@ -218,3 +218,12 @@ code {
     background: #45b39d;
   }
 }
+
+.negative {
+  border: 2px solid mediumaquamarine;
+  background: honeydew;
+  width: vw(300px);
+  margin-top: vw(-30px);
+  margin-left: vw(-30px);
+  padding: vw(10px);
+}
