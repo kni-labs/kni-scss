@@ -70,7 +70,6 @@
     font-size: rem($minMobileClamp);
 
     @media (min-width: #{$siteBasis--mobile + 1}px) and (max-width: #{($siteMax--mobile - 1)}px) {
-      border: 3px solid blue;
       @include fluidType(
         $minFontSize: $minMobileClamp,
         $maxFontSize: $fontSize--mobile-large,
