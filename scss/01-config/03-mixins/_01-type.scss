@@ -57,16 +57,20 @@
 
   // $siteMin to $siteMax--mobile
   @include fluidType(
-    $minFontSize: $fontSize--mobile,
+    $minFontSize: $fontSize--mobile-small,
     $maxFontSize: $fontSize--mobile-large,
     $minWidth: $siteMin,
     $maxWidth: $siteMax--mobile,
     $maxBreakpoint: false
   );
 
-  // If clamp is set, then add a mq to "slow down" the scale to specified amount
+  // below #siteMin
+  @media (min-width: 1px) and (max-width: #{($siteMin )}px) {
+    font-size: rem($minMobileClamp);
+  }
+
+  // minClamp rules
   @if $minClamp {
-    // $siteMin + 1 to $siteBasis--mobile - 1
     font-size: rem($minMobileClamp);
 
     @media (min-width: #{$siteBasis--mobile + 1}px) and (max-width: #{($siteMax--mobile - 1)}px) {
@@ -80,7 +84,7 @@
     }
   }
 
-  // $siteMax--mobile
+  // lock size at $siteMax--mobile (tablet) until $siteMin--desktop
   @media (min-width: #{$siteMax--mobile}px) {
     font-size: rem($minDesktopClamp);
   }
@@ -97,7 +101,7 @@
     );
   }
 
-  // If clamp is set, then add a mq to "slow down" the scale to specified amount
+  // Desktop minClamp rules
   @if $minClamp {
     // $siteMin--desktop to $siteBasis--desktop
     @media (min-width: #{$siteMin--desktop}px) and (max-width: #{$siteBasis--desktop - 1}px) {
