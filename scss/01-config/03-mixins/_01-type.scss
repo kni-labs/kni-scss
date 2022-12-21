@@ -55,12 +55,22 @@
     $minDesktopClamp: $fontSize--desktop * math.div($minClamp, 100%);
   }
 
+  // $siteMin to $siteMax--mobile
+  @include fluidType(
+    $minFontSize: $fontSize--mobile,
+    $maxFontSize: $fontSize--mobile-large,
+    $minWidth: $siteMin,
+    $maxWidth: $siteMax--mobile,
+    $maxBreakpoint: false
+  );
+
   // If clamp is set, then add a mq to "slow down" the scale to specified amount
   @if $minClamp {
     // $siteMin + 1 to $siteBasis--mobile - 1
     font-size: rem($minMobileClamp);
 
     @media (min-width: #{$siteBasis--mobile + 1}px) and (max-width: #{($siteMax--mobile - 1)}px) {
+      border: 3px solid blue;
       @include fluidType(
         $minFontSize: $minMobileClamp,
         $maxFontSize: $fontSize--mobile-large,
@@ -70,15 +80,6 @@
       );
     }
   }
-
-  // $siteMin to $siteMax--mobile
-  @include fluidType(
-    $minFontSize: $fontSize--mobile,
-    $maxFontSize: $fontSize--mobile-large,
-    $minWidth: $siteMin,
-    $maxWidth: $siteMax--mobile,
-    $maxBreakpoint: false
-  );
 
   // $siteMax--mobile
   @media (min-width: #{$siteMax--mobile}px) {
