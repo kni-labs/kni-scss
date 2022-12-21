@@ -39,12 +39,12 @@
     ($fontSize--mobile * $siteMax--mobile),
     $siteBasis--mobile
   );
-  $fontSize--desktop-large: math.div(
-    ($fontSize--desktop * $siteMax--desktop),
-    $siteBasis--desktop
-  );
   $fontSize--desktop-small: math.div(
     ($fontSize--desktop * $siteMin--desktop),
+    $siteBasis--desktop
+  );
+  $fontSize--desktop-large: math.div(
+    ($fontSize--desktop * $siteMax--desktop),
     $siteBasis--desktop
   );
   $minMobileClamp: $fontSize--mobile-small;
@@ -58,14 +58,22 @@
   // If clamp is set, then add a mq to "slow down" the scale to specified amount
   @if $minClamp {
     // $siteMin + 1 to $siteBasis--mobile - 1
-    @media (min-width: #{$siteMin + 1}px) and (max-width: #{($siteBasis--mobile - 1)}px) {
-      font-size: rem($minMobileClamp);
+    font-size: rem($minMobileClamp);
+
+    @media (min-width: #{$siteBasis--mobile + 1}px) and (max-width: #{($siteMax--mobile - 1)}px) {
+      @include fluidType(
+        $minFontSize: $minMobileClamp,
+        $maxFontSize: $fontSize--mobile-large,
+        $minWidth: $siteBasis--mobile,
+        $maxWidth: $siteMax--mobile,
+        $maxBreakpoint: false
+      );
     }
   }
 
   // $siteMin to $siteMax--mobile
   @include fluidType(
-    $minFontSize: $minMobileClamp,
+    $minFontSize: $fontSize--mobile,
     $maxFontSize: $fontSize--mobile-large,
     $minWidth: $siteMin,
     $maxWidth: $siteMax--mobile,
