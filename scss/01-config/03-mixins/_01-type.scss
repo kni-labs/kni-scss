@@ -64,8 +64,8 @@
     $maxBreakpoint: false
   );
 
-  // below #siteMin
-  @media (min-width: 1px) and (max-width: #{($siteMin )}px) {
+  // below $siteMin
+  @media (min-width: 1px) and (max-width: #{($siteMin)}px) {
     font-size: rem($minMobileClamp);
   }
 
