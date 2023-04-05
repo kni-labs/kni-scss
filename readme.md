@@ -134,3 +134,24 @@ p {
   @include setType(11, 13, 100%);
 }
 ```
+
+
+### Spacing
+
+Included are some default spacing values for layouts:
+
+```
+$spacing-01: vw(6px);
+$spacing-02: vw(12px);
+$spacing-03: vw(16px);
+$spacing-04: vw(34px);
+$spacing-05: vw(32px);
+$spacing-06: vw(40px);
+$spacing-07: vw(48px);
+$spacing-08: vw(64px);
+$spacing-09: vw(80px);
+$spacing-10: vw(96px);
+$spacing-11 vw(120);
+$spacing-12: vv(160px);
+
+$spacing-default: $spacing-07;
