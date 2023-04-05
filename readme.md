@@ -138,7 +138,7 @@ p {
 
 ### Spacing
 
-Included are some default spacing values for layouts:
+Included are some default spacing values for layouts. These can be overwritten on a project-basis, but we will mostly use these values on all projects.
 
 ```
 $spacing-01: vw(6px);
