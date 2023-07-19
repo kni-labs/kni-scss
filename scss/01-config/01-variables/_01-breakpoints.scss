@@ -19,9 +19,36 @@ $minContentWidth: $ms !default;
 $maxContentWidth: $ds !default;
 $maxFormWidth: $tm !default;
 $maxReaderWidth: $tm !default;
-$siteMin: $ms !default;
-$siteMin--desktop: $tl !default;
-$siteBasis--mobile: $mm !default;
-$siteBasis--desktop: $dm !default;
-$siteMax--mobile: $tm !default;
-$siteMax--desktop: $dl !default;
+
+// Default breakpoint. Can add more per project!
+* {
+  --emBase: 16;
+  --mobileMin: #{$ms};
+  --mobile: #{$mm};
+  --mobileMax: #{$ts};
+  --desktopMin: #{$tl};
+  --desktop: #{$dm};
+  --desktopMax: #{$dxl};
+  --siteMin: var(--mobileMin);
+  --siteBasis: var(--mobile);
+  --siteMax: var(--mobileMax);
+
+  @media (min-width: #{$tl}px) {
+    --siteMin: var(--desktopMin);
+    --siteBasis: var(--desktop);
+    --siteMax: var(--desktopMax);
+  }
+}
+
+// MQ shortcuts
+@mixin desktop {
+  @media (min-width: #{$tl}px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$ml + 1}px) and (max-width: #{$tl}px) {
+    @content;
+  }
+}

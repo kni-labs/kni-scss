@@ -1,75 +1,64 @@
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  @include h;
-}
+// enable Fluid Type for all type-based html elements
 
-h1,
-.h1 {
-  @include h1;
-}
-
-h2,
-.h2 {
-  @include h2;
-}
-
-h3,
-.h3 {
-  @include h3;
-}
-
-h4,
-.h4 {
-  @include h4;
-}
-
-h5,
-.h5 {
-  @include h5;
-}
-
-h6,
-.h6 {
-  @include h6;
-}
-
+tt,
+i,
+b,
+big,
+small,
+em,
+strong,
+dfn,
+code,
+samp,
+kbd,
+var,
+cite,
+abbr,
+acronym,
+sub,
+sup,
+span,
+bdo,
+address,
+div,
+a,
+object,
 p,
-.p {
-  @include p;
-}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+q,
+ins,
+del,
+dt,
+dd,
+li,
+label,
+option,
+textarea,
+fieldset,
+legend,
+button,
+caption,
+td,
+th,
+title,
+blockquote {
+  --fontSizeMin: calc(var(--fontSize) * var(--siteMin) / var(--siteBasis));
+  --fontSizeMax: calc(var(--fontSize) * var(--siteMax) / var(--siteBasis));
+  --fontSizeMinClamp: var(--fontSizeMin);
 
-.p {
-  &--xxs {
-    @include p--xxs;
-  }
-
-  &--xs {
-    @include p--xs;
-  }
-
-  &--sm {
-    @include p--sm;
-  }
-
-  &--lg {
-    @include p--lg;
-  }
-
-  &--xl {
-    @include p--xl;
-  }
-
-  &--xxl {
-    @include p--xxl;
-  }
+  font-size: clamp(
+    calc(var(--fontSizeMinClamp) * 1px),
+    calc(
+      (var(--fontSizeMin) / var(--emBase)) * 1rem +
+        (var(--fontSizeMax) - var(--fontSizeMin)) *
+        (100vw - var(--siteMin) * 1px) / (var(--siteMax) - var(--siteMin))
+    ),
+    calc(var(--fontSizeMax) * 1px)
+  );
 }

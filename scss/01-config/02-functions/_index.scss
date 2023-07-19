@@ -24,33 +24,4 @@
   @return #{$em * $emBase}px;
 }
 
-@function vw($px, $range: desktop) {
-  $basis: 0;
-  $max: 0;
-
-  @if $range == desktop {
-    $basis: $siteBasis--desktop;
-    $max: $siteMax--desktop;
-  } @else if $range == mobile {
-    $basis: $siteBasis--mobile;
-    $max: $siteMax--mobile;
-  }
-
-  @if $basis != 0 and $max != 0 and $px > 0 {
-    @return clamp(
-      1px,
-      #{removeUnit($px) * math.div(100, $basis)}vw,
-      #{math.div((removeUnit($px) * $max), $basis)}px
-    );
-
-    // reverse clamp for negative numbers
-  } @else if $basis != 0 and $max != 0 and $px < 0 {
-    @return clamp(
-      #{math.div((removeUnit($px) * $max), $basis)}px,
-      #{removeUnit($px) * math.div(100, $basis)}vw,
-      -1px
-    );
-  } @else {
-    @error 'Error in vw: $basis and $max must not be equal to zero. $basis: #{$basis}, $max: #{$max}';
-  }
-}
+// rip vw()

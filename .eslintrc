@@ -10,7 +10,6 @@
       "modules": true
     }
   },
-  "extends": ["eslint:recommended"],
   "ignorePatterns": ["!.*", "**/node_modules/**/*"],
   "plugins": ["unused-imports"],
   "rules": {

@@ -48,8 +48,6 @@ code {
   font-weight: 500;
   line-height: 1.3;
   width: 100%;
-
-  @include setType(14, 14, 100%);
 }
 
 #width {
@@ -65,7 +63,7 @@ code {
     font-size: rem(24);
   }
 
-  @media (min-width: 1px) and (max-width: #{($siteBasis--mobile - 1)}px) {
+  @media (min-width: 1px) and (max-width: #{($mm - 1)}px) {
     background: lightseagreen;
 
     &::before {
@@ -191,8 +189,6 @@ code {
     margin: vw(2px) vw(3px);
 
     &::before {
-      @include h6;
-
       content: 'asdfsf';
     }
   }
@@ -200,8 +196,6 @@ code {
 
 .test .btn {
   display: inline-block;
-  @include p;
-
   border-radius: 9999px;
   text-decoration: none;
   font-weight: 600;
@@ -246,4 +240,90 @@ code {
   margin-top: vw(-30px);
   margin-left: vw(-30px);
   padding: vw(10px);
+}
+
+%h-xxl {
+  --fontSize: 38;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 50;
+  }
+}
+
+%h-xl {
+  --fontSize: 33;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 43;
+  }
+}
+
+%h-l {
+  --fontSize: 28;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 35;
+  }
+}
+
+%h-m {
+  --fontSize: 24;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 29;
+  }
+}
+
+%h-s {
+  --fontSize: 21;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 24;
+  }
+}
+
+%h-xs {
+  --fontSize: 18;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 20;
+  }
+}
+
+%body-l {
+  --fontSize: 16;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 18;
+  }
+}
+
+%body-m {
+  --fontSize: 14;
+  --fontSizeMinClamp: 12;
+  @media (min-width: #{$tl}px) {
+    --fontSize: 16;
+    --fontSizeMinClamp: 14;
+  }
+}
+
+h1 {
+  @extend %h-xxl;
+}
+
+h2 {
+  @extend %h-xl;
+}
+
+h3 {
+  @extend %h-l;
+}
+
+h4 {
+  @extend %h-m;
+}
+
+h5 {
+  @extend %h-s;
+}
+
+h6 {
+  @extend %h-xs;
+}
+
+p {
+  @extend %body-m;
 }

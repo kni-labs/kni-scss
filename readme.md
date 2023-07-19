@@ -1,5 +1,7 @@
 # KNI SCSS
 
+Note: 2.0 is a very breaking change and should NOT be upgraded. Only use it for a fresh build.
+
 Our css starter pack and folder structure. The purpose of this repo is to have a single source of truth for all css used across, react, wordpress, static, or any future sites. When spinning up a new repo, please make sure it's using the latest version of this `scss` folder..
 
 ### Install
@@ -40,7 +42,7 @@ body {
   padding: 0 5%;
 
   @media (min-width: #{$tp}px) {
-    padding: 0 15vw;
+    padding: 0 15pxv;
   }
 }
 ```
@@ -54,83 +56,8 @@ Designs will have both portrait (mobile) designs and (desktop) designs delivered
 
 ### Scale Everything
 
-We're introducing a new `vw()` function which takes these sizes into account.
-
-Input:
-
-```scss
-div {
-  width: vw(320px);
-}
-```
-
-Output:
-
-```scss
-div {
-  width: 2.34375vw;
-}
-```
-
-The output becomes a flexible vw unit that changes as browser resizes. At `$siteBasis--mobile`(375px) and `siteBasis--desktop`(1280px) it should match up exactly to the comp.
-
-Use the pixel sizes you see in Figma and wrap them in this function everywhere. The exception is if you want to use actual pixels, then use `px` or `rem(px)` and it will output fixed pixel sizes.
-
-Many times you'll only need `vw()` for desktop applications (then mobile gets something like 100%), but because mobile and desktop use different `siteBasis` vars, mobile usages will need the optional mobile argument:
-
-Input:
-
-```scss
-div {
-  width: vw(30px, mobile);
-
-  @media (min-width: #{$tl}px) {
-    width:vw(30px);
-  }
-```
-
-Output:
-
-```scss
-div {
-  width: 2.34375vw;
-
-  @media (min-width: #{$tl}px) {
-    width: 2.34375vw;
-  }
-```
+pxv writeup here
 
 ### Fluid Typography
 
-We have 2 mixins to help with Fluid Typography.
-
-#### fluidType()
-
-Base mixin:
-
-```scss
-.item {
-  @include fluidType($minFontSize, $maxFontSize, $minWidth, $maxWidth);
-}
-```
-
-#### setType()
-
-This is superset of fluidType that should be used in most cases, and is great for Figma matching. Use this for fully responsive type automation. In most cases you only need to provide 2 arguments: The mobile size and the desktop size. **Note** these values are not the same as `fluidType`.
-
-```scss
-h1 {
-  @include setType(32, 48);
-}
-```
-
-Sometimes for smaller fonts you want to override the smallest size that it can go. In this case pass in the `$minClamp` argument which is the percentage the minimum font size should be compared to default size. Set it to `100%` to have it not scale any smaller than default size.
-
-```scss
-p {
-  @include setType(14, 16, $minClamp: 94%);
-}
-.eyebrow {
-  @include setType(11, 13, 100%);
-}
-```
+new responsive type writeup here
