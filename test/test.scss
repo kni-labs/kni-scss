@@ -1,3 +1,15 @@
+$ms: 320 !default; // Mobile smal
+$mm: 375 !default; // Mobile medium
+$ml: 500 !default; // Mobile large
+$ts: 600 !default; // Tablet small
+$tm: 768 !default; // Tablet medium
+$tl: 1024 !default; // Tablet large
+$dxs: $tl !default; // Desktop x-small
+$ds: 1280 !default; // Desktop small
+$dm: 1440 !default; // Desktop medium
+$dl: 1600 !default; // Desktop large
+$dxl: 1800 !default; // Desktop x-large
+
 @use 'sass:math';
 @import '../scss/global';
 
@@ -69,26 +81,34 @@ code {
     }
   }
 
-  @media (min-width: #{$mp}px) {
+  @media (min-width: #{$mm}px) {
     background: lightgoldenrodyellow;
 
     &::before {
-      content: '$mp: ';
+      content: '$mm: ';
     }
   }
 
   @media (min-width: #{$ml}px) {
-    background: lightsalmon;
+    background: yellow;
 
     &::before {
       content: '$ml: ';
     }
   }
-  @media (min-width: #{$tp}px) {
+
+  @media (min-width: #{$ts}px) {
+    background: lightsalmon;
+
+    &::before {
+      content: '$ts: ';
+    }
+  }
+  @media (min-width: #{$tm}px) {
     background: lightsteelblue;
 
     &::before {
-      content: '$tp: ';
+      content: '$tm: ';
     }
   }
   @media (min-width: #{$tl}px) {
@@ -99,11 +119,11 @@ code {
     }
   }
 
-  @media (min-width: #{$dk}px) {
+  @media (min-width: #{$dm}px) {
     background: rgb(90 216 244);
 
     &::before {
-      content: '$dk: ';
+      content: '$dm: ';
     }
   }
 
@@ -115,11 +135,11 @@ code {
     }
   }
 
-  @media (min-width: #{$lf}px) {
+  @media (min-width: #{$dxl}px) {
     background: yellow;
 
     &::before {
-      content: '$lf: ';
+      content: '$dxl: ';
     }
   }
 }
@@ -194,7 +214,7 @@ code {
   padding: vw(10px, mobile) vw(20px, mobile);
   background: darkslategray;
 
-  @media (min-width: #{$tp}px) and (max-width: #{$tl}px) {
+  @media (min-width: #{$tm}px) and (max-width: #{$tl}px) {
     padding: rem(10px) rem(20px);
   }
 
