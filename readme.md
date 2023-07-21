@@ -52,12 +52,50 @@ body {
 Designs will have both portrait (mobile) designs and (desktop) designs delivered by the design team. In general these will be the sizes
 
 - Mobile: `375px`
-- Desktop: `1280px` (Sometimes `1440px`)
+- Desktop: `1440px`
 
 ### Scale Everything
 
-pxv writeup here
+Instead of the deprecated `vw()` function we will now be using the [postcss-pxv plugin](https://github.com/kni-labs/postcss-pxv) for viewport unit conversions.
 
+input:
+```css
+div { width: 150pxv; }
+```
+
+output:
+```css
+div { width: clamp(1px, calc(150vw * (100 / var(--siteBasis))), calc(150px * var(--siteMax) / var(--siteBasis))); }
+```
 ### Fluid Typography
 
-new responsive type writeup here
+2.0 includes a completely different approach to fluid typogrpahy harnessing the power of css custom properties.
+
+Example
+
+```css
+.h-xxl {
+  --fontSize: 38;
+
+  @media (min-width: #{$tl}px) {
+    --fontSize: 50;
+  }
+}
+```
+
+Example with clamp:
+```css
+%body-m {
+  --fontSize: 14;
+  --fontSizeMinClamp: 12;
+
+  @media (min-width: #{$tl}px) {
+    --fontSize: 16;
+    --fontSizeMinClamp: 14;
+  }
+}
+```
+### Breakpoints
+
+todo
+
