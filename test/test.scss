@@ -242,58 +242,87 @@ code {
   padding: vw(10px);
 }
 
-%h-xxl {
+@mixin h-xxl {
   --fontSize: 38;
+
+  @media (min-width: #{$ts}px) and (max-width: #{tl}px) {
+    font-size: 44px;
+    border: 5px solid green;
+  }
+
   @media (min-width: #{$tl}px) {
     --fontSize: 50;
   }
 }
 
-%h-xl {
+@mixin h-xl {
   --fontSize: 33;
+
+  @media (min-width: #{$ts}px) {
+    font-size: 38px;
+  }
   @media (min-width: #{$tl}px) {
     --fontSize: 43;
   }
 }
 
-%h-l {
+@mixin h-l {
   --fontSize: 28;
+
+  @media (min-width: #{$ts}px) {
+    font-size: 31.5px;
+  }
   @media (min-width: #{$tl}px) {
     --fontSize: 35;
   }
 }
 
-%h-m {
+@mixin h-m {
   --fontSize: 24;
+
+  @media (min-width: #{$ts}px) {
+    font-size: 26.5px;
+  }
   @media (min-width: #{$tl}px) {
     --fontSize: 29;
   }
 }
 
-%h-s {
+@mixin h-s {
   --fontSize: 21;
+  @media (min-width: #{$ts}px) {
+    font-size: 22.5px;
+  }
   @media (min-width: #{$tl}px) {
     --fontSize: 24;
   }
 }
 
-%h-xs {
+@mixin h-xs {
   --fontSize: 18;
+
+  @media (min-width: #{$ts}px) {
+    font-size: 19px;
+  }
   @media (min-width: #{$tl}px) {
     --fontSize: 20;
   }
 }
 
-%body-l {
+@mixin body-l {
   --fontSize: 16;
+  @media (min-width: #{$ts}px) {
+    font-size: 17px;
+  }
   @media (min-width: #{$tl}px) {
     --fontSize: 18;
   }
 }
 
-%body-m {
+@mixin body-m {
   --fontSize: 14;
   --fontSizeMinClamp: 12;
+
   @media (min-width: #{$tl}px) {
     --fontSize: 16;
     --fontSizeMinClamp: 14;
@@ -301,29 +330,29 @@ code {
 }
 
 h1 {
-  @extend %h-xxl;
+  @include h-xxl;
 }
 
 h2 {
-  @extend %h-xl;
+  @include h-xl;
 }
 
 h3 {
-  @extend %h-l;
+  @include h-l;
 }
 
 h4 {
-  @extend %h-m;
+  @include h-m;
 }
 
 h5 {
-  @extend %h-s;
+  @include h-s;
 }
 
 h6 {
-  @extend %h-xs;
+  @include h-xs;
 }
 
 p {
-  @extend %body-m;
+  @include body-m;
 }
