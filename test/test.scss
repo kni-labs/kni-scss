@@ -245,9 +245,8 @@ code {
 @mixin h-xxl {
   --fontSize: 38;
 
-  @media (min-width: #{$ts}px) and (max-width: #{tl}px) {
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
     font-size: 44px;
-    border: 5px solid green;
   }
 
   @media (min-width: #{$tl}px) {
@@ -258,7 +257,7 @@ code {
 @mixin h-xl {
   --fontSize: 33;
 
-  @media (min-width: #{$ts}px) {
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
     font-size: 38px;
   }
   @media (min-width: #{$tl}px) {
@@ -269,7 +268,7 @@ code {
 @mixin h-l {
   --fontSize: 28;
 
-  @media (min-width: #{$ts}px) {
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
     font-size: 31.5px;
   }
   @media (min-width: #{$tl}px) {
@@ -280,7 +279,7 @@ code {
 @mixin h-m {
   --fontSize: 24;
 
-  @media (min-width: #{$ts}px) {
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
     font-size: 26.5px;
   }
   @media (min-width: #{$tl}px) {
@@ -290,7 +289,7 @@ code {
 
 @mixin h-s {
   --fontSize: 21;
-  @media (min-width: #{$ts}px) {
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
     font-size: 22.5px;
   }
   @media (min-width: #{$tl}px) {
@@ -301,7 +300,7 @@ code {
 @mixin h-xs {
   --fontSize: 18;
 
-  @media (min-width: #{$ts}px) {
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
     font-size: 19px;
   }
   @media (min-width: #{$tl}px) {
@@ -311,7 +310,7 @@ code {
 
 @mixin body-l {
   --fontSize: 16;
-  @media (min-width: #{$ts}px) {
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
     font-size: 17px;
   }
   @media (min-width: #{$tl}px) {
@@ -322,6 +321,10 @@ code {
 @mixin body-m {
   --fontSize: 14;
   --fontSizeMinClamp: 12;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 13px;
+  }
 
   @media (min-width: #{$tl}px) {
     --fontSize: 16;
