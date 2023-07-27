@@ -1,26 +1,26 @@
-@media print {
-  #__next {
-    > *:not(main) {
-      display: none;
-    }
-  }
+// @media print {
+//   #__next {
+//     > *:not(main) {
+//       display: none;
+//     }
+//   }
 
-  html,
-  body,
-  #__next {
-    height: auto;
-    overflow-y: scroll;
-  }
+//   html,
+//   body,
+//   #__next {
+//     height: auto;
+//     overflow-y: scroll;
+//   }
 
-  html body {
-    position: unset;
-    top: unset;
-    left: unset;
-    bottom: unset;
-    right: unset;
+//   html body {
+//     position: unset;
+//     top: unset;
+//     left: unset;
+//     bottom: unset;
+//     right: unset;
 
-    > *:not(#__next) {
-      display: none;
-    }
-  }
-}
+//     > *:not(#__next) {
+//       display: none;
+//     }
+//   }
+// }
