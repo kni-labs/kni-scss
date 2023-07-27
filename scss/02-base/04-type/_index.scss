@@ -51,6 +51,7 @@ blockquote {
   --fontSizeMin: calc(var(--fontSize) * var(--siteMin) / var(--siteBasis));
   --fontSizeMax: calc(var(--fontSize) * var(--siteMax) / var(--siteBasis));
   --fontSizeMinClamp: var(--fontSizeMin);
+  --fontSizeMaxClamp: var(--fontSizeMax);
 
   font-size: clamp(
     calc(var(--fontSizeMinClamp) * 1px),
@@ -59,6 +60,6 @@ blockquote {
         (var(--fontSizeMax) - var(--fontSizeMin)) *
         (100vw - var(--siteMin) * 1px) / (var(--siteMax) - var(--siteMin))
     ),
-    calc(var(--fontSizeMax) * 1px)
+    calc(var(--fontSizeMaxClamp) * 1px)
   );
 }

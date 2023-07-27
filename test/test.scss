@@ -321,9 +321,10 @@ code {
 @mixin body-m {
   --fontSize: 14;
   --fontSizeMinClamp: 12;
+  --fontSizeMaxClamp: 18;
 
   @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   @media (min-width: #{$tl}px) {
