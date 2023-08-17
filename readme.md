@@ -1,7 +1,5 @@
 # KNI SCSS
 
-Note: 2.0 is a very breaking change and should NOT be upgraded. Only use it for a fresh build.
-
 Our css starter pack and folder structure. The purpose of this repo is to have a single source of truth for all css used across, react, wordpress, static, or any future sites. When spinning up a new repo, please make sure it's using the latest version of this `scss` folder..
 
 ### Install
@@ -56,20 +54,31 @@ Designs will have both portrait (mobile) designs and (desktop) designs delivered
 
 ### Scale Everything
 
-Instead of the deprecated `vw()` function we will now be using the [postcss-pxv plugin](https://github.com/kni-labs/postcss-pxv) for viewport unit conversions.
+We will be using the [postcss-pxv plugin](https://github.com/kni-labs/postcss-pxv) for viewport unit conversions.
 
 input:
+
 ```css
-div { width: 150pxv; }
+div {
+  width: 150pxv;
+}
 ```
 
 output:
+
 ```css
-div { width: clamp(1px, calc(150vw * (100 / var(--siteBasis))), calc(150px * var(--siteMax) / var(--siteBasis))); }
+div {
+  width: clamp(
+    1px,
+    calc(150vw * (100 / var(--siteBasis))),
+    calc(150px * var(--siteMax) / var(--siteBasis))
+  );
+}
 ```
+
 ### Fluid Typography
 
-2.0 includes a completely different approach to fluid typogrpahy harnessing the power of css custom properties.
+A fluid typography approach harnessing the power of css custom properties.
 
 Example
 
@@ -84,8 +93,9 @@ Example
 ```
 
 Example with clamp:
+
 ```css
-%body-m {
+.body-m {
   --fontSize: 14;
   --fontSizeMinClamp: 12;
 
@@ -95,7 +105,3 @@ Example with clamp:
   }
 }
 ```
-### Breakpoints
-
-todo
-
