@@ -5,6 +5,7 @@ const purgeSourcemaps = require('gulp-purge-sourcemaps');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
+// TODO: postcss pxv support
 
 const sassOutDir = './test';
 const sassSrcDir = ['./test/test.scss'];
