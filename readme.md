@@ -1,6 +1,6 @@
 # KNI SCSS
 
-Our css starter pack and folder structure. The purpose of this repo is to have a single source of truth for all css used across, react, wordpress, static, or any future sites. When spinning up a new repo, please make sure it's using the latest version of this `scss` folder..
+Our css starter pack and folder structure. The purpose of this repo is to have a single source of truth for all css used across, react, wordpress, static, or any future sites. When spinning up a new repo, please make sure it's using the latest version of this `scss` folder.
 
 ### Install
 
