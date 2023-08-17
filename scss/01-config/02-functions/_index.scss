@@ -23,5 +23,3 @@
 @function px($em) {
   @return #{$em * $emBase}px;
 }
-
-// rip vw()
