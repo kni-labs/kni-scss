@@ -4,7 +4,7 @@ Our css starter pack and folder structure. The purpose of this repo is to have a
 
 ### Install
 
-This project runs on Node v16. Install Node 16 to run this project or install <a href="https://github.com/nvm-sh/nvm#install--update-script" target="_blank" rel="noopener noreferrer">NVM</a> and run `nvm install v16`. If using NVM, precede your `npm run` commands with `nvm use`.
+This project runs on Node v18. Install Node 18 to run this project or install <a href="https://github.com/nvm-sh/nvm#install--update-script" target="_blank" rel="noopener noreferrer">NVM</a> and run `nvm install v18`. If using NVM, precede your `npm run` commands with `nvm use`.
 
 Run `npm i` before running each NPM script to ensure that the project's dependencies are available and up to date.
 
@@ -135,7 +135,6 @@ p {
 }
 ```
 
-
 ### Spacing
 
 Included are some default spacing values for layouts. These can be overwritten on a project-basis, but we will mostly use these values on all projects.
@@ -155,3 +154,4 @@ $spacing-11 vw(120);
 $spacing-12: vv(160px);
 
 $spacing-default: $spacing-07;
+```
