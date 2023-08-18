@@ -105,3 +105,23 @@ Example with clamp:
   }
 }
 ```
+
+### Spacing
+
+Included are some default spacing values for layouts. These can be overwritten on a project-basis, but we will mostly use these values on all projects.
+
+```
+$spacing-01: 6pxv;
+$spacing-02: 12pxv;
+$spacing-03: 16pxv;
+$spacing-04: 34pxv;
+$spacing-05: 32pxv;
+$spacing-06: 40pxv;
+$spacing-07: 48pxv;
+$spacing-08: 64pxv;
+$spacing-09: 80pxv;
+$spacing-10: 96pxv;
+$spacing-11: 120pxv;
+$spacing-12: 160pxv;
+$spacing-default: $spacing-07;
+```
