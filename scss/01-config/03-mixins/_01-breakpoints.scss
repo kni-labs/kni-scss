@@ -1,0 +1,12 @@
+// MQ shortcuts
+@mixin desktop {
+  @media (min-width: #{$tl}px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$ml + 1}px) and (max-width: #{$tl}px) {
+    @content;
+  }
+}

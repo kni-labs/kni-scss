@@ -1,6 +1,23 @@
 *,
 *::after,
 *::before {
+  --emBase: 16;
+  --mobileMin: #{$ms};
+  --mobile: #{$mm};
+  --mobileMax: #{$ts};
+  --desktopMin: #{$tl};
+  --desktop: #{$dm};
+  --desktopMax: #{$dxl};
+  --siteMin: var(--mobileMin);
+  --siteBasis: var(--mobile);
+  --siteMax: var(--mobileMax);
+
+  @media (min-width: #{$tl}px) {
+    --siteMin: var(--desktopMin);
+    --siteBasis: var(--desktop);
+    --siteMax: var(--desktopMax);
+  }
+
   box-sizing: border-box;
   text-decoration: none;
   -webkit-overflow-scrolling: touch;
