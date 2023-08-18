@@ -36,8 +36,6 @@ code {
   font-weight: 500;
   line-height: 1.3;
   width: 100%;
-
-  @include setType(14, 14, 100%);
 }
 
 #width {
@@ -53,7 +51,7 @@ code {
     font-size: rem(24);
   }
 
-  @media (min-width: 1px) and (max-width: #{($siteBasis--mobile - 1)}px) {
+  @media (min-width: 1px) and (max-width: #{($mm - 1)}px) {
     background: lightseagreen;
 
     &::before {
@@ -69,26 +67,34 @@ code {
     }
   }
 
-  @media (min-width: #{$mp}px) {
+  @media (min-width: #{$mm}px) {
     background: lightgoldenrodyellow;
 
     &::before {
-      content: '$mp: ';
+      content: '$mm: ';
     }
   }
 
   @media (min-width: #{$ml}px) {
-    background: lightsalmon;
+    background: yellow;
 
     &::before {
       content: '$ml: ';
     }
   }
-  @media (min-width: #{$tp}px) {
+
+  @media (min-width: #{$ts}px) {
+    background: lightsalmon;
+
+    &::before {
+      content: '$ts: ';
+    }
+  }
+  @media (min-width: #{$tm}px) {
     background: lightsteelblue;
 
     &::before {
-      content: '$tp: ';
+      content: '$tm: ';
     }
   }
   @media (min-width: #{$tl}px) {
@@ -99,11 +105,11 @@ code {
     }
   }
 
-  @media (min-width: #{$dk}px) {
+  @media (min-width: #{$dm}px) {
     background: rgb(90 216 244);
 
     &::before {
-      content: '$dk: ';
+      content: '$dm: ';
     }
   }
 
@@ -115,11 +121,11 @@ code {
     }
   }
 
-  @media (min-width: #{$lf}px) {
+  @media (min-width: #{$dxl}px) {
     background: yellow;
 
     &::before {
-      content: '$lf: ';
+      content: '$dxl: ';
     }
   }
 }
@@ -171,8 +177,6 @@ code {
     margin: vw(2px) vw(3px);
 
     &::before {
-      @include h6;
-
       content: 'asdfsf';
     }
   }
@@ -180,8 +184,6 @@ code {
 
 .test .btn {
   display: inline-block;
-  @include p;
-
   border-radius: 9999px;
   text-decoration: none;
   font-weight: 600;
@@ -194,7 +196,7 @@ code {
   padding: vw(10px, mobile) vw(20px, mobile);
   background: darkslategray;
 
-  @media (min-width: #{$tp}px) and (max-width: #{$tl}px) {
+  @media (min-width: #{$tm}px) and (max-width: #{$tl}px) {
     padding: rem(10px) rem(20px);
   }
 
@@ -226,4 +228,123 @@ code {
   margin-top: vw(-30px);
   margin-left: vw(-30px);
   padding: vw(10px);
+}
+
+@mixin h-xxl {
+  --fontSize: 38;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 44px;
+  }
+
+  @media (min-width: #{$tl}px) {
+    --fontSize: 50;
+  }
+}
+
+@mixin h-xl {
+  --fontSize: 33;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 38px;
+  }
+  @media (min-width: #{$tl}px) {
+    --fontSize: 43;
+  }
+}
+
+@mixin h-l {
+  --fontSize: 28;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 31.5px;
+  }
+  @media (min-width: #{$tl}px) {
+    --fontSize: 35;
+  }
+}
+
+@mixin h-m {
+  --fontSize: 24;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 26.5px;
+  }
+  @media (min-width: #{$tl}px) {
+    --fontSize: 29;
+  }
+}
+
+@mixin h-s {
+  --fontSize: 21;
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 22.5px;
+  }
+  @media (min-width: #{$tl}px) {
+    --fontSize: 24;
+  }
+}
+
+@mixin h-xs {
+  --fontSize: 18;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 19px;
+  }
+  @media (min-width: #{$tl}px) {
+    --fontSize: 20;
+  }
+}
+
+@mixin body-l {
+  --fontSize: 16;
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 17px;
+  }
+  @media (min-width: #{$tl}px) {
+    --fontSize: 18;
+  }
+}
+
+@mixin body-m {
+  --fontSize: 14;
+  --fontSizeMinClamp: 12;
+  --fontSizeMaxClamp: 18;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: #{$tl}px) {
+    --fontSize: 16;
+    --fontSizeMinClamp: 14;
+  }
+}
+
+h1 {
+  @include h-xxl;
+}
+
+h2 {
+  @include h-xl;
+}
+
+h3 {
+  @include h-l;
+}
+
+h4 {
+  @include h-m;
+}
+
+h5 {
+  @include h-s;
+}
+
+h6 {
+  @include h-xs;
+}
+
+p {
+  @include body-m;
 }

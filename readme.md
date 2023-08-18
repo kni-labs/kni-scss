@@ -1,6 +1,6 @@
 # KNI SCSS
 
-Our css starter pack and folder structure. The purpose of this repo is to have a single source of truth for all css used across, react, wordpress, static, or any future sites. When spinning up a new repo, please make sure it's using the latest version of this `scss` folder..
+Our css starter pack and folder structure. The purpose of this repo is to have a single source of truth for all css used across, react, wordpress, static, or any future sites. When spinning up a new repo, please make sure it's using the latest version of this `scss` folder.
 
 ### Install
 
@@ -40,7 +40,7 @@ body {
   padding: 0 5%;
 
   @media (min-width: #{$tp}px) {
-    padding: 0 15vw;
+    padding: 0 15pxv;
   }
 }
 ```
@@ -50,87 +50,78 @@ body {
 Designs will have both portrait (mobile) designs and (desktop) designs delivered by the design team. In general these will be the sizes
 
 - Mobile: `375px`
-- Desktop: `1280px` (Sometimes `1440px`)
+- Desktop: `1440px`
 
 ### Scale Everything
 
-We're introducing a new `vw()` function which takes these sizes into account.
+We will be using the [postcss-pxv plugin](https://github.com/kni-labs/postcss-pxv) for viewport unit conversions.
 
-Input:
+input:
 
-```scss
+```css
 div {
-  width: vw(320px);
+  width: 150pxv;
 }
 ```
 
-Output:
+output:
 
-```scss
+```css
 div {
-  width: 2.34375vw;
+  width: clamp(
+    1px,
+    calc(150vw * (100 / var(--siteBasis))),
+    calc(150px * var(--siteMax) / var(--siteBasis))
+  );
 }
-```
-
-The output becomes a flexible vw unit that changes as browser resizes. At `$siteBasis--mobile`(375px) and `siteBasis--desktop`(1280px) it should match up exactly to the comp.
-
-Use the pixel sizes you see in Figma and wrap them in this function everywhere. The exception is if you want to use actual pixels, then use `px` or `rem(px)` and it will output fixed pixel sizes.
-
-Many times you'll only need `vw()` for desktop applications (then mobile gets something like 100%), but because mobile and desktop use different `siteBasis` vars, mobile usages will need the optional mobile argument:
-
-Input:
-
-```scss
-div {
-  width: vw(30px, mobile);
-
-  @media (min-width: #{$tl}px) {
-    width:vw(30px);
-  }
-```
-
-Output:
-
-```scss
-div {
-  width: 2.34375vw;
-
-  @media (min-width: #{$tl}px) {
-    width: 2.34375vw;
-  }
 ```
 
 ### Fluid Typography
 
-We have 2 mixins to help with Fluid Typography.
+A fluid typography approach harnessing the power of css custom properties.
 
-#### fluidType()
+Example
 
-Base mixin:
+```css
+.h-xxl {
+  --fontSize: 38;
 
-```scss
-.item {
-  @include fluidType($minFontSize, $maxFontSize, $minWidth, $maxWidth);
+  @media (min-width: #{$tl}px) {
+    --fontSize: 50;
+  }
 }
 ```
 
-#### setType()
+Example with clamp:
 
-This is superset of fluidType that should be used in most cases, and is great for Figma matching. Use this for fully responsive type automation. In most cases you only need to provide 2 arguments: The mobile size and the desktop size. **Note** these values are not the same as `fluidType`.
+```css
+.body-m {
+  --fontSize: 14;
+  --fontSizeMinClamp: 12;
 
-```scss
-h1 {
-  @include setType(32, 48);
+  @media (min-width: #{$tl}px) {
+    --fontSize: 16;
+    --fontSizeMinClamp: 14;
+  }
 }
 ```
 
-Sometimes for smaller fonts you want to override the smallest size that it can go. In this case pass in the `$minClamp` argument which is the percentage the minimum font size should be compared to default size. Set it to `100%` to have it not scale any smaller than default size.
+### Spacing
 
-```scss
-p {
-  @include setType(14, 16, $minClamp: 94%);
-}
-.eyebrow {
-  @include setType(11, 13, 100%);
-}
+Included are some default spacing values for layouts. These can be overwritten on a project-basis, but we will mostly use these values on all projects.
+
+```
+$spacing-01: 6pxv;
+$spacing-02: 12pxv;
+$spacing-03: 16pxv;
+$spacing-04: 34pxv;
+$spacing-05: 32pxv;
+$spacing-06: 40pxv;
+$spacing-07: 48pxv;
+$spacing-08: 64pxv;
+$spacing-09: 80pxv;
+$spacing-10: 96pxv;
+$spacing-11: 120pxv;
+$spacing-12: 160pxv;
+$spacing-default: $spacing-07;
 ```

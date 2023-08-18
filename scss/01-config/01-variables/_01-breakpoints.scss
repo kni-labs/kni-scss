@@ -1,25 +1,21 @@
-$ms: 320 !default; // Mobile smallest
+$ms: 320 !default; // Mobile small
 $mm: 375 !default; // Mobile medium
-$mp: 480 !default; // Mobile portrait
-$ml: 624 !default; // Mobile landscape
-$tp: 768 !default; // Tablet portrait
-$tl: 1024 !default; // Tablet landscape
-$dk: 1280 !default; // Desktop
-$dl: 1440 !default; // Desktop large
-$lf: 1600 !default; // Large format
+$ml: 500 !default; // Mobile large
+$ts: 600 !default; // Tablet small
+$tm: 768 !default; // Tablet medium
+$tl: 1024 !default; // Tablet large
+$dxs: $tl !default; // Desktop x-small
+$ds: 1280 !default; // Desktop small
+$dm: 1440 !default; // Desktop medium
+$dl: 1600 !default; // Desktop large
+$dxl: 1800 !default; // Desktop x-large
 
 $headerNavBreakpoint: $tl !default;
-$footerNavBreakpoint: $dk !default;
+$footerNavBreakpoint: $ds !default;
 $gridGutter: 5% !default;
 $gridColumns: 12 !default;
 $gridWidth: 100% - ($gridGutter * 2) !default;
 $minContentWidth: $ms !default;
-$maxContentWidth: $dk !default;
-$maxFormWidth: $tp !default;
-$maxReaderWidth: $tp !default;
-$siteMin: $ms !default;
-$siteMin--desktop: $tl !default;
-$siteBasis--mobile: $mm !default;
-$siteBasis--desktop: $dk !default;
-$siteMax--mobile: $tp !default;
-$siteMax--desktop: $dl !default;
+$maxContentWidth: $ds !default;
+$maxFormWidth: $tm !default;
+$maxReaderWidth: $tm !default;

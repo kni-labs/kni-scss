@@ -5,6 +5,8 @@ const purgeSourcemaps = require('gulp-purge-sourcemaps');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const postcsspxv = require('postcss-pxv');
 
 const sassOutDir = './test';
 const sassSrcDir = ['./test/test.scss'];
@@ -26,6 +28,7 @@ gulp.task('build-sass', async function () {
     .pipe(rename((path) => (path.basename = 'test')))
     .pipe(gulpAutoprefixer())
     .pipe(sourcemaps.write())
+    .pipe(postcss([postcsspxv]))
     .pipe(gulp.dest(sassOutDir));
 });
 

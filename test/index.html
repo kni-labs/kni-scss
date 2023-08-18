@@ -32,16 +32,7 @@
       <h6>KNI SCSS</h6>
       <ul>
         <li>
-          <a href="#em">em()</a>
-        </li>
-        <li>
-          <a href="#px">px()</a>
-        </li>
-        <li>
-          <a href="#rem">rem()</a>
-        </li>
-        <li>
-          <a href="#vw">vw()</a>
+          <a href="#pxv">pxv</a>
         </li>
         <li>
           <a href="#typography">Typography</a>
@@ -50,115 +41,24 @@
     </nav>
 
     <main>
-      <section id="em">
-        <h4>em() function</h4>
+      <section id="pxv">
+        <h4>pxv</h4>
         <hr />
-        <br />
         <article>
           <div>
-            <pre><code class="scss">.btn {
-  @include p;
-  padding: em(10px) em(20px);
-}
-</code></pre>
-          </div>
-          <br />
-          <div>
-            <div>
-              <p>
-                Use this when you want an element to scale with the nearest font
-                size near it. For example this button's padding will always be
-                porportional to the font size. In this specific case it makes
-                for less code than the vw solution.
-              </p>
-              <br />
-              <a href="#" class="btn">i'm an em-padded btn</a>
-              <a href="#" class="btn vw">vw padding</a>
-            </div>
-          </div>
-        </article>
-      </section>
 
-      <section id="px">
-        <h4>px() function</h4>
-        <hr />
-        <br />
-        <article>
-          <div>
-            <div>
-              <p>Mainly used for debugging. Talk to Cooper :p</p>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section id="rem">
-        <h4>rem() function</h4>
-        <hr />
-        <br />
-        <article>
-          <div>
-            <div>
-              <p>Convert px to rem.</p>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section id="vw">
-        <h4>vw() function</h4>
-        <hr />
-        <br />
-        <article>
-          <div>
-            <pre><code class="scss">div {
-  width: 100%;
-
-  @media (min-width: #{$tl}px) {
-    width: vw(300px);
-  }
-}</code></pre>
-          </div>
-          <br />
-          <div>
-            <p>
-              This function will allow us to input pixel sizes and output vw
-              units, which is super handy for matching Figma, while keeping all
-              elements scalable:
-            </p>
-            <br />
-            <div class="vwtest">
-              <p>
-                When your browser is at 1280px, this div will be 300px wide.
-                <br /><br />The box will keep scaling until it hits
-                $siteMax-desktop. For mobile the box is 100%.
-              </p>
-            </div>
-            <br />
-            <div>
-              <pre><code class="scss">div {
-  margin: vw(10px, mobile);
-
-  @media (min-width: #{$tl}px) {
-    margin: vw(30px);
-  }
-}</code></pre>
-            </div>
             <br />
             <p>
-              Lots of times we'll only use vw() for desktop scenarios but if you
-              need to use it during mobile, pass in a mobile argument.
+              Instead of the deprecated `vw()` function we will now be using <a href="https://github.com/kni-labs/postcss-pxv">postcss-pxv</a> for viewport unit conversions. You can read more about that <a href="https://github.com/kni-labs/postcss-pxv/blob/master/README.md">here</a>.<br><br>
             </p>
           </div>
-          <div class="vwTestContainer">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+
         </article>
       </section>
       <section id="typography">
+        <h4>Typography</h4>
+        <hr /><br>
+        <p>The way we're doing responsive typogrpahy is all new! Sorry! Writeup here. <br><br><br><br><br></p>
         <h1>h1 – This is how we CSS</h1>
 
         <pre> <code class="scss">
