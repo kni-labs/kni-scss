@@ -19,23 +19,27 @@ main {
 
   @media (min-width: #{$tl}px) {
     background: powderblue;
-    width: vw(300px);
+    width: 300pxv;
   }
 }
 
 article {
-  margin-bottom: vw(40px);
+  margin-bottom: 40pxv;
 }
 
 code {
   display: block;
   background: #1f212a;
-  padding: vw(5px) vw(10px);
-  border-radius: vw(5px);
+  padding: 10pxv;
+  border-radius: 5pxv;
   color: #fff;
   font-weight: 500;
   line-height: 1.3;
   width: 100%;
+}
+
+pre {
+  overflow-x: scroll;
 }
 
 #width {
@@ -170,11 +174,11 @@ code {
 }
 @for $i from 1 through 300 {
   .stressTest div:not(#width):nth-child(3n + #{$i}) {
-    width: vw($i * 1px);
+    width: #{$i * 1}pxv;
     border: 1px solid green;
-    height: vw($i * 0.3);
-    padding: vw(1px) vw(3px);
-    margin: vw(2px) vw(3px);
+    height: #{$i * 0.3}pxv;
+    padding: 1pxv 3pxv;
+    margin: 2pxv 3pxv;
 
     &::before {
       content: 'asdfsf';
@@ -193,15 +197,15 @@ code {
 }
 
 .test .btn.vw {
-  padding: vw(10px, mobile) vw(20px, mobile);
+  padding: 10pxv 20pxv;
   background: darkslategray;
 
   @media (min-width: #{$tm}px) and (max-width: #{$tl}px) {
-    padding: rem(10px) rem(20px);
+    padding: 10pxv 20pxv;
   }
 
   @media (min-width: #{$tl}px) {
-    padding: vw(10px) vw(20px);
+    padding: 10pxv 20pxv;
   }
 }
 
@@ -210,13 +214,13 @@ code {
 }
 
 .vwTestContainer div {
-  margin: vw(10px, mobile);
+  margin: 10pxv;
   background: #abebc6;
-  width: vw(30px, mobile);
-  height: vw(30px, mobile);
+  width: 30pxv;
+  height: 30pxv;
 
   @media (min-width: #{$tl}px) {
-    margin: vw(50px);
+    margin: 50pxv;
     background: #45b39d;
   }
 }
@@ -224,10 +228,10 @@ code {
 .negative {
   border: 2px solid mediumaquamarine;
   background: honeydew;
-  width: vw(300px);
-  margin-top: vw(-30px);
-  margin-left: vw(-30px);
-  padding: vw(10px);
+  width: 300pxv;
+  margin-top: -10pxv;
+  margin-left: -30pxv;
+  padding: 10pxv;
 }
 
 @mixin h-xxl {
@@ -321,6 +325,22 @@ code {
   }
 }
 
+@mixin body-xs {
+  --fontSize: 12;
+  --fontSizeMinClamp: 10;
+  --fontSizeMaxClamp: 12;
+
+  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: #{$tl}px) {
+    --fontSize: 12;
+    --fontSizeMinClamp: 10;
+    --fontSizeMaxClamp: 12;
+  }
+}
+
 h1 {
   @include h-xxl;
 }
@@ -347,4 +367,8 @@ h6 {
 
 p {
   @include body-m;
+}
+
+.p--xs {
+  @include body-xs;
 }
