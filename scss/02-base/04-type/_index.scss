@@ -47,7 +47,8 @@ caption,
 td,
 th,
 title,
-blockquote {
+blockquote,
+input {
   --fontSizeMin: calc(var(--fontSize) * var(--siteMin) / var(--siteBasis));
   --fontSizeMax: calc(var(--fontSize) * var(--siteMax) / var(--siteBasis));
   --fontSizeMinClamp: var(--fontSizeMin);
