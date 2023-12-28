@@ -4,8 +4,8 @@
   "description": "kni css",
   "main": "scss",
   "engines": {
-    "node": "^18.16.0",
-    "npm": "^9.5.1"
+    "node": ">=16 <21",
+    "npm": ">=8 <10"
   },
   "directories": {
     "test": "test"
