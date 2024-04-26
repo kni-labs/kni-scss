@@ -1,11 +1,11 @@
 {
   "name": "kni-scss",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "kni css",
   "main": "scss",
   "engines": {
     "node": ">=16 <21",
-    "npm": ">=8 <10"
+    "npm": ">=8 <11"
   },
   "directories": {
     "test": "test"
