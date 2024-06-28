@@ -53,6 +53,8 @@ input {
   --fontSizeMax: calc(var(--fontSize) * var(--siteMax) / var(--siteBasis));
   --fontSizeMinClamp: var(--fontSizeMin);
   --fontSizeMaxClamp: var(--fontSizeMax);
+  
+  font-weight: unset !important;
 
   font-size: clamp(
     calc(var(--fontSizeMinClamp) * 1px),
