@@ -48,6 +48,7 @@ td,
 th,
 title,
 blockquote,
+time,
 input {
   --fontSizeMin: calc(var(--fontSize) * var(--siteMin) / var(--siteBasis));
   --fontSizeMax: calc(var(--fontSize) * var(--siteMax) / var(--siteBasis));
