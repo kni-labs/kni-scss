@@ -11,17 +11,10 @@ $headingFont-regular: 400 !default;
 $headingFont-medium: 500 !default;
 $headingFont-semibold: 600 !default;
 $headingFont-bold: 700 !default;
-$bodyFont: 'Inter' !default;
-$bodyFontType: sans-serif !default;
-$headingFont: 'Inter' !default;
-$headingFontType: sans-serif !default;
 /* stylelint-disable value-keyword-case */
-$bodyFontStack: $bodyFont, $bodyFontType, -apple-system, BlinkMacSystemFont,
-  'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$bodyFontStack: -apple-system, BlinkMacSystemFont, 'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 /* stylelint-enable value-keyword-case */
 /* stylelint-disable value-keyword-case */
-$headingFontStack: $headingFont, $headingFontType, -apple-system,
-  BlinkMacSystemFont, 'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji',
-  'Segoe UI Symbol' !default;
+$headingFontStack: -apple-system, BlinkMacSystemFont, 'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 /* stylelint-disable enable-keyword-case */
 $font-path: '/fonts/' !default;
