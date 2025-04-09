@@ -1,6 +1,6 @@
 {
   "name": "kni-scss",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "kni css",
   "main": "scss",
   "engines": {
