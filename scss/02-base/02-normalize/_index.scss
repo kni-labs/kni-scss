@@ -136,11 +136,6 @@ fieldset {
 
 a {
   cursor: pointer;
-  transition: $globalTransition;
-
-  &:hover {
-    transition: $globalTransition;
-  }
 }
 
 nav {
