@@ -1,2 +1,19 @@
-@import '01-config/index';
-@import '02-base/index';
+// ==========================================================================
+// 🚀 GLOBAL.SCSS
+// Repo-only test harness
+// Compiles everything in canonical order to validate structure
+// - Never copied into projects
+// ==========================================================================
+
+@use "site/01-config" as *;       // Config first (tokens, settings)
+@use "engine/core" as *;          // Engine core reset, functions, mixins
+@use "site/02-base" as *;         // Base styles (colors, typography, layout)
+@use "site/03-components" as *;   // Components (buttons, cards, forms, etc.)
+@use "site/04-modules" as *;      // Modules (header, footer, sections)
+@use "site/05-pages" as *;        // Page-level overrides
+
+// Engine utilities (optional, last)
+@use "engine/utilities/display" as *;
+@use "engine/utilities/dev" as *;
+@use "engine/utilities/spacing" as *;
+@use "engine/utilities/flex" as *;
