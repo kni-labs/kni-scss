@@ -1,1 +1,9 @@
-// ✍️ Site Typography — heading/body tokens and type rules
+@use '../../engine/core' as *; // ✅ pulls in mixins
+@use '../01-config' as *; // config vars
+
+/* Typography stuff */
+
+// Fluid type
+// @include fluid-type-elements {
+//   font-size: var(--fluidType);
+// }

@@ -1,1 +1,7 @@
-// 🧩 Engine Mixins — buttons, breakpoints, reusable patterns
+/* 🧩 Engine Mixins — buttons, breakpoints, reusable patterns */
+
+@mixin fluid-type-elements {
+  :where(#{$fluid-type-elements}) {
+    @content;
+  }
+}

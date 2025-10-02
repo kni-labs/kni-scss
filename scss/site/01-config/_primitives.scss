@@ -1,1 +1,14 @@
-// 🎨 Site Primitives — low-level values (base units, z-index scale)
+// Site Primitives — Probably don't edit these directly
+:root {
+  --fontMinClamp: 10px;
+  --fontMaxClamp: 9999px;
+  --fontSize: 16pxv; /* change to px to turn off fluid type */
+}
+
+$fluid-type-elements: 'tt', 'i', 'b', 'big', 'small', 'em', 'strong', 'dfn',
+  'code', 'samp', 'kbd', 'var', 'cite', 'abbr', 'acronym', 'sub', 'sup', 'span',
+  'bdo', 'q', 'ins', 'del', 'time', 'mark', 'address', 'div', 'p', 'pre',
+  'blockquote', 'figcaption', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'dt', 'dd',
+  'li', 'caption', 'td', 'th', 'label', 'option', 'textarea', 'fieldset',
+  'legend', 'button', 'input', 'select', 'section', 'article', 'aside', 'main',
+  'nav', 'summary';

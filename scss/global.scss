@@ -1,19 +1,21 @@
-// ==========================================================================
-// 🚀 GLOBAL.SCSS
-// Repo-only test harness
-// Compiles everything in canonical order to validate structure
-// - Never copied into projects
-// ==========================================================================
+// global.scss (repo-only)
 
-@use "site/01-config" as *;       // Config first (tokens, settings)
-@use "engine/core" as *;          // Engine core reset, functions, mixins
-@use "site/02-base" as *;         // Base styles (colors, typography, layout)
-@use "site/03-components" as *;   // Components (buttons, cards, forms, etc.)
-@use "site/04-modules" as *;      // Modules (header, footer, sections)
-@use "site/05-pages" as *;        // Page-level overrides
+// Config
+@forward 'site/01-config';
 
-// Engine utilities (optional, last)
-@use "engine/utilities/display" as *;
-@use "engine/utilities/dev" as *;
-@use "engine/utilities/spacing" as *;
-@use "engine/utilities/flex" as *;
+// Engine
+@forward 'engine/core';
+
+// Base
+@forward 'site/02-base';
+
+// Components, Modules, Pages
+@forward 'site/03-components';
+@forward 'site/04-modules';
+@forward 'site/05-pages';
+
+// Utilities
+@forward 'engine/utilities/display';
+@forward 'engine/utilities/dev';
+@forward 'engine/utilities/spacing';
+@forward 'engine/utilities/flex';
