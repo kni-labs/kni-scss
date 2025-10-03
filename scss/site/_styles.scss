@@ -1,19 +1,23 @@
 // Config
-@use 'site/01-config' as *;
+@use '01-config' as *;
 
 // Engine
 @use 'kni-scss/engine/core' as *;
 
 // Base
-@use 'site/02base' as *;
+@use '02-base' as *;
 
 // Components, Modules, Pages
-@use 'site/03-components' as *;
-@use 'site/04-modules' as *;
-@use 'site/05-pages' as *;
+@use '03-components' as *;
+@use '04-modules' as *;
+@use '05-pages' as *;
 
 // Optional Utilities (only include what you need)
 @use 'kni-scss/engine/utilities/display' as *;
 @use 'kni-scss/engine/utilities/dev' as *;
 @use 'kni-scss/engine/utilities/spacing' as *;
 @use 'kni-scss/engine/utilities/flex' as *;
+
+body {
+  background: teal;
+}

@@ -1,5 +1,5 @@
-@use 'utilities' as *;
-@use 'display' as *;
-@use 'dev' as *;
-@use 'flex' as *;
-@use 'spacing' as *;
+@forward 'utilities';
+@forward 'display';
+@forward 'dev';
+@forward 'flex';
+@forward 'spacing';

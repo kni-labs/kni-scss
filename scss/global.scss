@@ -1,21 +1,12 @@
 // global.scss (repo-only)
 
-// Config
-@forward 'site/01-config';
-
-// Engine
-@forward 'engine/core';
-
-// Base
-@forward 'site/02-base';
-
-// Components, Modules, Pages
-@forward 'site/03-components';
-@forward 'site/04-modules';
-@forward 'site/05-pages';
-
-// Utilities
-@forward 'engine/utilities/display';
-@forward 'engine/utilities/dev';
-@forward 'engine/utilities/spacing';
-@forward 'engine/utilities/flex';
+@forward './site/01-config';
+@forward './engine/core';
+@forward './site/02-base';
+@forward './site/03-components';
+@forward './site/04-modules';
+@forward './site/05-pages';
+@forward './engine/utilities/display';
+@forward './engine/utilities/dev';
+@forward './engine/utilities/spacing';
+@forward './engine/utilities/flex';

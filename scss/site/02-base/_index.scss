@@ -1,7 +1,7 @@
-@use 'colors' as *;
-@use 'fonts' as *;
-@use 'typography' as *;
-@use 'functions' as *;
-@use 'mixins' as *;
-@use 'layout' as *;
-@use 'utilities' as *;
+@forward 'colors';
+@forward 'fonts';
+@forward 'typography';
+@forward 'functions';
+@forward 'mixins';
+@forward 'layout';
+@forward 'utilities';

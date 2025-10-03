@@ -2,13 +2,12 @@
 @use '../scss/global' as *;
 
 body {
-  border: 32pxv solid tomato;
+  border: 152pxv solid tomato;
 }
 
 * {
-  transition: all .3s $easing;
+  transition: all 0.3s $easing;
 }
-
 
 // :where(h1, h2, h3, h4, h5, h6, p, small) {
 //   font-size: clamp(
@@ -18,11 +17,12 @@ body {
 //   );
 // }
 
-html, html * {
+html,
+html * {
   font-size: clamp(
     var(--fontMinClamp),
-    var(--fontSize), /* already expanded to calc(...pxvUnit) */
-    var(--fontMaxClamp)
+    var(--fontSize),
+    /* already expanded to calc(...pxvUnit) */ var(--fontMaxClamp)
   );
 }
 
@@ -32,9 +32,6 @@ h1 {
   --fontSize: 50pxv; /* author-friendly syntax */
 }
 
-
-
-
 // /* Set once — everything inherits */
 // html {
 //   font-size: var(--fluidType);
@@ -42,14 +39,12 @@ h1 {
 
 /* Override only the middle number per element */
 
-
- @media (min-width: 600px) {
-    :root {
-      --siteBasis: 1440;
-      --siteMax: 1800;
-    }
+@media (min-width: 600px) {
+  :root {
+    --siteBasis: 1440;
+    --siteMax: 1800;
   }
-
+}
 
 /* This will appear in the compiled CSS */
 
