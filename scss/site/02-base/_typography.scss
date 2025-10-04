@@ -1,9 +1,36 @@
-@use '../../engine/core' as *; // ✅ pulls in mixins
-@use '../01-config' as *; // config vars
+// -----------------------------------------------------------------------------
+// 🧩  Typography Settings
+// -----------------------------------------------------------------------------
 
-/* Typography stuff */
+:root {
+  /* Base type scale */
+  --font-size: var(--default-font-size); // Set to 16px to turn off fluid type
+  --line-height-body: 1.5;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 
-// Fluid type
-// @include fluid-type-elements {
-//   font-size: var(--fluidType);
-// }
+  /* Role-specific sizes */
+  --font-size-h1: 72pxv;
+  --font-size-h2: 56pxv;
+  --font-size-h3: 40pxv;
+  --font-size-h4: 32pxv;
+  --font-size-h5: 24pxv;
+  --font-size-h6: 18pxv;
+}
+
+// -----------------------------------------------------------------------------
+// 🧩  Fluid Type Baseline (System Rule)
+// Probably dont edit this
+// -----------------------------------------------------------------------------
+html,
+html :where(*, input, button, select, textarea, fieldset, legend) {
+  font-size: clamp(
+    var(--font-min-clamp),
+    var(--font-size),
+    var(--font-max-clamp)
+  );
+}
+
+body {
+  margin-left: 50pxv;
+}

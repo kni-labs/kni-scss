@@ -14,7 +14,8 @@
 }
 
 body {
-  border: 28pxv solid cadetblue;
+  border: 28pxv solid coral;
+  background: #fff;
 }
 
 // :where(h1, h2, h3, h4, h5, h6, p, small) {
@@ -25,19 +26,15 @@ body {
 //   );
 // }
 
-html,
-html * {
-  font-size: clamp(
-    var(--fontMinClamp),
-    var(--fontSize),
-    /* already expanded to calc(...pxvUnit) */ var(--fontMaxClamp)
-  );
+h1 {
+  --font-min-clamp: 48px;
+  --font-max-clamp: 52px;
+  --font-size: 50pxv; /* author-friendly syntax */
 }
 
-h1 {
-  --fontMinClamp: 48px;
-  --fontMaxClamp: 52px;
-  --fontSize: 50pxv; /* author-friendly syntax */
+h2 {
+  --font-min-clamp: 68px;
+  --font-size: 70pxv; /* author-friendly syntax */
 }
 
 // /* Set once — everything inherits */
