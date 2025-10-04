@@ -1,13 +1,15 @@
-// -----------------------------------------------------------------------------
-// 🧩  Typography Settings
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// 📄 _typography.scss
+// Site specific typography settings and custom styles
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+// 🎛 Base Typography Tokens
 // -----------------------------------------------------------------------------
 
 :root {
   /* Base type scale */
-  --font-size: var(--default-font-size); // Set to 16px to turn off fluid type
-  --line-height-body: 1.5;
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
+  --font-size: 16pxv; // 🪄 Set to 16px to turn off fluid type
+  --default-line-height-body: 1.5;
 
   /* Role-specific sizes */
   --font-size-h1: 72pxv;
@@ -18,9 +20,7 @@
   --font-size-h6: 18pxv;
 }
 
-// -----------------------------------------------------------------------------
-// 🧩  Fluid Type Baseline (System Rule)
-// Probably dont edit this
+// 🧩  Fluid Type Baseline (Probably dont touch this)
 // -----------------------------------------------------------------------------
 html,
 html :where(*, input, button, select, textarea, fieldset, legend) {
@@ -31,6 +31,5 @@ html :where(*, input, button, select, textarea, fieldset, legend) {
   );
 }
 
-body {
-  margin-left: 50pxv;
-}
+// ✏️  Custom type styles – write your css here
+// -----------------------------------------------------------------------------

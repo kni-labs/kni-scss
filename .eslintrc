@@ -15,7 +15,7 @@
   "plugins": ["unused-imports"],
   "rules": {
     "@next/next/no-img-element": "off",
-    "camelcase": "error",
+    // "camelcase": "error",
     "eqeqeq": "error",
     "no-duplicate-imports": "error",
     "no-empty-function": "error",

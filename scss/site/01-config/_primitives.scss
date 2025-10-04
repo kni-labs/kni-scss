@@ -16,4 +16,9 @@
     calc((100 / var(--site-basis)) * 1vw),
     calc(1px * var(--site-max) / var(--site-basis))
   );
+
+  // system font stack
+  --font-family-system: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+    helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
 }
