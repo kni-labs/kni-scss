@@ -4,4 +4,16 @@
   --default-font-size: 16pxv;
   --font-min-clamp: 10px;
   --font-max-clamp: 9999px;
+
+  // pxv defaults - mobile first
+  --site-min: 0;
+  --site-basis: 375;
+  --site-max: 767;
+
+  // pxv unit
+  --pxv-unit: clamp(
+    calc(1px * var(--site-min) / var(--site-basis)),
+    calc((100 / var(--site-basis)) * 1vw),
+    calc(1px * var(--site-max) / var(--site-basis))
+  );
 }

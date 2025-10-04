@@ -1,2 +1,18 @@
 /* 📦 Site Layout — container widths, breakpoints, grid setup
  */
+
+// default mobile pxv units
+:root {
+  --site-min: 0;
+  --site-basis: 375;
+  --site-max: 767;
+}
+
+// Primary responsive engine
+@media (min-width: 768px) {
+  :root {
+    --site-min: 768;
+    --site-basis: 1400;
+    --site-max: 1800;
+  }
+}

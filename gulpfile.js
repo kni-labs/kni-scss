@@ -6,13 +6,14 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const postcsspxv = require('postcss-pxv');
 const browserSync = require('browser-sync').create();
+const insert = require('gulp-insert'); // 👈 inject CSS rule
 const {exec} = require('child_process'); // stylelint via CLI
 
 // --------------------------
 // Paths
 // --------------------------
 const sassOutDir = './test'; // compiled CSS lives here
-const sassSrcDir = ['./test/styles.scss']; // ✅ renamed entry point
+const sassSrcDir = ['./test/styles.scss']; // entry point
 const sassWatchDir = ['./scss/**/*.scss', './test/**/*.scss'];
 const htmlWatchDir = './test/**/*.html';
 
@@ -35,15 +36,46 @@ gulp.task('lint-css', function (done) {
 // --------------------------
 gulp.task('build-sass', async function () {
   return await gulp
-    .src(sassSrcDir) // input: styles.scss
+    .src(sassSrcDir)
     .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    .pipe(postcss([postcsspxv]))
+    .pipe(
+      postcss([
+        postcsspxv({
+          siteMin: 0,
+          siteBasis: 375,
+          siteMax: 767,
+          vars: {
+            min: '--site-min',
+            basis: '--site-basis',
+            max: '--site-max',
+            unit: '--pxv-unit',
+          },
+          writeVars: false, // set to true if you want :root vars injected
+        }),
+      ])
+    )
     .pipe(gulpAutoprefixer())
-    .pipe(sourcemaps.write('./', {includeContent: true, sourceRoot: '../scss'}))
-    .pipe(gulp.dest(sassOutDir)) // output: styles.css + styles.css.map
-    .pipe(browserSync.stream()) // live-inject CSS
+
+    // 👇 inject test-only transition rule at the end of CSS
+    .pipe(
+      insert.append(`
+        /* injected by gulp for dev testing */
+        * {
+          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+      `)
+    )
+
+    .pipe(
+      sourcemaps.write('./', {
+        includeContent: true,
+        sourceRoot: '../scss',
+      })
+    )
+    .pipe(gulp.dest(sassOutDir))
+    .pipe(browserSync.stream())
     .on('end', () =>
       console.log(
         '✅ Built styles.scss → test/styles.css with sourcemaps + live reload'

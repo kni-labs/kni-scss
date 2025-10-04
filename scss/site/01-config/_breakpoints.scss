@@ -1,1 +1,22 @@
-// Breakpoint settings
+// Breakpoint default tokens - probably dont edit these
+
+$ms: 320 !default; // Mobile small
+$mm: 375 !default; // Mobile medium
+$ml: 500 !default; // Mobile large
+$ts: 600 !default; // Tablet small
+$tm: 768 !default; // Tablet medium
+$tl: 1024 !default; // Tablet large
+$dxs: $tl !default; // Desktop x-small
+$ds: 1280 !default; // Desktop small
+$dm: 1440 !default; // Desktop medium
+$dl: 1600 !default; // Desktop large
+$dxl: 1800 !default; // Desktop x-large
+
+// default pxv basis
+
+:root {
+  --site-mobile-max: #{$tl - 1};
+  --site-desktop-max: #{$dxl};
+}
+
+// See layout/_container.scss for usage examples

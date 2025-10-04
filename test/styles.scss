@@ -9,22 +9,10 @@
 @use '../scss/engine/utilities/spacing' as *;
 @use '../scss/engine/utilities/flex' as *;
 
-* {
-  transition: all 0.3s $easing;
-}
-
 body {
-  border: 28pxv solid coral;
+  border: 32pxv solid paleturquoise;
   background: #fff;
 }
-
-// :where(h1, h2, h3, h4, h5, h6, p, small) {
-//   font-size: clamp(
-//     var(--fontMinClamp),
-//     var(--fontSize), /* already expanded to calc(...pxvUnit) */
-//     var(--fontMaxClamp)
-//   );
-// }
 
 h1 {
   --font-min-clamp: 48px;
@@ -35,20 +23,6 @@ h1 {
 h2 {
   --font-min-clamp: 68px;
   --font-size: 70pxv; /* author-friendly syntax */
-}
-
-// /* Set once — everything inherits */
-// html {
-//   font-size: var(--fluidType);
-// }
-
-/* Override only the middle number per element */
-
-@media (min-width: 600px) {
-  :root {
-    --siteBasis: 1440;
-    --siteMax: 1800;
-  }
 }
 
 /* This will appear in the compiled CSS */
