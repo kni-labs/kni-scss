@@ -1,34 +1,48 @@
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 // 📄 _typography.scss
-// Site specific typography settings and custom styles
+// Typography settings and custom styles
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-// 🎛 Base Typography Tokens
+// ⚙️ Base Typography Tokens
 // -----------------------------------------------------------------------------
 
 :root {
   /* Base type scale */
-  --font-size: 16pxv; // 🪄 Set to 16px to turn off fluid type
-  --default-line-height-body: 1.5;
-
-  /* Role-specific sizes */
-  --font-size-h1: 72pxv;
-  --font-size-h2: 56pxv;
-  --font-size-h3: 40pxv;
-  --font-size-h4: 32pxv;
-  --font-size-h5: 24pxv;
-  --font-size-h6: 18pxv;
+  --font-size: 16pxv; // Set to 16px to turn off fluid type
+  --line-height: 1.5;
+  --line-height-heading: var(--line-height);
+  --letter-spacing: normal;
+  --type-margin: 10pxv; // todo: replace with spacing var
+  --heading-type-margin: var(--type-margin);
 }
 
-// 🧩  Fluid Type Baseline (Probably dont touch this)
+// 🧩  Type system
 // -----------------------------------------------------------------------------
-html,
-html :where(*, input, button, select, textarea, fieldset, legend) {
+
+html {
+  // ☠️ Danger zone - fluid type baseline – probably don't touch this
   font-size: clamp(
     var(--font-min-clamp),
     var(--font-size),
     var(--font-max-clamp)
   );
+
+  // Edit these per project
+  font-family: var(--font-family-system);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+}
+
+// Rules for all text elements. :where means it has specificity of 0
+// so easy to override
+:where(p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote, pre, figure) {
+  margin-block-end: var(--type-margin);
+}
+
+// Header specific styles
+:where(h1, h2, h3, h4, h5, h6) {
+  line-height: 1.2;
+  margin-bottom: var(--heading-type-margin);
 }
 
 // ✏️  Custom type styles – write your css here
