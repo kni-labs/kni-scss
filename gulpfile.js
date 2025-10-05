@@ -16,16 +16,34 @@ const sassOutDir = './test'; // compiled CSS lives here
 const sassSrcDir = ['./test/styles.scss']; // entry point
 const sassWatchDir = ['./scss/**/*.scss', './test/**/*.scss'];
 const htmlWatchDir = './test/**/*.html';
-
+const colors = require('ansi-colors');
 // --------------------------
 // Lint SCSS (non-blocking)
 // --------------------------
-gulp.task('lint-css', function (done) {
+
+
+gulp.task('lint-css-fix', function (done) {
   exec(
-    'npx stylelint "scss/**/*.scss" "test/**/*.scss" --formatter=string',
+    'npx stylelint "scss/**/*.scss" "test/**/*.scss" --config .stylelintrc --fix --formatter string',
     function (err, stdout, stderr) {
-      if (stdout) console.log(stdout);
-      if (stderr) console.error(stderr);
+      if (stdout) {
+        // Highlight key tokens
+        const coloredOutput = stdout
+          .replace(/✖/g, colors.red('✖'))
+          .replace(/⚠️/g, colors.yellow('⚠️'))
+          .replace(/\.scss/g, colors.cyan('.scss'))
+          .replace(/\(\S+\)/g, match => colors.dim(match)); // rule name in dim gray
+        console.log(coloredOutput);
+      }
+
+      if (stderr) console.error(colors.red(stderr));
+
+      if (err) {
+        console.log(colors.yellow('⚠️  Stylelint fixed some issues (non-blocking)'));
+      } else {
+        console.log(colors.green('✅  Stylelint clean — all formatting issues resolved'));
+      }
+
       done();
     }
   );
@@ -86,19 +104,19 @@ gulp.task('build-sass', async function () {
 // --------------------------
 // Serve + Watch
 // --------------------------
-gulp.task('serve', function () {
+gulp.task('serve', gulp.series('lint-css-fix', function () {
   browserSync.init({
     server: {baseDir: './test'},
     open: false,
     notify: false,
   });
 
-  gulp.watch(sassWatchDir, gulp.series('lint-css', 'build-sass'));
+  gulp.watch(sassWatchDir, gulp.series('lint-css-fix', 'build-sass'));
   gulp.watch(htmlWatchDir).on('change', browserSync.reload);
-});
+}));
 
 // --------------------------
 // Tasks
 // --------------------------
-gulp.task('build', gulp.series('lint-css', 'build-sass'));
+gulp.task('build', gulp.series('lint-css-fix', 'build-sass'));
 gulp.task('default', gulp.series('serve'));
