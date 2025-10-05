@@ -1,5 +1,11 @@
-// Breakpoint default tokens - probably dont edit these
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// 📄 _breakpoints.scss
+// Breakpoint definitions for responsive design
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
+// 🧩  Breakpoints Primitives - Probably dont edit these
+//     But feel free to roll your own media queries with them
+// -----------------------------------------------------------------------------
 $ms: 320 !default; // Mobile small
 $mm: 375 !default; // Mobile medium
 $ml: 500 !default; // Mobile large
@@ -12,11 +18,50 @@ $dm: 1440 !default; // Desktop medium
 $dl: 1600 !default; // Desktop large
 $dxl: 1800 !default; // Desktop x-large
 
-// default pxv basis
+// ⚙️  Responsive settings
+// -----------------------------------------------------------------------------
+
+$desktop-max: 1800; // This gets edited often
 
 :root {
-  --site-mobile-max: #{$tm - 1};
-  --site-desktop-max: #{$dxl};
+  // pxv defaults
+  --mobile-min: 0;
+  --mobile-basis: 375; // Figma mobile
+  --mobile-max: 767;
+  --desktop-min: 768;
+  --desktop-basis: 1440; // Figma desktop
+  --desktop-max: #{$desktop-max};
+
+  // pxv unit - dont edit
+  --site-min: var(--mobile-min);
+  --site-basis: var(--mobile-basis);
+  --site-max: var(--mobile-max);
 }
 
-// See layout/_container.scss for usage examples
+// 🛠️  Media Queries
+//    "sm" and "lg" should handle 95% of use cases. Feel free to add "med"
+//    roll your own per project!
+// -----------------------------------------------------------------------------
+
+// "Mobile" sizes
+@mixin sm {
+  @media (max-width: #{$tm - 1}px) {
+    @content;
+  }
+}
+
+// "Desktop" sizes
+@mixin lg {
+  @media (min-width: #{$tm}px) {
+    @content;
+  }
+}
+
+// "Desktop" sizes
+@mixin max {
+  @media (min-width: #{$desktop-max}px) {
+    @content;
+  }
+}
+
+// Roll your own here

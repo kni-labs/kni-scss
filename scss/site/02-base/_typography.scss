@@ -10,7 +10,7 @@
   /* Base type scale */
   --font-size: 16pxv; // Set to 16px to turn off fluid type
   --line-height: 1.5;
-  --line-height-heading: var(--line-height);
+  --text-wrap: pretty;
   --letter-spacing: normal;
   --type-margin: 10pxv; // todo: replace with spacing var
   --heading-type-margin: var(--type-margin);
@@ -36,6 +36,7 @@ html {
 // Rules for all text elements. :where means it has specificity of 0
 // so easy to override
 :where(p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote, pre, figure) {
+  text-wrap: var(--text-wrap);
   margin-block-end: var(--type-margin);
 }
 
