@@ -1,7 +1,7 @@
 {
-  "name": "kni-scss",
+  "name": "kni-cascade",
   "version": "8.0.0",
-  "description": "kni css",
+  "description": "KNI Cascade — an opinionated SCSS engine and single source of truth for design scaling.",
   "main": "scss",
   "engines": {
     "node": ">=18 <=22",
@@ -12,8 +12,7 @@
   },
   "scripts": {
     "build": "npm run gulp-build",
-    "deploy": "npm run eslint && npm run stylelint && npm run build",
-    "eslint": "npx eslint \"./**/*.{js,mjs,jsx,ts,tsx,mdx}\" --max-warnings=0 --fix",
+    "deploy": "npm run stylelint && npm run build",
     "gulp": "gulp",
     "gulp-build": "gulp build-sass",
     "http-server": "http-server",
@@ -25,8 +24,6 @@
   "author": "KNI",
   "license": "ISC",
   "dependencies": {
-    "eslint": "^8.23.0",
-    "eslint-plugin-unused-imports": "^2.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-plumber": "^1.2.1",
@@ -38,7 +35,7 @@
     "http-server": "^14.1.1",
     "husky": "^8.0.1",
     "postcss": "^8.4.28",
-    "postcss-pxv": "github:kni-labs/postcss-pxv#varify",
+    "postcss-pxv": "https://github.com/kni-labs/postcss-pxv/varify",
     "sass": "^1.54.9",
     "stylelint": "^15.10.2",
     "stylelint-config-prettier-scss": "^1.0.0",

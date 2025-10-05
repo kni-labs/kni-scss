@@ -1,8 +1,11 @@
 /* 📦 Site Layout — container widths, breakpoints, grid setup
  */
 
-// default mobile pxv units
 :root {
+  --site-desktop-max: 1800;
+
+  // default mobile pxv units
+  --site-mobile-max: 767;
   --site-min: 0;
   --site-basis: 375;
   --site-max: 767;

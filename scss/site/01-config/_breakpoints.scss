@@ -15,7 +15,7 @@ $dxl: 1800 !default; // Desktop x-large
 // default pxv basis
 
 :root {
-  --site-mobile-max: #{$tl - 1};
+  --site-mobile-max: #{$tm - 1};
   --site-desktop-max: #{$dxl};
 }
 
