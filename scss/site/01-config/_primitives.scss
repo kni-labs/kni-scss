@@ -1,14 +1,8 @@
 // Site Primitives — Probably don't edit these directly
 
 :root {
-  --default-font-size: 16pxv;
   --font-min-clamp: 12px;
   --font-max-clamp: 9999px;
-
-  // pxv defaults - mobile first
-  --site-min: 0;
-  --site-basis: 375;
-  --site-max: 767;
 
   // pxv unit
   --pxv-unit: clamp(

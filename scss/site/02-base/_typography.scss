@@ -8,12 +8,13 @@
 
 :root {
   /* Base type scale */
+  --font-min-clamp: 12px; // forced min-size for all type
+  --font-max-clamp: 9999px; // no touch
   --font-size: 16pxv; // Set to 16px to turn off fluid type
   --line-height: 1.5;
   --text-wrap: pretty;
-  --letter-spacing: normal;
+  --letter-spacing: normal; // 0.01em etc - match figma
   --type-margin: 10pxv; // todo: replace with spacing var
-  --heading-type-margin: var(--type-margin);
 }
 
 // 🧩  Type system
@@ -31,6 +32,7 @@ html {
   font-family: var(--font-family-system);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
+  text-wrap: var(--text-wrap);
 }
 
 // Rules for all text elements. :where means it has specificity of 0
@@ -43,7 +45,7 @@ html {
 // Header specific styles
 :where(h1, h2, h3, h4, h5, h6) {
   line-height: 1.2;
-  margin-bottom: var(--heading-type-margin);
+  margin-bottom: var(--type-margin);
 }
 
 // ✏️  Custom type styles – write your css here
