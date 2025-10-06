@@ -1,9 +1,9 @@
-// Site Primitives — Probably don't edit these directly
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// 📄 _primitives.scss
+// Site design primitives and root variables. Probably don't edit these directly
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 :root {
-  --font-min-clamp: 12px;
-  --font-max-clamp: 9999px;
-
   // pxv unit
   --pxv-unit: clamp(
     calc(1px * var(--site-min) / var(--site-basis)),

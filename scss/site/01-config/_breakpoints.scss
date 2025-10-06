@@ -4,7 +4,6 @@
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 // 🧩  Breakpoints Primitives - Probably dont edit these
-//     But feel free to roll your own media queries with them
 // -----------------------------------------------------------------------------
 $ms: 320 !default; // Mobile small
 $mm: 375 !default; // Mobile medium
@@ -17,6 +16,9 @@ $ds: 1280 !default; // Desktop small
 $dm: 1440 !default; // Desktop medium
 $dl: 1600 !default; // Desktop large
 $dxl: 1800 !default; // Desktop x-large
+
+// sample mq
+// @media (min-width: #{$tm}) {}
 
 // ⚙️  Responsive settings
 // -----------------------------------------------------------------------------
@@ -32,7 +34,7 @@ $desktop-max: 1800; // This gets edited often
   --desktop-basis: 1440; // Figma desktop
   --desktop-max: #{$desktop-max};
 
-  // pxv unit - dont edit
+  // This powers the pxv unit - do not edit
   --site-min: var(--mobile-min);
   --site-basis: var(--mobile-basis);
   --site-max: var(--mobile-max);
@@ -40,7 +42,7 @@ $desktop-max: 1800; // This gets edited often
 
 // 🛠️  Media Queries
 //    "sm" and "lg" should handle 95% of use cases. Feel free to add "med"
-//    roll your own per project!
+//    or roll your own per project!
 // -----------------------------------------------------------------------------
 
 // "Mobile" sizes
@@ -57,7 +59,7 @@ $desktop-max: 1800; // This gets edited often
   }
 }
 
-// "Desktop" sizes
+// "Above max" sizes
 @mixin max {
   @media (min-width: #{$desktop-max}px) {
     @content;
