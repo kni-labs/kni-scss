@@ -1,6 +1,6 @@
 # KNI Cascade
 
-A modern, modular front-end architecture creating a single source of truth for all our css - across WP, React, static, or any future build.
+A modern front-end architecture creating a single source of truth for all our css - across WP, React, static, or any future builds.
 
 We package:
 - **Sass** for CSS folder architecture + clean DX
