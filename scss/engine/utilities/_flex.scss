@@ -1,1 +1,73 @@
-/* 🔄 Engine Utility: Flexbox utilities */
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// 📄 _flex.scss
+// Standard flexbox utlity classes — Louie and Trevor own these
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+.flex {
+  display: flex;
+
+  &.inline-flex {
+    display: inline-flex;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  $justify: (
+    j-sb: space-between,
+    j-c: center,
+    j-start: flex-start,
+    j-end: flex-end,
+  );
+  @each $class, $value in $justify {
+    &.#{$class} {
+      justify-content: $value;
+    }
+  }
+
+  $align: (
+    a-c: center,
+    a-start: flex-start,
+    a-end: flex-end,
+    a-stretch: stretch,
+  );
+  @each $class, $value in $align {
+    &.#{$class} {
+      align-items: $value;
+    }
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.column-mobile {
+    @include bb {
+      flex-direction: column;
+    }
+  }
+
+  &.column-mobile-reverse {
+    @include bb {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &.row-desktop-reverse {
+    @include baa {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.a-start-mobile {
+    @include bb {
+      align-items: flex-start;
+    }
+  }
+}

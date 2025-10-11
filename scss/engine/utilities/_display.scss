@@ -1,1 +1,54 @@
-/* 👁️ Engine Utility: Display helpers (.hidden, .sr-only) */
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// 📄 _display.scss
+// General Layout utility classes - Trevor/Louie ownership
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+.desktop-only {
+  @include bb {
+    display: none;
+  }
+}
+
+.mobile-only {
+  @include baa {
+    display: none;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fit-cover {
+  object-fit: cover;
+}
+
+.fit-contain {
+  object-fit: contain;
+}
+
+.fit-photo {
+  position: relative;
+
+  &.abs-full,
+  &.absolute {
+    position: absolute;
+  }
+
+  &.cover img,
+  &.cover video {
+    @include abs-full;
+
+    object-fit: cover;
+  }
+
+  &.contain img,
+  &.contain video {
+    @include abs-full;
+
+    object-fit: contain;
+  }
+}

@@ -48,3 +48,17 @@
   width: 100%;
   height: 100%;
 }
+
+@mixin wp-admin-bar {
+  #wpadminbar {
+    position: fixed !important;
+    opacity: 0.3 !important;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateY(-80%) !important;
+
+    &:hover {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}

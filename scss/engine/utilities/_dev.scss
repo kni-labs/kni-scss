@@ -1,1 +1,109 @@
-/* 🛠️ Engine Utility: Dev helpers (debug borders, outline classes) */
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// 📄 _dev.scss
+// Louie's dev utils - todo: writeup needed
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+#dev-config--width {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: lightgreen;
+  padding: 10px;
+
+  &::before,
+  span {
+    font-weight: bold;
+
+    --fontSize: 24;
+  }
+
+  @media (min-width: 1px) and (max-width: 374px) {
+    // $mm - 1px
+    background: lightseagreen;
+
+    &::before {
+      content: 'Below 320: '; // $ms
+    }
+  }
+
+  @media (min-width: 320px) {
+    // $ms
+    background: lightblue;
+
+    &::before {
+      content: '320: ';
+    }
+  }
+
+  @media (min-width: 375px) {
+    // $mm
+    background: lightgoldenrodyellow;
+
+    &::before {
+      content: '375: ';
+    }
+  }
+
+  @media (min-width: 500px) {
+    // $ml
+    background: yellow;
+
+    &::before {
+      content: '500: ';
+    }
+  }
+
+  @media (min-width: 600px) {
+    // $ts
+    background: lightsalmon;
+
+    &::before {
+      content: '600: ';
+    }
+  }
+
+  @media (min-width: 768px) {
+    // $tm
+    background: lightsteelblue;
+
+    &::before {
+      content: '768: ';
+    }
+  }
+
+  @media (min-width: 1024px) {
+    // $tl
+    background: lightpink;
+
+    &::before {
+      content: '1024: ';
+    }
+  }
+
+  @media (min-width: 1440px) {
+    // $dm
+    background: rgb(90 216 244);
+
+    &::before {
+      content: '1440: ';
+    }
+  }
+
+  @media (min-width: 1600px) {
+    // $dl
+    background: rgb(147 245 128);
+
+    &::before {
+      content: '1600: ';
+    }
+  }
+
+  @media (min-width: 1800px) {
+    // $dxl
+    background: yellow;
+
+    &::before {
+      content: '1800: ';
+    }
+  }
+}
