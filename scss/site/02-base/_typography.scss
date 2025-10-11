@@ -13,7 +13,7 @@
   --line-height: 1.5;
   --text-wrap: pretty;
   --letter-spacing: normal; // 0.01em etc - match figma
-  --type-margin: 10pxv; // todo: replace with spacing var
+  --type-margin: 15pxv; // todo: replace with spacing var
 }
 
 // 🧩  Type system
@@ -43,8 +43,14 @@ html {
 // Header specific styles
 :where(h1, h2, h3, h4, h5, h6) {
   line-height: 1.2;
+}
 
-  // add header specific styles here
+code,
+kbd,
+samp,
+pre,
+tt {
+  font-family: var(--font-family-monospace);
 }
 
 // ✏️  Custom type styles – write your css here

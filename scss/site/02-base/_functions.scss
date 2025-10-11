@@ -5,7 +5,9 @@
 
 //  ✏️ Site functions
 // -----------------------------------------------------------------------------
-// write your functions here
+@function my-function($arg) {
+  @return $arg;
+}
 
 // 🧩  Library Functions Reference
 // -----------------------------------------------------------------------------

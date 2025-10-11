@@ -28,177 +28,19 @@
       };
     </script>
 
-    <nav class="sideNav">
-      <h6>KNI SCSS</h6>
-      <ul>
-        <li>
-          <a href="#pxv">pxv</a>
-        </li>
-        <li>
-          <a href="#typography">Typography</a>
-        </li>
-      </ul>
-    </nav>
-
+    <h1>KNI-Cascade</h1>
+    <p>This is how we CSS.</p>
+    <div class="box">I'm a cool box</div>
     <main>
-      <section id="pxv">
-        <h4>pxv</h4>
-        <hr />
-        <article>
-          <div>
-
-            <br />
-            <p>
-              Instead of the deprecated `vw()` function we will now be using <a href="https://github.com/kni-labs/postcss-pxv">postcss-pxv</a> for viewport unit conversions. You can read more about that <a href="https://github.com/kni-labs/postcss-pxv/blob/master/README.md">here</a>.<br><br>
-            </p>
-          </div>
-
-        </article>
-      </section>
       <section id="typography">
         <h4>Typography</h4>
         <hr /><br>
         <h1 class="fluid-type-bad"">h1 – This is how we CSS</h1>
-        <code>
+        <h2>I'm an h2</h2>
+        <h3>h3's are cool</h3>
+        <div><pre><code>this is some code</code></pre></div>
 <button>i'm a button</button>
-<pre>
-h1 {
-  --fontSize: 38;
 
-  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 44px;
-  }
-
-  @media (min-width: #{$tl}px) {
-    --fontSize: 50;
-  }
-}
-</pre>
-        </code>
-        <br /><br />
-
-        <h2>h2 – Heading example</h2>
-        <code>
-<pre>
-h2 {
-  --fontSize: 33;
-
-  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 38px;
-  }
-  @media (min-width: #{$tl}px) {
-    --fontSize: 43;
-  }
-}
-</pre>
-        </code>
-        <br /><br />
-
-        <h3>My favorite heading tag is h3</h3>
-        <code>
-<pre>
-h3 {
-  --fontSize: 28;
-
-  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 31.5px;
-  }
-  @media (min-width: #{$tl}px) {
-    --fontSize: 35;
-  }
-}
-</pre>
-        </code>
-        <br /><br />
-
-        <h5>But not as much as h5's</h5>
-        <code>
-<pre>
-h5 {
-  --fontSize: 21;
-
-  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 22.5px;
-  }
-
-  @media (min-width: #{$tl}px) {
-    --fontSize: 24;
-  }
-}
-</pre>
-        </code>
-        <br /><br />
-
-        <h6>This h6 is a bit larger than the paragraph</h6>
-        <code>
-<pre>
-h6 {
-  --fontSize: 18;
-
-  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 19px;
-  }
-
-  @media (min-width: #{$tl}px) {
-    --fontSize: 20;
-  }
-}
-</pre>
-        </code>
-        <br /><br />
-
-        <p>
-          This is an example paragraph tag. Sometimes for smaller fonts you want
-          to override the smallest size it can go. In this case pass in the
-          $minClamp argument which is the percentage the minimum font size
-          should be. Set it to 100% to have it not scale any smaller than
-          default.
-        </p>
-        <br />
-        <code>
-<pre>
-p {
-  --fontSize: 14;
-  --fontSizeMinClamp: 12;
-  --fontSizeMaxClamp: 18;
-
-  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 16px;
-  }
-
-  @media (min-width: #{$tl}px) {
-    --fontSize: 16;
-    --fontSizeMinClamp: 14;
-  }
-}
-</pre>
-          </code
-        ><br /><br />
-
-        <p class="p--xs">
-          This is an example paragraph with the class ".p--xs". For very small
-          selectors you may not want it to ever scale smaller. The `minClamp`
-          argument can also just be value on it's own:
-        </p>
-        <br />
-        <code>
-<pre>
-.p--xs {
-  --fontSize: 12;
-  --fontSizeMinClamp: 10;
-  --fontSizeMaxClamp: 12;
-
-  @media (min-width: #{$ts}px) and (max-width: #{$tl}px) {
-    font-size: 12px;
-  }
-
-  @media (min-width: #{$tl}px) {
-    --fontSize: 12;
-    --fontSizeMinClamp: 10;
-  }
-}
-</pre>
-        </code>
         <div class="negative">i have a negative margin</div>
       </section>
     </main>

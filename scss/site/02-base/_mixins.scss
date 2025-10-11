@@ -7,6 +7,10 @@
 // -----------------------------------------------------------------------------
 // write your mixins here
 
+@mixin my-mixin {
+  border: 1px solid red;
+}
+
 // 🧩  Library Mixins Reference
 // -----------------------------------------------------------------------------
 // @mixin touch-device {

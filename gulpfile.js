@@ -6,7 +6,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const postcsspxv = require('postcss-pxv');
 const browserSync = require('browser-sync').create();
-const insert = require('gulp-insert'); // 👈 inject CSS rule
 const {exec} = require('child_process'); // stylelint via CLI
 
 // --------------------------
@@ -75,17 +74,6 @@ gulp.task('build-sass', async function () {
       ])
     )
     .pipe(gulpAutoprefixer())
-
-    // 👇 inject test-only transition rule at the end of CSS
-    .pipe(
-      insert.append(`
-        /* injected by gulp for dev testing */
-        * {
-          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-      `)
-    )
-
     .pipe(
       sourcemaps.write('./', {
         includeContent: true,
