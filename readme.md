@@ -3,13 +3,15 @@
 A modern front-end architecture creating a single source of truth for all our css - across WP, React, static, or any future builds.
 
 We package:
-- **Sass** for CSS folder architecture + clean DX
+- A revamped css folder structure and updated/modernized css base that fixes all inheritance issues.
+- **Sass** for clean and familiar DX
 - **PostCSS** to transform the compiled CSS into browser-ready output.
-  - **[postcss-pxv](https://github.com/kni-labs/postcss-pxv)** — Our custom viewport unit
+  - **[postcss-pxv](https://github.com/kni-labs/postcss-pxv)** — Our custom viewport unit (now 40% smaller!)
   - **Autoprefixer** (? to discuss)
   - **CSSNano** (?)
 - **Stylelint** (config only?) to enforce code style and consistency across .scss files.
 - **Prettier**  config file (that get pulled into each boilerplate)
+- **config.js** Pulled into each boilerplate
 
 ### NPM Library or CSS Boilerplate?
 
