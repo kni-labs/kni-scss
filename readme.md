@@ -11,11 +11,11 @@ We package:
 - **Stylelint** (config only?) to enforce code style and consistency across .scss files.
 - **Prettier**  config file (that get pulled into each boilerplate)
 
-### NPM Reference or CSS Boilerplate?
+### NPM Library or CSS Boilerplate?
 
 The answer: why not both?
 
-Currently everything in KNI-SCSS lives in npm modules. This is great for pushing updates but creates 2 main pain points
+Currently everything in KNI-SCSS lives in npm modules. This is great for pushing updates but creates 2 main pain points:
 
 1. No clear reference where to override variables
 2. Our CSS boilerplates are still living in different places (kni-wp-bp, kni-next, etc)
