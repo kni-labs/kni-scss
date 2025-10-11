@@ -23,7 +23,7 @@ Currently everything in KNI-SCSS lives in npm modules. This is great for pushing
 2. Our CSS boilerplates are still living in different places (kni-wp-bp, kni-next, etc)
 
 I'm proposing that we split out css file into 2 main folders:
-- **/engine**: (Lives in npm modules), houses reset, mixins, functions, utility classes etc
-- **/site**: (copied to appropriate location with a postinstall script) css boilerplate housing tokens, primitives, base styling and normalized folder structure 
+- **/engine**: (Lives in npm modules) - houses reset, mixins, functions, utility classes etc
+- **/site**: (copied to appropriate location with a postinstall script) - css boilerplate housing tokens, primitives, base styling and normalized folder structure 
 
-This allows this repo to truly be a single source of truth for all things css, and completely removes css from all boilerplates.
+This allows this repo to truly be a single source of truth for all things css, and completely removes css from all boilerplates. Devs can dive in and start coding knowing exactly where to edit everything.
