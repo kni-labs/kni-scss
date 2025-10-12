@@ -1,3 +1,5 @@
+@use '../../engine' as *; // todo: move?
+
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 // 📄 _typography.scss
 // Typography settings and custom styles
@@ -5,6 +7,22 @@
 
 // ⚙️ Base Typography Tokens
 // -----------------------------------------------------------------------------
+
+// :where(
+//   html, body, h1, h2, h3, h4, h5, h6,
+//   p, ul, ol, dl, dd, li,
+//   blockquote, pre, figure, caption,
+//   address
+// ) {
+//   font-size: clamp(
+//     var(--font-min-clamp),
+//     var(--font-size),
+//     var(--font-max-clamp)
+//   );
+// }
+
+@include fluid-type;
+
 :root {
   /* Base type scale */
   --font-min-clamp: 12px; // forced min-size for all type
@@ -13,20 +31,15 @@
   --line-height: 1.5;
   --text-wrap: pretty;
   --letter-spacing: normal; // 0.01em etc - match figma
-  --type-margin: 15pxv; // todo: replace with spacing var
+  --type-margin: var(--default-type-margin); // todo: replace with spacing var
 }
 
 // 🧩  Type system
 // -----------------------------------------------------------------------------
 
-html {
-  // ☠️ Danger zone - fluid type baseline – probably don't touch this
-  font-size: clamp(
-    var(--font-min-clamp),
-    var(--font-size),
-    var(--font-max-clamp)
-  );
+// @include fluid-type; //
 
+html {
   // Edit these per project
   font-family: var(--font-family-system);
   line-height: var(--line-height);

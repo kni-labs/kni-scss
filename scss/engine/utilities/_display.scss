@@ -1,54 +1,43 @@
-// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-// 📄 _display.scss
-// General Layout utility classes - Trevor/Louie ownership
-// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-.desktop-only {
-  @include bb {
-    display: none;
-  }
-}
+// // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// // 📄 _display.scss
+// // General Layout utility classes - Trevor/Louie ownership
+// // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-.mobile-only {
-  @include baa {
-    display: none;
-  }
-}
+// .relative {
+//   position: relative;
+// }
 
-.relative {
-  position: relative;
-}
+// .absolute {
+//   position: absolute;
+// }
 
-.absolute {
-  position: absolute;
-}
+// .fit-cover {
+//   object-fit: cover;
+// }
 
-.fit-cover {
-  object-fit: cover;
-}
+// .fit-contain {
+//   object-fit: contain;
+// }
 
-.fit-contain {
-  object-fit: contain;
-}
+// .fit-photo {
+//   position: relative;
 
-.fit-photo {
-  position: relative;
+//   &.abs-full,
+//   &.absolute {
+//     position: absolute;
+//   }
 
-  &.abs-full,
-  &.absolute {
-    position: absolute;
-  }
+//   &.cover img,
+//   &.cover video {
+//     @include abs-full;
 
-  &.cover img,
-  &.cover video {
-    @include abs-full;
+//     object-fit: cover;
+//   }
 
-    object-fit: cover;
-  }
+//   &.contain img,
+//   &.contain video {
+//     @include abs-full;
 
-  &.contain img,
-  &.contain video {
-    @include abs-full;
-
-    object-fit: contain;
-  }
-}
+//     object-fit: contain;
+//   }
+// }

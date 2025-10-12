@@ -1,3 +1,13 @@
+@mixin fluid-type {
+  :where(html, body, tt, i, b, big, small, em, strong, dfn, code, samp, kbd, var, cite, abbr, acronym, sub, sup, span, bdo, address, div, a, object, p, h1, h2, h3, h4, h5, h6, pre, q, ins, del, dt, dd, li, label, option, textarea, fieldset, legend, button, caption, td, th, title, blockquote, time, input, article, aside, details, figcaption, figure, footer, header, main, mark, nav, section, summary, output, select, meter, progress, text, tspan, tref) {
+    font-size: clamp(
+      var(--font-min-clamp),
+      var(--font-size),
+      var(--font-max-clamp)
+    );
+  }
+}
+
 @mixin touch-device {
   @media (hover: none) {
     @content;

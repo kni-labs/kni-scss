@@ -1,16 +1,10 @@
-@use '../scss/site/01-config' as *;
-@use '../scss/engine/core' as *;
-@use '../scss/site/02-base' as *;
-@use '../scss/site/03-components' as *;
-@use '../scss/site/04-modules' as *;
-@use '../scss/site/05-pages' as *;
-@use '../scss/engine/utilities/display' as *;
-@use '../scss/engine/utilities/dev' as *;
-@use '../scss/engine/utilities/spacing' as *;
-@use '../scss/engine/utilities/flex' as *;
+@use '../scss/site' as *;
+
+@use 'sass:meta';
+@debug meta.mixin-exists(border);
 
 body {
-  border: 25pxv solid burlywood;
+  border: 50px solid green;
   background: lavenderblush;
   padding: 15pxv 40pxv;
 }
@@ -23,7 +17,7 @@ h1 {
 
 h2 {
   --font-min-clamp: 68px;
-  --font-size: 70pxv; /* author-friendly syntax */
+  --font-size: 72pxv; /* author-friendly syntax */
 }
 
 .box {
