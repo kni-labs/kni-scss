@@ -1,10 +1,7 @@
 @use '../scss/site' as *;
 
-@use 'sass:meta';
-@debug meta.mixin-exists(border);
-
 body {
-  border: 50px solid green;
+  border: 30px solid green;
   background: lavenderblush;
   padding: 15pxv 40pxv;
 }

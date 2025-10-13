@@ -20,26 +20,6 @@ $dxl: 1800 !default; // Desktop x-large
 // sample mq
 // @media (min-width: #{$tm}) {}
 
-// ⚙️  Responsive settings
-// -----------------------------------------------------------------------------
-
-$desktop-max: 1800; // This gets edited often
-
-:root {
-  // pxv defaults
-  --mobile-min: 0;
-  --mobile-basis: 375; // Figma mobile
-  --mobile-max: 767;
-  --desktop-min: 768;
-  --desktop-basis: 1440; // Figma desktop
-  --desktop-max: #{$desktop-max};
-
-  // This powers the pxv unit - do not edit
-  --site-min: var(--mobile-min);
-  --site-basis: var(--mobile-basis);
-  --site-max: var(--mobile-max);
-}
-
 // 🛠️  Media Queries
 //    "sm" and "lg" should handle 95% of use cases. Feel free to add "med"
 //    or roll your own per project!

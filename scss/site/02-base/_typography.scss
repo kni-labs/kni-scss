@@ -3,46 +3,16 @@
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 // 📄 _typography.scss
-// Typography settings and custom styles
+// Type system + custom styles
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-
-// ⚙️ Base Typography Tokens
-// -----------------------------------------------------------------------------
-
-// :where(
-//   html, body, h1, h2, h3, h4, h5, h6,
-//   p, ul, ol, dl, dd, li,
-//   blockquote, pre, figure, caption,
-//   address
-// ) {
-//   font-size: clamp(
-//     var(--font-min-clamp),
-//     var(--font-size),
-//     var(--font-max-clamp)
-//   );
-// }
-
-@include fluid-type;
-
-:root {
-  /* Base type scale */
-  --font-min-clamp: 12px; // forced min-size for all type
-  --font-max-clamp: 9999px; // no touch
-  --font-size: 16pxv; // Set to 16px to turn off fluid type
-  --line-height: 1.5;
-  --text-wrap: pretty;
-  --letter-spacing: normal; // 0.01em etc - match figma
-  --type-margin: var(--default-type-margin); // todo: replace with spacing var
-}
 
 // 🧩  Type system
 // -----------------------------------------------------------------------------
 
-// @include fluid-type; //
+@include fluid-type; // remove this if you dont want fluid type
 
 html {
-  // Edit these per project
-  font-family: var(--font-family-system);
+  font-family: var(--font-family-system); // edit me
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
   text-wrap: var(--text-wrap);

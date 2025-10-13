@@ -1,7 +1,9 @@
 // Forward all major site folders
 @forward '01-config';
+@use '01-config' as *;
 
 @forward '../engine';
+@use '../engine' as *;
 
 @forward '02-base';
 @forward '03-components';

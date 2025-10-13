@@ -65,7 +65,7 @@ hr {
   inline-size: 100%;
   border: none;
   background-color: currentcolor;
-  margin-block: var(--default-type-margin);
+  margin-block: var(--type-margin); // todo: remove var?
 }
 
 // Remove all animations, transitions and smooth scroll for people that prefer not to see them

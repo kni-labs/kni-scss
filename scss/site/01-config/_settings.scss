@@ -4,11 +4,21 @@
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 $easing: cubic-bezier(0.23, 1, 0.32, 1); // Michael Jordan Magic Johnson
+$desktop-max: 1800; // edit here, used in media queries as well
 
 :root {
-  --default-type-margin: 15pxv;
+  // pxv settings - Match figma
+  --mobile-min: 0;
+  --mobile-basis: 375; // Figma mobile
+  --mobile-max: 767;
+  --desktop-min: 768;
+  --desktop-basis: 1440; // Figma desktop
+  --desktop-max: #{$desktop-max};
+
+  // default type settings
+  --font-min-clamp: 12px; // forced min-size for all type
+  --line-height: 1.5; // default line height
+  --text-wrap: pretty; // default
+  --letter-spacing: normal; // 0.01em etc - match figma
+  --type-margin: 15pxv; // Bottom spacing under type elements todo: replace with spacing var
 }
-
-// Style the wp admin bar
-
-// @include wp-admin-bar; // turn off to disable

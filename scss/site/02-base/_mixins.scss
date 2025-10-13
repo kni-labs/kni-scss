@@ -1,0 +1,57 @@
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// 📄 _mixins.scss
+// Write custom mixins or reference available mixins from /engine
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+//  ✏️ Site mixins
+// -----------------------------------------------------------------------------
+// write your mixins here
+
+@mixin my-mixin {
+  border: 1px solid red;
+}
+
+// 🧩  Library Mixins Reference
+// -----------------------------------------------------------------------------
+// @mixin touch-device {
+//   @media (hover: none) {
+//     @content;
+//   }
+// }
+
+// @mixin screen-reader-only {
+//   position: absolute;
+//   overflow: hidden;
+//   top: auto;
+//   left: -10000px;
+//   clip: rect(1px, 1px, 1px, 1px);
+//   clip-path: inset(50%);
+//   width: 1px;
+//   height: 1px;
+//   margin: -1px;
+//   padding: 0;
+// }
+
+// @mixin focus {
+//   &:focus,
+//   > *:focus {
+//     outline: none;
+//   }
+
+//   &:focus > * {
+//     box-shadow: 0 0 0 2px #0061c7;
+//     border-radius: 2px;
+//   }
+// }
+
+// @mixin no-focus {
+//   &:focus,
+//   > *:focus {
+//     outline: none;
+//   }
+
+//   &:focus > * {
+//     box-shadow: none;
+//     border-radius: 0;
+//   }
+// }
